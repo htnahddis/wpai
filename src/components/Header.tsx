@@ -8,6 +8,7 @@ import ConsultationModal from "./ConsultationModal";
 
 export default function Header() {
   const pathname = usePathname();
+  const currentPath = pathname || "";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -117,7 +118,7 @@ export default function Header() {
                     </div>
                     <div className="grid grid-cols-1 gap-1">
                       {productLinks.map((item) => {
-                        const isActive = pathname === item.href;
+                        const isActive = currentPath === item.href;
                         return (
                           <Link
                             key={item.href}
@@ -153,7 +154,7 @@ export default function Header() {
               <Link
                 href="/percixpert"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === "/percixpert" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath === "/percixpert" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 PerciXpert
@@ -162,7 +163,7 @@ export default function Header() {
               <Link
                 href="/perciserve-support-suite"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === "/perciserve-support-suite" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath === "/perciserve-support-suite" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 PerciServe
@@ -171,7 +172,7 @@ export default function Header() {
               <Link
                 href="/percihub-business-suite"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === "/percihub-business-suite" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath === "/percihub-business-suite" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 PerciHub
@@ -180,7 +181,7 @@ export default function Header() {
               <Link
                 href="/what-we-do/intelligence-enterprise-offerings/xpa-epm"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname.includes("xpa-epm") ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath.includes("xpa-epm") ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 xP&A & EPM
@@ -189,7 +190,7 @@ export default function Header() {
               <Link
                 href="/sap-business-ai"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === "/sap-business-ai" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath === "/sap-business-ai" ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 SAP Business AI
@@ -198,7 +199,7 @@ export default function Header() {
               <Link
                 href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration"
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname.includes("ai-acceleration") ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
+                  currentPath.includes("ai-acceleration") ? "text-[#0D5CE5] bg-blue-50/50" : "text-[#292A2E] hover:text-[#0D5CE5]"
                 }`}
               >
                 AI Acceleration
