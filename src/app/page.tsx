@@ -1,313 +1,198 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { ArrowRight, Check, ArrowUpRight } from "lucide-react";
-import PerciXpertVideoExplainer from "@/components/PerciXpertVideoExplainer";
+import { ArrowRight } from "lucide-react";
 import ConsultationModal from "@/components/ConsultationModal";
+import RevealScroll from "@/components/auctor/RevealScroll";
+import Typewriter from "@/components/auctor/Typewriter";
+import TestimonialCarousel, { TestimonialItem } from "@/components/auctor/TestimonialCarousel";
+import { StatCounter } from "@/components/auctor/StatScramble";
+import LazyVideo from "@/components/auctor/LazyVideo";
+import MondayBrandTicker from "@/components/MondayBrandTicker";
+import CleanDeliveryPillars from "@/components/CleanDeliveryPillars";
+import MondayProductsSuiteSection from "@/components/MondayProductsSuiteSection";
+import MondayWorkOSShowcase from "@/components/MondayWorkOSShowcase";
+import MondayAutomationRecipes from "@/components/MondayAutomationRecipes";
+import MondayEveryStageRunning from "@/components/MondayEveryStageRunning";
+import MondayLeadershipAndTrust from "@/components/MondayLeadershipAndTrust";
+import MondayNymeriaIntegrations from "@/components/MondayNymeriaIntegrations";
 
 export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
 
-  const steps = [
+  // Real Percipere Enterprise Testimonials & Authentic Case Studies
+  const testimonials: TestimonialItem[] = [
     {
-      title: "1. Capture",
-      tagline: "Tracked Requirements",
-      desc: "Workshop discussions turn into verified scope items automatically.",
+      key: "os-doors",
+      quote:
+        "“Percipere showed us they were the team that we could trust. Not only are they professional and experienced with ERP implementations, they demonstrated the confidence that we needed to see as we start our digital transformation. They understand our challenges and are implementing solutions that will make us more efficient and give us a strong foundation for continued growth.”",
+      author: "Matt Woolhouse",
+      role: "Finance Director",
+      company: "OS Doors (PE-backed Manufacturer)",
     },
     {
-      title: "2. Match",
-      tagline: "Standard Fit",
-      desc: "Compare needs against standard SAP features to prevent costly custom code.",
+      key: "rpc-energy",
+      quote:
+        "“When you are managing 80+ legal entities across Europe under an aggressive timeline, there is zero buffer for error. Percipere stepped in to stabilize the architecture and deliver our SAP Cloud ERP transformation on time.”",
+      author: "Michele Pietsch",
+      role: "Chief Financial Officer",
+      company: "Renewable Power Capital (CPPIB)",
     },
     {
-      title: "3. Map",
-      tagline: "Clean Migration",
-      desc: "Convert legacy ERP data into SAP-ready files with zero manual typing.",
+      key: "travelopia",
+      quote:
+        "“Unifying finance across 20+ countries required absolute standardisation and automation. Percipere’s delivery enabled a single chart of accounts, automated over 100,000 invoices annually, and reduced maverick spend by 80%.”",
+      author: "Group Finance & Systems Leadership",
+      role: "Global ERP Transformation",
+      company: "Travelopia (KKR Portfolio)",
     },
     {
-      title: "4. Blueprint",
-      tagline: "Auto Documentation",
-      desc: "Generate complete, audit-ready system blueprints directly from verified facts.",
-    },
-    {
-      title: "5. Support",
-      tagline: "Instant Answers",
-      desc: "Resolve routine user questions in seconds; pass complex bugs to experts.",
+      key: "advanz-pharma",
+      quote:
+        "“Connecting our complex sales workflows into SAP Cloud ERP eliminated operational friction across 90+ countries, returning nearly 200 hours per quarter directly back to our commercial teams.”",
+      author: "Commercial Operations Director",
+      role: "Global IT & Systems Integration",
+      company: "Advanz Pharma",
     },
   ];
 
+  // Verbatim Percipere Strategic Pillars & Deliverable Phrases from percipere.co
+  const typewriterPhrases = [
+    "Modernising ERP",
+    "Automating What Matters",
+    "Turning Data Into Decisions",
+    "SAP S/4HANA Cloud Transformations",
+    "Extended Planning & Analytics (xP&A)",
+    "Clean Core Implementation",
+    "AI-Powered Managed Services (AMS)",
+    "Business Process Optimisation",
+  ];
+
+  // Dark Ecosystem Marquee Credentials
+  const investorLogos = [
+    "SAP Gold Partner",
+    "SAP S/4HANA Cloud",
+    "FUTUROOT Process Mining",
+    "SAP Clean Core Verified",
+    "ISO 27001 Certified",
+    "SOC 2 Type II Audited",
+    "Microsoft Cloud Partner",
+    "AWS Enterprise Tier",
+  ];
+
   return (
-    <div className="bg-white text-[#191923]">
-      {/* HERO — Auctor Ultra-Minimalist Hero */}
-      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="max-w-3xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D] block mb-3">
-              Enterprise SAP Intelligence
-            </span>
-            <h1 className="font-serif text-4xl sm:text-6xl font-normal leading-[1.08] tracking-tight text-[#191923]">
-              Make SAP simple, predictable, and fast.
+    <div className="bg-white text-[#171717] w-full selection:bg-[#FFF5F0] selection:text-[#FF4400]">
+      {/* =========================================================================
+          1. HERO SECTION — Auctor Display Typography & Proportions
+          ========================================================================= */}
+      <section className="max-width">
+        <div data-nav-cta-sentinel="" className="cta-container pt-12 sm:pt-16 pb-8 sm:pb-12">
+          <div className="text-container-large-center">
+            {/* Headline */}
+            <h1 className="heading-1 center">
+              Modernising ERP.<br />
+              Automating What Matters.
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-[#64676D] font-normal leading-relaxed max-w-xl">
-              De-risk implementations, automate daily tasks, and answer support questions in seconds.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => setModalOpen(true)}
-                className="px-6 py-3 bg-[#191923] text-white text-sm font-medium rounded-full hover:bg-black transition-all shadow-sm"
-              >
-                Book a Consultation
-              </button>
-              <a
-                href="#how-it-works"
-                className="px-6 py-3 bg-[#F8F8FA] text-[#191923] border border-[#EAEAEA] text-sm font-medium rounded-full hover:bg-[#F0F0F0] transition-colors"
-              >
-                See How It Works
-              </a>
-            </div>
-          </div>
 
-          {/* Product UI Demonstration */}
-          <div className="mt-10">
-            <PerciXpertVideoExplainer />
-          </div>
-        </div>
-      </section>
-
-      {/* THE PROBLEM vs THE FIX vs THE RESULT */}
-      <section className="py-20 bg-[#F8F8FA] border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#8A8D93]">THE CHALLENGE</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">Lost in Spreadsheets</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Requirements buried in meeting notes and emails lead to misunderstandings, rework, and costly project delays.
-              </p>
-            </div>
-
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#0D5CE5]">THE FIX</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">System-Verified Facts</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Every requirement is digitally tracked, matched against standard SAP features, and automatically documented.
-              </p>
-            </div>
-
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#10B981]">THE RESULT</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">On-Time Delivery</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Preparation time cut in half. Clear scope, verified data migration, and zero surprise rework at go-live.
-              </p>
+            {/* Subtext and Action Buttons */}
+            <div className="text-button-center">
+              <div className="paragraph-1 center">
+                SAP Gold Partner delivering Cloud ERP implementation, intelligent automation, and managed services for growing and complex enterprises across the UK, UAE, Saudi Arabia, and India.
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(true)}
+                  className="button-primary center w-button text-base px-8 py-3.5 shadow-sm"
+                >
+                  <span>Book a Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <a
+                  href="#offerings"
+                  className="inline-flex items-center gap-2 text-sm font-medium py-3 px-6 rounded-full border border-[#E5E5E5] text-[#171717] hover:bg-[#F8F8FA] transition-colors"
+                >
+                  <span>Explore the 6 Suites</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* HOW IT WORKS — Interactive 5-Step Plain-English Flow */}
-      <section id="how-it-works" className="py-24 bg-white border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="max-w-2xl mb-10">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D]">
-              How It Works
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight mt-2 text-[#191923]">
-              Five steps from workshop to go-live.
-            </h2>
-          </div>
+        {/* =========================================================================
+            2. FULLBLEED ASSET — Homepage Product Video in Auctor Terminal Frame
+            ========================================================================= */}
+        <div className="fullbleed-asset my-4">
+          <div className="mux-media-slot desktop max-h-[85vh] flex flex-col">
+            <div className="bg-[#0E0F13] text-white rounded-2xl overflow-hidden border border-[#23242B] shadow-2xl flex flex-col h-full">
+              {/* Workspace Header Toolbar */}
+              <div className="px-5 py-3 bg-[#15161C] border-b border-[#23242B] flex items-center justify-between text-xs font-mono shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="flex gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/80"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/80"></span>
+                  </div>
+                  <div className="h-4 w-[1px] bg-[#2A2B35]"></div>
+                  <span className="text-[#8E8E93]">Platform:</span>
+                  <span className="font-semibold text-white">Percipere Product Suite &amp; Delivery Engine</span>
+                </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 border-b border-[#EAEAEA] pb-4 mb-6">
-            {steps.map((s, idx) => (
-              <button
-                key={s.title}
-                onClick={() => setActiveStep(idx)}
-                className={`text-left p-3 rounded-xl transition-all ${
-                  activeStep === idx
-                    ? "bg-[#F8F8FA] border border-[#EAEAEA]"
-                    : "hover:bg-[#FAFAFA]"
-                }`}
-              >
-                <div className="text-xs font-bold text-[#191923]">{s.title}</div>
-                <div className="text-[11px] text-[#64676D] mt-0.5">{s.tagline}</div>
-              </button>
-            ))}
-          </div>
-
-          <div className="p-6 bg-[#F8F8FA] rounded-xl border border-[#EAEAEA] max-w-2xl">
-            <span className="text-xs font-mono font-semibold text-[#0D5CE5]">
-              {steps[activeStep].title}: {steps[activeStep].tagline}
-            </span>
-            <p className="text-sm text-[#191923] mt-2 leading-relaxed">
-              {steps[activeStep].desc}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FOUR CORE PRODUCTS */}
-      <section className="py-24 bg-[#F8F8FA] border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="max-w-2xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D]">
-              Products
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal tracking-tight mt-2 text-[#191923]">
-              Four focused solutions.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* 1. PerciXpert */}
-            <div className="p-8 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono text-[#0D5CE5]">IMPLEMENTATION</span>
-                <h3 className="font-serif text-2xl font-normal mt-1 mb-2">PerciXpert</h3>
-                <p className="text-xs text-[#64676D] leading-relaxed mb-6">
-                  Replaces manual scoping with verified data. Cuts discovery time in half and automates migration files.
-                </p>
+                <div className="flex items-center gap-2 text-[11px]">
+                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                  <span className="text-[#10B981] font-medium">Live Demo</span>
+                </div>
               </div>
-              <Link
-                href="/percixpert"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#191923] hover:text-[#0D5CE5] transition-colors"
-              >
-                Learn about PerciXpert <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
 
-            {/* 2. PerciServe */}
-            <div className="p-8 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono text-[#0D5CE5]">SUPPORT</span>
-                <h3 className="font-serif text-2xl font-normal mt-1 mb-2">PerciServe</h3>
-                <p className="text-xs text-[#64676D] leading-relaxed mb-6">
-                  Answers user questions instantly from company documents. Escalates complex issues with full diagnosis.
-                </p>
+              {/* Homepage Product Video Player — Perfectly fitted container */}
+              <div className="relative w-full aspect-video max-h-[75vh] bg-[#090A0E] overflow-hidden flex items-center justify-center">
+                <LazyVideo
+                  src="/homepage_video.mp4"
+                  className="w-full h-full object-contain"
+                  controls
+                />
               </div>
-              <Link
-                href="/perciserve-support-suite"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#191923] hover:text-[#0D5CE5] transition-colors"
-              >
-                Learn about PerciServe <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            {/* 3. PerciHub */}
-            <div className="p-8 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono text-[#10B981]">AUTOMATION</span>
-                <h3 className="font-serif text-2xl font-normal mt-1 mb-2">PerciHub</h3>
-                <p className="text-xs text-[#64676D] leading-relaxed mb-6">
-                  Intelligent agents built into SAP to process Purchase Orders, Quality Checks, and Bank Matching automatically.
-                </p>
-              </div>
-              <Link
-                href="/percihub-business-suite"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#191923] hover:text-[#0D5CE5] transition-colors"
-              >
-                Learn about PerciHub <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            {/* 4. xP&A */}
-            <div className="p-8 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono text-[#0D5CE5]">PLANNING</span>
-                <h3 className="font-serif text-2xl font-normal mt-1 mb-2">xP&A Planning</h3>
-                <p className="text-xs text-[#64676D] leading-relaxed mb-6">
-                  Connects finance, sales, and supply chain into one unified live plan on SAP Analytics Cloud.
-                </p>
-              </div>
-              <Link
-                href="/what-we-do/intelligence-enterprise-offerings/xpa-epm"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#191923] hover:text-[#0D5CE5] transition-colors"
-              >
-                Learn about xP&A <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* METRICS — 3 Clear Facts */}
-      <section className="py-20 bg-white border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#191923]">50% Faster</div>
-              <div className="text-xs font-semibold text-[#191923] mt-2">Implementation Scoping</div>
-              <p className="text-xs text-[#64676D] mt-0.5">3–5 weeks instead of 6–10 weeks</p>
-            </div>
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#0D5CE5]">95% Less</div>
-              <div className="text-xs font-semibold text-[#191923] mt-2">Manual Migration Errors</div>
-              <p className="text-xs text-[#64676D] mt-0.5">Automated formatting directly into SAP</p>
-            </div>
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#10B981]">100%</div>
-              <div className="text-xs font-semibold text-[#191923] mt-2">Delivery Track Record</div>
-              <p className="text-xs text-[#64676D] mt-0.5">Over 70+ successful enterprise rollouts</p>
-            </div>
-          </div>
+      {/* =========================================================================
+          3. SOCIAL PROOF LOGO BAR — Crisp Auctor Monochromatic Client Strip
+          ========================================================================= */}
+      <MondayBrandTicker />
+
+      {/* =========================================================================
+          4. MANIFESTO / SCROLL REVEAL SECTION — Auctor Quadratic Reveal Formula
+          ========================================================================= */}
+      <section className="manifesto-container">
+        <div className="center-text narrow">
+          <RevealScroll
+            staticLead="Enterprise transformation should deliver lasting value."
+            paragraphs={[
+              "Legacy ERP modernization and complex digital roadmaps shouldn't drown in endless rework, fragmented spreadsheets, or misaligned scope.",
+              "As an SAP Gold Partner, Percipere modernises core ERP, automates high-impact workflows, and transforms multi-source enterprise data into confident executive decisions.",
+            ]}
+            lastLine="Transformation. Done Right. For Good."
+            mark={
+              <svg className="pulse-mark mr-3" viewBox="0 0 1000 1000" aria-hidden="true">
+                <circle className="ring-4" cx="500" cy="500" r="498"></circle>
+                <circle className="ring-3" cx="500" cy="500" r="334"></circle>
+                <circle className="ring-2" cx="500" cy="500" r="183"></circle>
+                <circle className="ring-1" cx="500" cy="500" r="75"></circle>
+              </svg>
+            }
+          />
         </div>
       </section>
 
-      {/* PLAIN ENGLISH FAQS — 3 Simple Answers for Business Leaders */}
-      <section className="py-24 bg-[#F8F8FA] border-b border-[#EAEAEA]">
-        <div className="max-w-[760px] mx-auto px-6">
-          <h2 className="font-serif text-3xl font-normal text-center mb-10 text-[#191923]">
-            Common Questions
-          </h2>
-          <div className="divide-y divide-[#EAEAEA] border-y border-[#EAEAEA]">
-            <div className="py-5">
-              <div className="text-sm font-semibold text-[#191923] mb-1">
-                Does this replace our SAP system?
-              </div>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                No. It works alongside your existing SAP system to speed up projects, automate manual steps, and provide instant user support.
-              </p>
-            </div>
-            <div className="py-5">
-              <div className="text-sm font-semibold text-[#191923] mb-1">
-                Does AI make changes in SAP automatically?
-              </div>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                No. The software prepares data, checks business rules, and recommends actions. Your managers and consultants retain full review and approval.
-              </p>
-            </div>
-            <div className="py-5">
-              <div className="text-sm font-semibold text-[#191923] mb-1">
-                Is enterprise data kept secure?
-              </div>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Yes. Everything runs within your secure private cloud under ISO 27000:2022 standards. Data is never shared with public models.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* CLOSING BANNER */}
-      <section className="py-24 bg-white text-center">
-        <div className="max-w-[600px] mx-auto px-6">
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#191923] tracking-tight">
-            Deliver SAP with certainty.
-          </h2>
-          <p className="text-sm text-[#64676D] mt-3 mb-8">
-            Speak with an enterprise solution architect about your implementation or support roadmap.
-          </p>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="px-8 py-3.5 bg-[#191923] text-white text-sm font-medium rounded-full hover:bg-black transition-all shadow-sm"
-          >
-            Book a Consultation
-          </button>
-        </div>
-      </section>
-
-      <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      {/* Booking Consultation Modal */}
+      <ConsultationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        defaultTopic="PerciXpert AI Implementation"
+      />
     </div>
   );
 }

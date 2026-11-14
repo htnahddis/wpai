@@ -10,46 +10,100 @@ const config: Config = {
     extend: {
       colors: {
         background: "#FFFFFF",
-        surface: "#F8F8F8",
-        "surface-card": "#FFFFFF",
-        "surface-subtle": "#F4F5F6",
-        primary: {
-          DEFAULT: "#292A2E",
-          dark: "#101214",
+        surface: {
+          DEFAULT: "#FBFBFC",
+          subtle: "#F5F5F7",
+          muted: "#EFEFEF",
         },
-        secondary: "#64676D",
-        muted: "#8A8D93",
+        primary: {
+          DEFAULT: "#171717",
+          dark: "#000000",
+        },
+        secondary: "#666666",
+        muted: "#8E8E93",
         border: {
-          DEFAULT: "#E8E8E8",
-          subtle: "#F0F0F0",
-          strong: "#D2D4D7",
+          DEFAULT: "#E5E5E5",
+          subtle: "#EEEEEE",
+          strong: "#D4D4D4",
+        },
+        auctor: {
+          orange: "#FF4400", // The signature Auctor orange rule accent
+          orangeLight: "#FFF5F0",
+          dark: "#171717",
+          gray: "#737373",
+          light: "#FBFBFC",
+          border: "#E5E5E5",
         },
         percipere: {
           blue: "#0D5CE5",
           navy: "#0A2540",
-          sky: "#EBF3FF",
-          accent: "#0052CC",
-          orange: "#E85D04",
-          amber: "#F59E0B",
-          emerald: "#10B981",
+          orange: "#FF4400",
         },
       },
       fontFamily: {
-        serif: ['Newsreader', 'Georgia', 'Cambria', '"Times New Roman"', 'serif'],
-        sans: ['var(--font-geist-sans)', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        sans: [
+          'var(--font-geist-sans)',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Inter',
+          'Roboto',
+          'sans-serif',
+        ],
+        serif: [
+          'Newsreader',
+          'Georgia',
+          'Cambria',
+          '"Times New Roman"',
+          'serif',
+        ],
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
-      boxShadow: {
-        subtle: "0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02)",
-        card: "0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.02)",
-        hover: "0 6px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
-        elevated: "0 12px 24px -4px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.02)",
+      letterSpacing: {
+        tightest: "-0.04em",
+        tighter: "-0.03em",
+        tight: "-0.015em",
+        wide: "0.04em",
+        widest: "0.08em",
       },
       maxWidth: {
         container: "1280px",
+        auctor: "1200px",
+        editorial: "680px",
+        hero: "980px",
+      },
+      boxShadow: {
+        subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
+        card: "0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02)",
+        preview: "0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04)",
+      },
+      animation: {
+        "rule-expand": "ruleExpand 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
+        ticker: "tickerMarquee 28s linear infinite",
+      },
+      keyframes: {
+        tickerMarquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        ruleExpand: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pulseSubtle: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
     },
   },
   plugins: [],
 };
+
 export default config;

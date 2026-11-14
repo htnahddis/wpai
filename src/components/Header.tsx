@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import ConsultationModal from "./ConsultationModal";
 
 export default function Header() {
@@ -12,100 +12,199 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const navLinks = [
-    { name: "PerciXpert", href: "/percixpert" },
-    { name: "PerciServe", href: "/perciserve-support-suite" },
-    { name: "PerciHub", href: "/percihub-business-suite" },
-    { name: "xP&A Planning", href: "/what-we-do/intelligence-enterprise-offerings/xpa-epm" },
-    { name: "SAP Business AI", href: "/sap-business-ai" },
-    { name: "AI Acceleration", href: "/what-we-do/intelligence-enterprise-offerings/ai-acceleration" },
+  // The 6 verified Percipere pages
+  const navPages = [
+    {
+      name: "PerciXpert",
+      href: "/percixpert",
+      tagline: "AI implementation engine for SAP S/4HANA",
+    },
+    {
+      name: "PerciServe",
+      href: "/perciserve-support-suite",
+      tagline: "Enterprise support suite & root-cause analysis",
+    },
+    {
+      name: "PerciHub",
+      href: "/percihub-business-suite",
+      tagline: "Autonomous business agents for SAP processes",
+    },
+    {
+      name: "xP&A / EPM",
+      href: "/what-we-do/intelligence-enterprise-offerings/xpa-epm",
+      tagline: "Extended Planning on SAP Analytics Cloud",
+    },
+    {
+      name: "SAP Business AI",
+      href: "/sap-business-ai",
+      tagline: "SAP Joule integration and custom enterprise agents",
+    },
+    {
+      name: "AI Acceleration",
+      href: "/what-we-do/intelligence-enterprise-offerings/ai-acceleration",
+      tagline: "Enterprise AI roadmap and PerciSuite tooling",
+    },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#EAEAEA] transition-all">
-        <div className="max-w-[1240px] mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Auctor minimal brand wordmark */}
-          <Link href="/" className="flex items-baseline gap-1 group">
-            <span className="font-serif text-2xl font-bold tracking-tight text-[#191923] group-hover:opacity-80 transition-opacity">
-              percipere
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E85D04]"></span>
-          </Link>
+      <div className="cn-nav-fixed-root sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E5E5]/80 transition-all">
+        <nav className="cn-nav max-w-[1240px] mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="cn-nav-inner w-full flex items-center justify-between gap-4">
+            {/* Brand Wordmark with Auctor-Style Micro Mark */}
+            <Link href="/" className="cn-logo flex items-baseline gap-1 group shrink-0">
+              <span className="font-serif text-2xl font-bold tracking-tight text-[#171717] group-hover:opacity-85 transition-opacity">
+                percipere
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF4400]"></span>
+            </Link>
 
-          {/* Minimal, uncluttered navigation */}
-          <nav className="hidden lg:flex items-center gap-1.5">
-            {navLinks.map((link) => {
-              const isActive =
-                currentPath === link.href ||
-                (link.href.includes("xpa-epm") && currentPath.includes("xpa-epm")) ||
-                (link.href.includes("ai-acceleration") && currentPath.includes("ai-acceleration"));
+            {/* Desktop Navigation Links — Strictly the 6 Percipere Pages */}
+            <div className="cn-links hidden xl:flex items-center gap-6">
+              {navPages.map((page) => {
+                const isActive =
+                  currentPath === page.href ||
+                  (page.href.includes("xpa-epm") && currentPath.includes("xpa-epm")) ||
+                  (page.href.includes("ai-acceleration") && currentPath.includes("ai-acceleration"));
 
-              return (
+                return (
+                  <Link
+                    key={page.name}
+                    href={page.href}
+                    className={`cn-link text-[13px] font-medium tracking-tight transition-colors py-1.5 whitespace-nowrap ${
+                      isActive
+                        ? "text-[#171717] font-semibold border-b-2 border-[#FF4400]"
+                        : "text-[#555559] hover:text-[#171717]"
+                    }`}
+                  >
+                    {page.name}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Tablet Navigation Dropdown for intermediate viewports */}
+            <div className="hidden lg:flex xl:hidden items-center gap-4">
+              <div className="flex items-center gap-4">
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 py-1.5 rounded-full text-[13px] font-medium tracking-tight transition-all ${
-                    isActive
-                      ? "bg-[#F4F4F6] text-[#191923] font-semibold"
-                      : "text-[#64676D] hover:text-[#191923] hover:bg-[#FAFAFA]"
-                  }`}
+                  href="/percixpert"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
                 >
-                  {link.name}
+                  PerciXpert
                 </Link>
-              );
-            })}
-          </nav>
+                <Link
+                  href="/perciserve-support-suite"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
+                >
+                  PerciServe
+                </Link>
+                <Link
+                  href="/percihub-business-suite"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
+                >
+                  PerciHub
+                </Link>
+                <Link
+                  href="/what-we-do/intelligence-enterprise-offerings/xpa-epm"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
+                >
+                  xP&amp;A
+                </Link>
+                <Link
+                  href="/sap-business-ai"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
+                >
+                  SAP AI
+                </Link>
+                <Link
+                  href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration"
+                  className="text-[13px] font-medium text-[#555559] hover:text-[#171717]"
+                >
+                  Advisory
+                </Link>
+              </div>
+            </div>
 
-          {/* Single primary CTA - Auctor style */}
-          <div className="hidden sm:flex items-center gap-4">
-            <button
-              onClick={() => setModalOpen(true)}
-              className="px-5 py-2 bg-[#191923] text-white text-[13px] font-medium rounded-full hover:bg-black transition-all shadow-sm active:scale-95"
-            >
-              Book a Consultation
-            </button>
-          </div>
-
-          {/* Mobile menu trigger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#191923] rounded-lg hover:bg-[#F8F8F8]"
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-
-        {/* Mobile dropdown */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-[#EAEAEA] px-6 py-5 space-y-2 animate-in fade-in duration-150">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-sm font-medium text-[#191923] hover:text-[#0D5CE5]"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-3 border-t border-[#EAEAEA]">
+            {/* Auctor CTA Wrap */}
+            <div className="cn-cta-wrap flex items-center gap-3 shrink-0">
               <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setModalOpen(true);
-                }}
-                className="w-full py-2.5 bg-[#191923] text-white text-xs font-semibold rounded-full text-center"
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="cn-cta button-primary text-[13px] py-2 px-5 hidden sm:inline-flex bg-[#171717] text-white hover:bg-black rounded-full"
               >
-                Book a Consultation
+                Book a Demo
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="cn-mobile-demo sm:hidden button-primary text-[12px] py-1.5 px-3.5 bg-[#171717] text-white rounded-full"
+              >
+                Demo
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="cn-burger lg:hidden p-2 text-[#171717] hover:bg-[#F5F5F7] rounded-lg transition-colors"
+                aria-label="Toggle navigation menu"
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
-        )}
-      </header>
+        </nav>
+      </div>
 
-      <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      {/* Mobile Drawer featuring the 6 pages */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-16 z-40 bg-white/98 backdrop-blur-lg flex flex-col p-6 overflow-y-auto border-t border-[#E5E5E5] lg:hidden animate-in fade-in duration-150">
+          <div className="space-y-4 mb-8">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#8E8E93]">
+              The 6 Enterprise Offerings
+            </span>
+            <div className="space-y-2">
+              {navPages.map((page) => (
+                <Link
+                  key={page.name}
+                  href={page.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block p-3.5 rounded-xl border border-[#EBEBED] bg-[#FBFBFC] hover:border-[#171717] transition-all"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-[14px] font-semibold text-[#171717] font-serif">
+                      {page.name}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-[#8E8E93]" />
+                  </div>
+                  <div className="text-[12px] text-[#737373] mt-1 font-normal">
+                    {page.tagline}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-auto pt-6 border-t border-[#E5E5E5]">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setModalOpen(true);
+              }}
+              className="w-full button-primary py-3 bg-[#171717] text-white rounded-full font-medium"
+            >
+              Book a Demo
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Booking Consultation Modal */}
+      <ConsultationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        defaultTopic="PerciXpert AI Implementation"
+      />
     </>
   );
 }
