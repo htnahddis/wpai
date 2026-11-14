@@ -2,33 +2,33 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Cpu, Layers, GitBranch, Database, ShieldCheck, Activity } from "lucide-react";
+import { ArrowUpRight, Cpu, Layers, GitBranch, Database, Activity } from "lucide-react";
 
 export default function EcosystemStrip({ current }: { current?: string }) {
   const pillars = [
     {
       name: "PerciXpert",
-      role: "Implementation & Audit",
-      desc: "Requirements to SDD & AMS handover",
+      role: "Delivery Engine",
+      desc: "Requirements to SDD blueprint",
       href: "/percixpert",
       icon: Cpu,
     },
     {
       name: "PerciServe",
-      role: "Intelligent Support",
-      desc: "Instant L1 answer to L2/L3 root-cause",
+      role: "Support Suite",
+      desc: "L1 instant to L2/L3 root cause",
       href: "/perciserve-support-suite",
       icon: Activity,
     },
     {
       name: "PerciHub",
-      role: "Context AI Agents",
-      desc: "Autonomous workflows directly in SAP",
+      role: "Business Agents",
+      desc: "Context-aware SAP agent execution",
       href: "/percihub-business-suite",
       icon: GitBranch,
     },
     {
-      name: "xP&A / PerciPlan",
+      name: "xP&A",
       role: "Enterprise Planning",
       desc: "Cross-functional planning on SAC",
       href: "/what-we-do/intelligence-enterprise-offerings/xpa-epm",
@@ -37,62 +37,61 @@ export default function EcosystemStrip({ current }: { current?: string }) {
     {
       name: "FUTUROOT",
       role: "Process Intelligence",
-      desc: "P2P/O2C mining & continuous monitoring",
+      desc: "P2P/O2C mining and alerts",
       href: "/perciserve-support-suite#workflow",
       icon: Layers,
     },
   ];
 
   return (
-    <section className="py-14 bg-[#F8F8F8] border-y border-[#E8E8E8]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#E8E8E8]">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#0D5CE5]">
-              The PerciVerse Ecosystem
-            </span>
-            <h3 className="font-serif text-2xl font-normal text-[#292A2E] mt-1">
-              Connected Enterprise Intelligence for SAP
-            </h3>
-          </div>
-          <p className="text-xs text-[#64676D] mt-2 md:mt-0 max-w-md">
-            Each offering operates independently or combines across the complete SAP lifecycle — enriched by FUTUROOT process intelligence.
-          </p>
-        </div>
+          <section className="py-14 bg-[#F8F8FA] border-y border-[#EAEAEA]">
+            <div className="max-w-[1240px] mx-auto px-6">
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 pb-4 border-b border-[#EAEAEA]">
+                <div>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D]">
+                      Ecosystem
+                    </span>
+                      <h3 className="font-serif text-2xl font-normal text-[#191923] mt-1">
+                        Connected intelligence across the SAP lifecycle.
+                      </h3>
+                    </div>
+                      <p className="text-xs text-[#64676D] mt-2 md:mt-0 max-w-sm">
+                        Modular capabilities grounded in live system context and FUTUROOT process telemetry.
+                      </p>
+                    </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
-          {pillars.map((item) => {
-            const isSelf = current === item.name;
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`p-4 rounded-xl border transition-all text-left group ${
-                  isSelf
-                    ? "bg-white border-[#0D5CE5] shadow-card ring-1 ring-blue-100"
-                    : "bg-white border-[#E8E8E8] hover:border-blue-300 hover:shadow-card"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-[#F8F8F8] border border-[#E8E8E8] flex items-center justify-center text-[#292A2E] group-hover:text-[#0D5CE5] transition-colors">
-                    <Icon className="w-4 h-4" />
-                  </div>
-                  {isSelf ? (
-                    <span className="text-[10px] font-semibold text-[#0D5CE5] uppercase tracking-wider px-2 py-0.5 bg-blue-50 rounded-full">
-                      Current
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                        {pillars.map((item) => {
+                          const isSelf = current === item.name;
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className={`p-4 rounded-xl border transition-all text-left group ${isSelf
+                                    ? "bg-white border-[#191923] shadow-sm"
+                                    : "bg-white border-[#EAEAEA] hover:border-[#191923] hover:shadow-subtle"
+                                }`}
+                            >
+                              <div className="flex items-center justify-between mb-2">
+                                  <div className="w-7 h-7 rounded-lg bg-[#F8F8FA] border border-[#EAEAEA] flex items-center justify-center text-[#191923] group-hover:text-[#0D5CE5] transition-colors">
+                                    <Icon className="w-3.5 h-3.5" />
+                                  </div>
+                                  {isSelf ? (
+                    <span className="text-[9px] font-mono font-semibold text-[#191923] uppercase tracking-wider px-1.5 py-0.5 bg-[#F0F0F0] rounded">
+                      Active
                     </span>
                   ) : (
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#8A8D93] group-hover:text-[#0D5CE5] transition-colors" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#8A8D93] group-hover:text-[#191923] transition-colors" />
                   )}
                 </div>
-                <h4 className="text-sm font-semibold text-[#292A2E] group-hover:text-[#0D5CE5] transition-colors">
+                <h4 className="text-xs font-semibold text-[#191923] group-hover:text-[#0D5CE5] transition-colors">
                   {item.name}
                 </h4>
-                <p className="text-[11px] font-medium text-[#0D5CE5] mt-0.5">
+                <p className="text-[10px] font-mono text-[#64676D] mt-0.5">
                   {item.role}
                 </p>
-                <p className="text-xs text-[#64676D] mt-1 leading-snug">
+                <p className="text-[11px] text-[#64676D] mt-1 leading-snug">
                   {item.desc}
                 </p>
               </Link>
@@ -101,5 +100,5 @@ export default function EcosystemStrip({ current }: { current?: string }) {
         </div>
       </div>
     </section>
-  );
+                                );
 }
