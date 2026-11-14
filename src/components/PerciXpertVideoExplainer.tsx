@@ -15,51 +15,51 @@ const SCENES: Scene[] = [
   {
     id: 1,
     timeRange: [0, 7],
-    title: "1. The Problem",
-    overlay: "Every SAP implementation starts with decisions.",
-    subOverlay: "But disconnected information creates unnecessary risk.",
+    title: "1. The Challenge",
+    overlay: "SAP projects often start with scattered notes and spreadsheets.",
+    subOverlay: "Undocumented assumptions lead to scope creep and surprise costs.",
   },
   {
     id: 2,
     timeRange: [7, 15],
-    title: "2. Requirements",
-    overlay: "Capture requirements. Keep every decision traceable.",
-    subOverlay: "Converting unstructured workshop conversations into verified scope items.",
+    title: "2. Capture",
+    overlay: "Capture every requirement from day one.",
+    subOverlay: "Workshops turn into tracked, verified scope items automatically.",
   },
   {
     id: 3,
     timeRange: [15, 25],
-    title: "3. FIT-GAP & Blueprint",
-    overlay: "Understand the existing business. Identify gaps before they become rework.",
-    subOverlay: "Evaluating requirements against the complete SAP scope item library.",
+    title: "3. Standard Fit",
+    overlay: "Match needs against standard SAP features.",
+    subOverlay: "Identify real gaps early to avoid expensive custom code.",
   },
   {
     id: 4,
     timeRange: [25, 37],
-    title: "4. Migration & APIs",
-    overlay: "Transform complex migration and integration work into structured, verifiable outputs.",
-    subOverlay: "Automating legacy data to LTMC templates and third-party Business API mappings.",
+    title: "4. Data & APIs",
+    overlay: "Move legacy data into SAP with zero manual errors.",
+    subOverlay: "Automated data formatting and pre-tested system connections.",
   },
   {
     id: 5,
     timeRange: [37, 47],
-    title: "5. Auto-Documentation",
-    overlay: "Documentation that reflects the actual build. Knowledge that stays beyond go-live.",
-    subOverlay: "Standardized Solution Design Document (SDD) generated directly from system facts.",
+    title: "5. Auto-Blueprint",
+    overlay: "Generate audit-ready system blueprints in seconds.",
+    subOverlay: "Accurate documentation that reflects the live system, not outdated notes.",
   },
   {
     id: 6,
     timeRange: [47, 55],
     title: "6. Two Deployments",
-    overlay: "One platform. Two ways to de-risk SAP delivery.",
-    subOverlay: "Greenfield Implementation Module vs. System Audit Module for AMS transitions.",
+    overlay: "New SAP implementations or health checks on existing systems.",
+    subOverlay: "Fast-track new rollouts or identify hidden risks in your current setup.",
   },
   {
     id: 7,
     timeRange: [55, 60],
     title: "7. Outcome",
-    overlay: "Start with facts. Deliver with confidence.",
-    subOverlay: "PerciXpert • AI-Driven Precision Across the Entire SAP S/4HANA Lifecycle.",
+    overlay: "Delivered on time. Zero surprise rework.",
+    subOverlay: "PerciXpert • System-verified precision for enterprise SAP delivery.",
   },
 ];
 
@@ -146,8 +146,8 @@ export default function PerciXpertVideoExplainer() {
       {/* Main 16:9 Screen Canvas */}
       <div className="relative aspect-video bg-[#FFFFFF] overflow-hidden select-none flex flex-col justify-between p-6 sm:p-10">
         {/* Subtle grid background to emulate Auctor & Linear light mode canvas */}
-        <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.35]" 
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.35]"
           style={{
             backgroundImage: "radial-gradient(#E8E8E8 1px, transparent 1px)",
             backgroundSize: "24px 24px",
@@ -174,36 +174,36 @@ export default function PerciXpertVideoExplainer() {
 
         {/* Dynamic Scene Visual Presentation */}
         <div className="relative z-10 my-auto w-full max-w-4xl mx-auto">
-          {/* SCENE 1: THE PROBLEM (0-7s) */}
+          {/* SCENE 1: THE CHALLENGE (0-7s) */}
           {activeScene.id === 1 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-in fade-in duration-300">
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform -rotate-1">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Spreadsheet_v14_final.xlsx</div>
+                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Spreadsheet_v14.xlsx</div>
                 <div className="text-xs font-semibold text-[#292A2E]">Undocumented Legacy Rules</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-full bg-[#E8E8E8] rounded"></div>
                   <div className="h-1.5 w-3/4 bg-[#E8E8E8] rounded"></div>
-                  <span className="text-[10px] text-red-500 font-medium">⚠️ Manual gap: Cost creep origin</span>
+                  <span className="text-[10px] text-red-500 font-medium">⚠️ Manual process risks</span>
                 </div>
               </div>
 
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform translate-y-2">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Workshop_Notes_Day3.docx</div>
-                <div className="text-xs font-semibold text-[#292A2E]">Fragmented Workshop Transcripts</div>
+                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Workshop_Notes.docx</div>
+                <div className="text-xs font-semibold text-[#292A2E]">Scattered Meeting Notes</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-4/5 bg-[#E8E8E8] rounded"></div>
                   <div className="h-1.5 w-2/3 bg-[#E8E8E8] rounded"></div>
-                  <span className="text-[10px] text-amber-600 font-medium">⚠️ 10–25% cost overrun risk</span>
+                  <span className="text-[10px] text-amber-600 font-medium">⚠️ Missed requirements</span>
                 </div>
               </div>
 
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform rotate-1">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Legacy ERP Extraction</div>
-                <div className="text-xs font-semibold text-[#292A2E]">Mismatched Field Formats</div>
+                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Legacy ERP Export</div>
+                <div className="text-xs font-semibold text-[#292A2E]">Inconsistent Data Formats</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-full bg-[#E8E8E8] rounded"></div>
                   <div className="h-1.5 w-1/2 bg-[#E8E8E8] rounded"></div>
-                  <span className="text-[10px] text-red-500 font-medium">⚠️ Zero traceability to target SAP</span>
+                  <span className="text-[10px] text-red-500 font-medium">⚠️ Manual data cleanup</span>
                 </div>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function PerciXpertVideoExplainer() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#10B981]"></div>
                   <span className="text-xs font-semibold text-[#292A2E]">
-                    AI Requirements Ingestion • SAP Activate Standard
+                    Digital Scope Tracking • Every Requirement Logged
                   </span>
                 </div>
                 <span className="text-[11px] font-mono text-[#0D5CE5] bg-blue-50 px-2 py-0.5 rounded">
@@ -226,63 +226,63 @@ export default function PerciXpertVideoExplainer() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-3 bg-[#F8F8F8] rounded-lg border border-[#E8E8E8]">
                   <div className="flex items-center justify-between text-[11px] font-medium text-[#64676D] mb-1">
-                    <span>REQ-FIN-0192</span>
-                    <span className="text-[#10B981]">Linked to S/4HANA</span>
+                    <span>FINANCE REQUIREMENT</span>
+                    <span className="text-[#10B981]">Linked to SAP Standard</span>
                   </div>
                   <p className="text-xs text-[#292A2E] font-medium">
-                    Automate 3-way matching for consignment subcontractor invoices.
+                    Automate 3-way invoice matching for external suppliers.
                   </p>
                   <div className="mt-2 flex items-center gap-1.5 text-[10px] text-[#8A8D93]">
-                    <span>Source: Workshop transcript 14:02</span>
+                    <span>Source: Workshop transcript</span>
                     <span>•</span>
-                    <span className="text-[#0D5CE5]">Audit trail verified</span>
+                    <span className="text-[#0D5CE5]">Audit verified</span>
                   </div>
                 </div>
 
                 <div className="p-3 bg-[#F8F8F8] rounded-lg border border-[#E8E8E8]">
                   <div className="flex items-center justify-between text-[11px] font-medium text-[#64676D] mb-1">
-                    <span>REQ-SCM-0418</span>
-                    <span className="text-[#10B981]">Linked to S/4HANA</span>
+                    <span>SUPPLY CHAIN REQUIREMENT</span>
+                    <span className="text-[#10B981]">Linked to SAP Standard</span>
                   </div>
                   <p className="text-xs text-[#292A2E] font-medium">
-                    Batch expiration alert routing to SAP EWM quarantine storage.
+                    Automatic alerts for batch expiry and quarantine routing.
                   </p>
                   <div className="mt-2 flex items-center gap-1.5 text-[10px] text-[#8A8D93]">
-                    <span>Source: QA Stakeholder Session</span>
+                    <span>Source: Operations session</span>
                     <span>•</span>
-                    <span className="text-[#0D5CE5]">Audit trail verified</span>
+                    <span className="text-[#0D5CE5]">Audit verified</span>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* SCENE 3: AS-IS DISCOVERY & FIT-GAP (15-25s) */}
+          {/* SCENE 3: STANDARD FIT CHECK (15-25s) */}
           {activeScene.id === 3 && (
             <div className="bg-white border border-[#E8E8E8] rounded-xl p-5 shadow-card animate-in fade-in duration-300">
               <div className="flex items-center justify-between pb-3 border-b border-[#F0F0F0] mb-3">
                 <span className="text-xs font-semibold text-[#292A2E]">
-                  PerciXpert Scope Item Matching Engine (S/4HANA Scope Library)
+                  Standard SAP Feature Matcher • Avoid Custom Code
                 </span>
-                <span className="text-[11px] text-[#64676D]">3-State Gap Resolution</span>
+                <span className="text-[11px] text-[#64676D]">Instant Evaluation</span>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-between p-2.5 bg-[#F8F8F8] rounded-lg border border-[#E8E8E8] text-xs">
-                  <span className="font-mono text-[#292A2E]">Scope Item 2BM: Accelerated Customer Returns</span>
+                  <span className="font-mono text-[#292A2E]">Customer Returns & Refunds</span>
                   <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    Full Fit
+                    Standard Fit (Zero Custom Code)
                   </span>
                 </div>
                 <div className="flex items-center justify-between p-2.5 bg-[#F8F8F8] rounded-lg border border-[#E8E8E8] text-xs">
-                  <span className="font-mono text-[#292A2E]">Scope Item J45: Subcontracting with Serial Numbers</span>
+                  <span className="font-mono text-[#292A2E]">Subcontractor Serial Tracking</span>
                   <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-                    Partial Fit (Configuration Extensible)
+                    Configurable Setting
                   </span>
                 </div>
                 <div className="flex items-center justify-between p-2.5 bg-[#F8F8F8] rounded-lg border border-[#E8E8E8] text-xs">
-                  <span className="font-mono text-[#292A2E]">Scope Item X99: Custom Commodity Formula Pricing</span>
+                  <span className="font-mono text-[#292A2E]">Custom Pricing Formula</span>
                   <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-50 text-[#0D5CE5] border border-blue-200">
-                    Gap Identified → Solution Thinking Blueprint Generated
+                    Extension Blueprint Generated
                   </span>
                 </div>
               </div>
@@ -294,73 +294,73 @@ export default function PerciXpertVideoExplainer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-in fade-in duration-300">
               <div className="bg-white border border-[#E8E8E8] p-4 rounded-xl shadow-card">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-[#292A2E]">Legacy Data → LTMC Mapping</span>
-                  <span className="text-[10px] text-[#10B981] font-mono">100% Ready</span>
+                  <span className="text-xs font-semibold text-[#292A2E]">Legacy Data → SAP Format</span>
+                  <span className="text-[10px] text-[#10B981] font-mono">Automated</span>
                 </div>
                 <div className="space-y-1.5 text-[11px] font-mono">
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#64676D]">JDE_F4101.ITM</span>
-                    <span className="text-[#0D5CE5]">→ MATNR (SAP Product)</span>
+                    <span className="text-[#64676D]">Old Item Codes</span>
+                    <span className="text-[#0D5CE5]">→ SAP Product Master</span>
                   </div>
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#64676D]">JDE_F4101.UOM</span>
-                    <span className="text-[#0D5CE5]">→ MEINS (Base UoM)</span>
+                    <span className="text-[#64676D]">Old Units of Measure</span>
+                    <span className="text-[#0D5CE5]">→ SAP Standard Units</span>
                   </div>
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#64676D]">JDE_F0101.AN8</span>
-                    <span className="text-[#0D5CE5]">→ KUNNR (Business Partner)</span>
+                    <span className="text-[#64676D]">Customer & Supplier IDs</span>
+                    <span className="text-[#0D5CE5]">→ SAP Business Partner</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white border border-[#E8E8E8] p-4 rounded-xl shadow-card">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-[#292A2E]">SAP Business API Verification</span>
+                  <span className="text-xs font-semibold text-[#292A2E]">API Connections Pre-Tested</span>
                   <span className="text-[10px] text-[#0D5CE5] font-mono">Simulated</span>
                 </div>
                 <div className="space-y-1.5 text-[11px] font-mono">
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#292A2E]">API_BUSINESS_PARTNER</span>
-                    <span className="text-[#10B981]">HTTP 200 OK</span>
+                    <span className="text-[#292A2E]">Customer & Partner Sync</span>
+                    <span className="text-[#10B981]">Ready</span>
                   </div>
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#292A2E]">API_PURCHASEORDER_PROCESS</span>
-                    <span className="text-[#10B981]">HTTP 200 OK</span>
+                    <span className="text-[#292A2E]">Purchase Orders</span>
+                    <span className="text-[#10B981]">Ready</span>
                   </div>
                   <div className="p-1.5 bg-[#F8F8F8] rounded flex justify-between">
-                    <span className="text-[#292A2E]">API_SALES_ORDER_SRV</span>
-                    <span className="text-[#10B981]">HTTP 200 OK</span>
+                    <span className="text-[#292A2E]">Sales Orders</span>
+                    <span className="text-[#10B981]">Ready</span>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* SCENE 5: AUTO-DOCUMENTATION (37-47s) */}
+          {/* SCENE 5: AUTO-BLUEPRINT (37-47s) */}
           {activeScene.id === 5 && (
             <div className="bg-white border border-[#E8E8E8] rounded-xl p-5 shadow-card max-w-2xl mx-auto animate-in fade-in duration-300">
               <div className="flex items-center justify-between pb-3 border-b border-[#F0F0F0] mb-3">
                 <div className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-[#0D5CE5]" />
                   <span className="text-xs font-semibold text-[#292A2E]">
-                    Solution Design Document (SDD) Auto-Generated
+                    System Blueprint Auto-Generated
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-[#10B981] bg-emerald-50 px-2 py-0.5 rounded">
-                  SAP-Compliant Build Record
+                  Complete & Auditable
                 </span>
               </div>
               <div className="space-y-2 text-xs text-[#64676D]">
                 <div className="p-2.5 bg-[#F8F8F8] rounded flex items-center justify-between">
-                  <span>1. Complete Configuration Matrix & Custom Fields</span>
+                  <span>1. Full Configuration Settings & Field Rules</span>
                   <Check className="w-3.5 h-3.5 text-[#10B981]" />
                 </div>
                 <div className="p-2.5 bg-[#F8F8F8] rounded flex items-center justify-between">
-                  <span>2. End-to-End CDS Views & Communication Scenarios</span>
+                  <span>2. System Integrations & Data Mappings</span>
                   <Check className="w-3.5 h-3.5 text-[#10B981]" />
                 </div>
                 <div className="p-2.5 bg-[#F8F8F8] rounded flex items-center justify-between">
-                  <span>3. AMS Support Handover Timeline (Compressed from 8–12 wks to Days)</span>
+                  <span>3. Knowledge Handover (Compressed from months to days)</span>
                   <Check className="w-3.5 h-3.5 text-[#10B981]" />
                 </div>
               </div>
@@ -372,31 +372,31 @@ export default function PerciXpertVideoExplainer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-in fade-in duration-300">
               <div className="bg-white border-2 border-[#0D5CE5] p-4 rounded-xl shadow-card">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[#0D5CE5] bg-blue-50 px-2 py-0.5 rounded">
-                  Module 1
+                  Option 1
                 </span>
                 <h4 className="text-sm font-semibold text-[#292A2E] mt-2">
-                  Greenfield Implementation Module
+                  New Implementations
                 </h4>
                 <p className="text-xs text-[#64676D] mt-1">
-                  Built for SAP S/4HANA Public Cloud from the ground up — workshop capture to go-live blueprint.
+                  From initial workshop to go-live blueprint — with automated scoping and data migration.
                 </p>
                 <div className="mt-3 text-[11px] font-mono text-[#10B981]">
-                  ✓ 3–5 week prepare/explore vs 6–10 wks
+                  ✓ Scoping in weeks, not months
                 </div>
               </div>
 
               <div className="bg-white border-2 border-[#292A2E] p-4 rounded-xl shadow-card">
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-[#292A2E] bg-[#F4F5F6] px-2 py-0.5 rounded">
-                  Module 2
+                  Option 2
                 </span>
                 <h4 className="text-sm font-semibold text-[#292A2E] mt-2">
-                  System Audit Module
+                  System Health Check
                 </h4>
                 <p className="text-xs text-[#64676D] mt-1">
-                  For AMS transition and in-flight recovery — audits live SAP objects to highlight gaps and undocumented logic.
+                  For existing systems or project handovers — audits live configurations to surface gaps and undocumented code.
                 </p>
                 <div className="mt-3 text-[11px] font-mono text-[#0D5CE5]">
-                  ✓ Eliminates consultant rot & transition risk
+                  ✓ Eliminates handover risk
                 </div>
               </div>
             </div>
@@ -444,13 +444,13 @@ export default function PerciXpertVideoExplainer() {
       <div className="bg-[#F8F8F8] border-t border-[#E8E8E8] p-3 sm:p-4">
         {/* Scrubber Progress Bar */}
         <div className="relative w-full h-2 bg-[#E8E8E8] rounded-full overflow-hidden cursor-pointer mb-3"
-             onClick={(e) => {
-               const rect = e.currentTarget.getBoundingClientRect();
-               const clickX = e.clientX - rect.left;
-               const pct = clickX / rect.width;
-               setCurrentTime(Math.min(duration, Math.max(0, pct * duration)));
-             }}>
-          <div 
+          onClick={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const pct = clickX / rect.width;
+            setCurrentTime(Math.min(duration, Math.max(0, pct * duration)));
+          }}>
+          <div
             className="h-full bg-[#0D5CE5] transition-all"
             style={{ width: `${(currentTime / duration) * 100}%` }}
           />
@@ -489,11 +489,10 @@ export default function PerciXpertVideoExplainer() {
               <button
                 key={scene.id}
                 onClick={() => jumpToScene(scene)}
-                className={`px-2 py-1 rounded text-[11px] font-medium transition-colors ${
-                  activeScene.id === scene.id
+                className={`px-2 py-1 rounded text-[11px] font-medium transition-colors ${activeScene.id === scene.id
                     ? "bg-[#0D5CE5] text-white"
                     : "bg-white border border-[#E8E8E8] text-[#64676D] hover:text-[#292A2E]"
-                }`}
+                  }`}
               >
                 {scene.title.split(". ")[1]}
               </button>
@@ -504,11 +503,10 @@ export default function PerciXpertVideoExplainer() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowCaptions(!showCaptions)}
-              className={`px-2 py-1 rounded border text-[11px] font-medium transition-colors ${
-                showCaptions
+              className={`px-2 py-1 rounded border text-[11px] font-medium transition-colors ${showCaptions
                   ? "bg-blue-50 border-blue-200 text-[#0D5CE5]"
                   : "bg-white border-[#E8E8E8] text-[#8A8D93]"
-              }`}
+                }`}
             >
               CC {showCaptions ? "ON" : "OFF"}
             </button>

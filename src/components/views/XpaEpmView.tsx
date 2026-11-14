@@ -12,7 +12,7 @@ export default function XpaEpmView() {
   const xpaComparison: ComparisonRow[] = [
     {
       aspect: "Planning Scope",
-      traditional: "Isolated within finance spreadsheets",
+      traditional: "Isolated in separate departmental spreadsheets",
       percipere: "Unites Finance, Sales, HR, and Supply Chain in one plan",
     },
     {
@@ -22,12 +22,12 @@ export default function XpaEpmView() {
     },
     {
       aspect: "Decision Speed",
-      traditional: "Weeks spent wrangling spreadsheet discrepancies",
+      traditional: "Weeks spent fixing spreadsheet discrepancies",
       percipere: "Instant what-if scenario models to test business choices",
     },
     {
       aspect: "Financial Close",
-      traditional: "Painful manual intercompany eliminations",
+      traditional: "Manual intercompany eliminations and reconciliations",
       percipere: "Automated, fully auditable multi-entity close",
     },
   ];
@@ -42,10 +42,10 @@ export default function XpaEpmView() {
               xP&A & EPM Solutions
             </span>
             <h1 className="font-serif text-4xl sm:text-6xl font-normal leading-[1.08] tracking-tight text-[#191923]">
-              Bring every business plan together.
+              One connected plan for your entire business.
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-[#64676D] font-normal leading-relaxed max-w-xl">
-              Connect finance, sales, HR, and operations through integrated forecasting on SAP Analytics Cloud. No more broken spreadsheets.
+              Connect finance, sales, HR, and operations through integrated forecasting on SAP Analytics Cloud. Replace fragile spreadsheets.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button
@@ -79,14 +79,14 @@ export default function XpaEpmView() {
               <div className="p-4 bg-white rounded-xl border border-[#EAEAEA]">
                 <div className="text-xs text-[#8A8D93] font-mono">SUPPLY CHAIN</div>
                 <div className="text-sm font-bold text-[#191923] mt-1">Demand & Capacity</div>
-                <div className="text-[11px] text-[#10B981] mt-0.5">MRP Linked</div>
+                <div className="text-[11px] text-[#10B981] mt-0.5">Inventory Linked</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT IS xP&A — Comparison Table */}
+      {/* COMPARISON TABLE */}
       <section className="py-20 bg-white border-b border-[#EAEAEA]">
         <div className="max-w-[1000px] mx-auto px-6">
           <div className="max-w-xl mb-10">
@@ -102,7 +102,7 @@ export default function XpaEpmView() {
         </div>
       </section>
 
-      {/* FOUR CORE PACKAGES — Clean Cards */}
+      {/* FOUR CORE PACKAGES */}
       <section className="py-24 bg-[#F8F8FA] border-b border-[#EAEAEA]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="max-w-2xl mb-12">
@@ -119,70 +119,31 @@ export default function XpaEpmView() {
               <span className="text-xs font-mono text-[#0D5CE5]">PACKAGE 01</span>
               <h3 className="font-serif text-xl font-normal mt-1 mb-2">Strategic Financial & Operational Planning</h3>
               <p className="text-xs text-[#64676D] leading-relaxed">
-                Replaces static budgets with dynamic models tied to real-time operations, allowing instant strategy pivots.
+                Connects financial forecasts to real-time operations, allowing quick strategy adjustments when markets shift.
               </p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
               <span className="text-xs font-mono text-[#0D5CE5]">PACKAGE 02</span>
-              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Business Analytics & Single Source of Truth</h3>
+              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Governed Business Analytics</h3>
               <p className="text-xs text-[#64676D] leading-relaxed">
-                Harmonizes SAP and non-SAP data into unified, governed dashboards that business leaders can trust.
+                Harmonizes SAP and third-party data into unified dashboards that management can trust completely.
               </p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
               <span className="text-xs font-mono text-[#0D5CE5]">PACKAGE 03</span>
-              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Accelerated Financial Consolidation & Close</h3>
+              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Accelerated Financial Close</h3>
               <p className="text-xs text-[#64676D] leading-relaxed">
-                Automates inter-company eliminations, currency translations, and audit reporting for a stress-free close.
+                Automates intercompany eliminations and currency adjustments for a faster, audit-compliant month-end close.
               </p>
             </div>
 
             <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
               <span className="text-xs font-mono text-[#0D5CE5]">PACKAGE 04</span>
-              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Continuous Forecasting & Scenario Modelling</h3>
+              <h3 className="font-serif text-xl font-normal mt-1 mb-2">Continuous Forecasting & Scenarios</h3>
               <p className="text-xs text-[#64676D] leading-relaxed">
-                Machine learning algorithms predict demand, cost variance, and cash impact across shifting economic conditions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* METRICS & CLIENT RESULTS */}
-      <section className="py-20 bg-white border-b border-[#EAEAEA]">
-        <div className="max-w-[1240px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center sm:text-left">
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#191923]">40+</div>
-              <div className="text-xs font-semibold mt-2">Engagements Delivered</div>
-              <p className="text-xs text-[#64676D]">Finance & Supply Chain transformations</p>
-            </div>
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#0D5CE5]">275</div>
-              <div className="text-xs font-semibold mt-2">Certified Specialists</div>
-              <p className="text-xs text-[#64676D]">In EPM, ERP, and Automation</p>
-            </div>
-            <div>
-              <div className="font-serif text-4xl sm:text-5xl font-normal text-[#10B981]">100%</div>
-              <div className="text-xs font-semibold mt-2">Completion Record</div>
-              <p className="text-xs text-[#64676D]">Every planned engagement delivered</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 bg-[#F8F8FA] rounded-xl border border-[#EAEAEA]">
-              <span className="text-xs font-mono text-[#0D5CE5]">GLOBAL ENGINEERING LEADER (5,000+ EMPLOYEES)</span>
-              <p className="text-xs text-[#191923] font-semibold mt-1 mb-1">
-                95% fewer reporting errors, 75% fewer analytics FTEs, and rolling 52-week forecasts.
-              </p>
-            </div>
-
-            <div className="p-6 bg-[#F8F8FA] rounded-xl border border-[#EAEAEA]">
-              <span className="text-xs font-mono text-[#0D5CE5]">INTERNATIONAL CONSUMER GOODS (£689M TURNOVER)</span>
-              <p className="text-xs text-[#191923] font-semibold mt-1 mb-1">
-                Global BPC planning model delivered across 20+ countries in just 8 months.
+                Simulate pricing changes, cost inflation, and demand fluctuations to make confident executive decisions.
               </p>
             </div>
           </div>
@@ -190,7 +151,7 @@ export default function XpaEpmView() {
       </section>
 
       {/* Ecosystem Strip */}
-      <EcosystemStrip current="xP&A / PerciPlan" />
+      <EcosystemStrip current="xP&A & EPM" />
 
       {/* CLOSING CTA */}
       <section className="py-24 bg-white text-center">
@@ -199,18 +160,18 @@ export default function XpaEpmView() {
             Unify your enterprise planning.
           </h2>
           <p className="text-xs text-[#64676D] mt-2 mb-8">
-            Speak with an SAP Analytics Cloud architect about your company&apos;s planning cycles.
+            See how SAP Analytics Cloud replaces spreadsheet sprawl with continuous forecasting.
           </p>
           <button
             onClick={() => setModalOpen(true)}
             className="px-8 py-3.5 bg-[#191923] text-white text-sm font-medium rounded-full hover:bg-black transition-all shadow-sm"
           >
-            Schedule a Consultation
+            Schedule a Walkthrough
           </button>
         </div>
       </section>
 
-      <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} defaultTopic="xP&A & EPM" />
+      <ConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} defaultTopic="xP&A & EPM Solutions" />
     </div>
   );
 }

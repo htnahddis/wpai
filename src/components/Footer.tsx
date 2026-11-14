@@ -48,7 +48,7 @@ export default function Footer() {
                                 </li>
                                 <li>
                                     <Link href="/what-we-do/intelligence-enterprise-offerings/xpa-epm" className="text-[#64676D] hover:text-[#191923] transition-colors">
-                                      xP&A & EPM
+                                      xP&A Planning
                                     </Link>
                                 </li>
                               </ul>

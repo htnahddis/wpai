@@ -9,35 +9,35 @@ export default function EcosystemStrip({ current }: { current?: string }) {
     {
       name: "PerciXpert",
       role: "Delivery Engine",
-      desc: "Requirements to SDD blueprint",
+      desc: "Scoping to auto-blueprints",
       href: "/percixpert",
       icon: Cpu,
     },
     {
       name: "PerciServe",
       role: "Support Suite",
-      desc: "L1 instant to L2/L3 root cause",
+      desc: "Instant answers & root cause",
       href: "/perciserve-support-suite",
       icon: Activity,
     },
     {
       name: "PerciHub",
       role: "Business Agents",
-      desc: "Context-aware SAP agent execution",
+      desc: "Automated routine SAP tasks",
       href: "/percihub-business-suite",
       icon: GitBranch,
     },
     {
       name: "xP&A",
       role: "Enterprise Planning",
-      desc: "Cross-functional planning on SAC",
+      desc: "Connected live forecasting",
       href: "/what-we-do/intelligence-enterprise-offerings/xpa-epm",
       icon: Database,
     },
     {
       name: "FUTUROOT",
       role: "Process Intelligence",
-      desc: "P2P/O2C mining and alerts",
+      desc: "Bottleneck mining & alerts",
       href: "/perciserve-support-suite#workflow",
       icon: Layers,
     },
@@ -56,7 +56,7 @@ export default function EcosystemStrip({ current }: { current?: string }) {
                       </h3>
                     </div>
                       <p className="text-xs text-[#64676D] mt-2 md:mt-0 max-w-sm">
-                        Modular capabilities grounded in live system context and FUTUROOT process telemetry.
+                        Modular software designed to work directly alongside your existing SAP setup.
                       </p>
                     </div>
 
