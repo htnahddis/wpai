@@ -1,7 +1,5 @@
-"use client";
-
-import XpaEpmPage from "../what-we-do/intelligence-enterprise-offerings/xpa-epm/page";
+import XpaEpmView from "@/components/views/XpaEpmView";
 
 export default function Page() {
-  return <XpaEpmPage />;
+  return <XpaEpmView />;
 }
