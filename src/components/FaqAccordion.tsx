@@ -18,7 +18,6 @@ interface FaqAccordionProps {
 export default function FaqAccordion({
   items,
   title = "Frequently Asked Questions",
-  eyebrow = "Clarity & FAQs",
   description = "Concise answers to common enterprise and technical implementation questions.",
 }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -30,12 +29,7 @@ export default function FaqAccordion({
   return (
     <div className="max-w-3xl mx-auto">
       <div className="text-center mb-10">
-        {eyebrow && (
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#0D5CE5] bg-blue-50 rounded-full mb-3 border border-blue-100/50">
-            {eyebrow}
-          </span>
-        )}
-        <h3 className="font-serif text-2xl sm:text-3xl text-[#292A2E] font-normal tracking-tight">
+        <h3 className="font-sans text-2xl sm:text-3xl text-[#191923] font-normal tracking-tight">
           {title}
         </h3>
         {description && (

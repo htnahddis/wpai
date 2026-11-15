@@ -163,7 +163,7 @@ export default function PerciXpertVideoExplainer() {
             </span>
           </div>
           <div className="text-right">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#8A8D93]">
+            <span className="text-xs font-mono font-medium text-[#8A8D93]">
               Active Scene
             </span>
             <div className="text-xs font-semibold text-[#292A2E]">
@@ -178,7 +178,7 @@ export default function PerciXpertVideoExplainer() {
           {activeScene.id === 1 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-in fade-in duration-300">
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform -rotate-1">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Spreadsheet_v14.xlsx</div>
+                <div className="text-[10px] font-mono text-[#8A8D93] mb-1">Spreadsheet_v14.xlsx</div>
                 <div className="text-xs font-semibold text-[#292A2E]">Undocumented Legacy Rules</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-full bg-[#E8E8E8] rounded"></div>
@@ -188,7 +188,7 @@ export default function PerciXpertVideoExplainer() {
               </div>
 
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform translate-y-2">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Workshop_Notes.docx</div>
+                <div className="text-[10px] font-mono text-[#8A8D93] mb-1">Workshop_Notes.docx</div>
                 <div className="text-xs font-semibold text-[#292A2E]">Scattered Meeting Notes</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-4/5 bg-[#E8E8E8] rounded"></div>
@@ -198,7 +198,7 @@ export default function PerciXpertVideoExplainer() {
               </div>
 
               <div className="bg-[#F8F8F8] border border-[#E8E8E8] p-4 rounded-xl shadow-subtle transform rotate-1">
-                <div className="text-[10px] uppercase font-mono text-[#8A8D93] mb-1">Legacy ERP Export</div>
+                <div className="text-[10px] font-mono text-[#8A8D93] mb-1">Legacy ERP Export</div>
                 <div className="text-xs font-semibold text-[#292A2E]">Inconsistent Data Formats</div>
                 <div className="mt-2 space-y-1">
                   <div className="h-1.5 w-full bg-[#E8E8E8] rounded"></div>
@@ -371,7 +371,7 @@ export default function PerciXpertVideoExplainer() {
           {activeScene.id === 6 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-in fade-in duration-300">
               <div className="bg-white border-2 border-[#0D5CE5] p-4 rounded-xl shadow-card">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#0D5CE5] bg-blue-50 px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-medium text-[#0D5CE5] bg-blue-50 px-2 py-0.5 rounded">
                   Option 1
                 </span>
                 <h4 className="text-sm font-semibold text-[#292A2E] mt-2">
@@ -386,7 +386,7 @@ export default function PerciXpertVideoExplainer() {
               </div>
 
               <div className="bg-white border-2 border-[#292A2E] p-4 rounded-xl shadow-card">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#292A2E] bg-[#F4F5F6] px-2 py-0.5 rounded">
+                <span className="text-xs font-mono font-medium text-[#292A2E] bg-[#F4F5F6] px-2 py-0.5 rounded">
                   Option 2
                 </span>
                 <h4 className="text-sm font-semibold text-[#292A2E] mt-2">
@@ -451,17 +451,17 @@ export default function PerciXpertVideoExplainer() {
             setCurrentTime(Math.min(duration, Math.max(0, pct * duration)));
           }}>
           <div
-            className="h-full bg-[#0D5CE5] transition-all"
+            className="h-full bg-[#1B1466] transition-all"
             style={{ width: `${(currentTime / duration) * 100}%` }}
           />
         </div>
 
         {/* Controls row */}
-        <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-sans">
           <div className="flex items-center gap-2">
             <button
               onClick={togglePlay}
-              className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E8] flex items-center justify-center text-[#292A2E] hover:text-[#0D5CE5] hover:border-blue-200 transition-colors shadow-subtle"
+              className="w-8 h-8 rounded-lg bg-white border border-[#E9E9EF] flex items-center justify-center text-[#191923] hover:text-[#1B1466] hover:border-[#1B1466] transition-colors shadow-2xs"
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 ml-0.5" />}
@@ -472,13 +472,13 @@ export default function PerciXpertVideoExplainer() {
                 setCurrentTime(0);
                 setIsPlaying(true);
               }}
-              className="w-8 h-8 rounded-lg bg-white border border-[#E8E8E8] flex items-center justify-center text-[#64676D] hover:text-[#292A2E] transition-colors"
+              className="w-8 h-8 rounded-lg bg-white border border-[#E9E9EF] flex items-center justify-center text-[#777783] hover:text-[#191923] transition-colors"
               aria-label="Replay"
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
 
-            <span className="font-mono text-xs text-[#64676D] ml-1">
+            <span className="font-mono text-xs text-[#777783] ml-1">
               {formatTime(currentTime)} / 01:00
             </span>
           </div>
@@ -489,10 +489,11 @@ export default function PerciXpertVideoExplainer() {
               <button
                 key={scene.id}
                 onClick={() => jumpToScene(scene)}
-                className={`px-2 py-1 rounded text-[11px] font-medium transition-colors ${activeScene.id === scene.id
-                    ? "bg-[#0D5CE5] text-white"
-                    : "bg-white border border-[#E8E8E8] text-[#64676D] hover:text-[#292A2E]"
-                  }`}
+                className={`px-2.5 py-1 rounded text-[11px] font-medium transition-colors ${
+                  activeScene.id === scene.id
+                    ? "bg-[#1B1466] text-white"
+                    : "bg-white border border-[#E9E9EF] text-[#777783] hover:text-[#191923]"
+                }`}
               >
                 {scene.title.split(". ")[1]}
               </button>
@@ -503,17 +504,18 @@ export default function PerciXpertVideoExplainer() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowCaptions(!showCaptions)}
-              className={`px-2 py-1 rounded border text-[11px] font-medium transition-colors ${showCaptions
-                  ? "bg-blue-50 border-blue-200 text-[#0D5CE5]"
-                  : "bg-white border-[#E8E8E8] text-[#8A8D93]"
-                }`}
+              className={`px-2 py-1 rounded border text-[11px] font-medium transition-colors ${
+                showCaptions
+                  ? "bg-[#F0EFFF] border-[#1B1466]/20 text-[#1B1466]"
+                  : "bg-white border-[#E9E9EF] text-[#777783]"
+              }`}
             >
               CC {showCaptions ? "ON" : "OFF"}
             </button>
 
             <button
               onClick={() => setPlaybackSpeed(playbackSpeed === 1 ? 1.5 : 1)}
-              className="px-2 py-1 rounded bg-white border border-[#E8E8E8] text-[11px] font-mono text-[#64676D] hover:text-[#292A2E]"
+              className="px-2 py-1 rounded bg-white border border-[#E9E9EF] text-[11px] font-mono text-[#777783] hover:text-[#191923]"
             >
               {playbackSpeed}x
             </button>

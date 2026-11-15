@@ -172,17 +172,14 @@ export default function MondayWorkOSShowcase() {
   const activeStage = WORK_OS_STAGES.find((s) => s.id === activeStageId) || WORK_OS_STAGES[0];
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 border-t border-zinc-200">
+    <section className="w-full bg-[#F8F8FA] py-16 sm:py-20 border-t border-[#E9E9EF]">
       <div className="max-w-[1200px] mx-auto px-6">
-        {/* Section Header */}
+        {/* Section Header: No eyebrows, Magenta keyword */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 block mb-2 font-medium">
-            Lifecycle Work OS
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif text-zinc-900 tracking-tight leading-tight">
-            How work flows across the SAP implementation
+          <h2 className="text-2xl sm:text-4xl font-sans font-normal text-[#191923] tracking-tight leading-tight">
+            How work flows across the <span className="text-[#FF00B7]">SAP implementation</span>
           </h2>
-          <p className="mt-2.5 text-sm sm:text-base text-zinc-600">
+          <p className="mt-2.5 text-sm sm:text-base text-[#777783]">
             Real-time synchronization between scoping, delivery sprints, and managed AMS support.
           </p>
         </div>
@@ -198,8 +195,8 @@ export default function MondayWorkOSShowcase() {
                 onClick={() => setActiveStageId(stage.id)}
                 className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${
                   isActive
-                    ? "bg-zinc-900 text-white shadow-xs"
-                    : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200/80 hover:text-zinc-900"
+                    ? "bg-[#1B1466] text-white shadow-xs"
+                    : "bg-white text-[#777783] border border-[#E9E9EF] hover:border-[#1B1466]/30 hover:text-[#191923]"
                 }`}
               >
                 {stage.name}
@@ -209,17 +206,17 @@ export default function MondayWorkOSShowcase() {
         </div>
 
         {/* Material Board Card */}
-        <div className="bg-[#FAFBFD] rounded-2xl border border-zinc-200 overflow-hidden shadow-xs">
-          <div className="px-5 py-3.5 bg-white border-b border-zinc-200 flex items-center justify-between">
+        <div className="bg-[#F8F8FA] rounded-2xl border border-[#E9E9EF] overflow-hidden shadow-card">
+          <div className="px-5 py-3.5 bg-white border-b border-[#E9E9EF] flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-              <span className="text-xs font-semibold text-zinc-900 font-mono">
+              <span className="w-2 h-2 rounded-full bg-[#FF00B7]"></span>
+              <span className="text-xs font-medium text-[#191923] font-mono">
                 {activeStage.boardData.groupTitle}
               </span>
             </div>
             <Link
               href={activeStage.linkHref}
-              className="text-xs font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1"
+              className="text-xs font-medium text-[#1B1466] hover:text-[#00B7FF] flex items-center gap-1 transition-colors"
             >
               <span>{activeStage.linkText}</span>
               <ArrowRight className="w-3 h-3" />
@@ -227,16 +224,16 @@ export default function MondayWorkOSShowcase() {
           </div>
 
           {/* Clean Data Rows */}
-          <div className="divide-y divide-zinc-200/70 text-xs">
+          <div className="divide-y divide-[#E9E9EF] text-xs">
             {activeStage.boardData.items.map((item, idx) => (
-              <div key={idx} className="p-3.5 sm:p-4 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-zinc-50/80 transition-colors">
+              <div key={idx} className="p-3.5 sm:p-4 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[#F8F8FA] transition-colors">
                 <div className="flex items-start gap-2.5 min-w-0">
-                  <span className="w-1 self-stretch rounded-full bg-blue-600 shrink-0 mt-0.5"></span>
+                  <span className="w-1 self-stretch rounded-full bg-[#00B7FF] shrink-0 mt-0.5"></span>
                   <div>
-                    <div className="font-medium text-zinc-900 text-xs sm:text-sm">{item.name}</div>
+                    <div className="font-medium text-[#191923] text-xs sm:text-sm">{item.name}</div>
                     {item.aiIndicator && (
-                      <div className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-700 mt-0.5">
-                        <Sparkles className="w-2.5 h-2.5 text-emerald-500" />
+                      <div className="inline-flex items-center gap-1 text-[10px] font-mono text-[#1B1466] mt-0.5">
+                        <Sparkles className="w-2.5 h-2.5 text-[#FF00B7]" />
                         <span>{item.aiIndicator}</span>
                       </div>
                     )}
@@ -244,11 +241,11 @@ export default function MondayWorkOSShowcase() {
                 </div>
 
                 <div className="flex items-center gap-4 shrink-0 pl-3.5 sm:pl-0">
-                  <span className="text-[11px] font-mono text-zinc-500">{item.owner}</span>
+                  <span className="text-[11px] font-mono text-[#777783]">{item.owner}</span>
                   <span className={`px-2.5 py-0.5 rounded text-[10px] font-medium ${item.status.bg}`}>
                     {item.status.text}
                   </span>
-                  <div className="text-[10px] font-mono text-zinc-400 flex items-center gap-1 w-20 justify-end">
+                  <div className="text-[10px] font-mono text-[#777783] flex items-center gap-1 w-20 justify-end">
                     <Clock className="w-3 h-3" />
                     <span>{item.timeline}</span>
                   </div>
@@ -258,14 +255,14 @@ export default function MondayWorkOSShowcase() {
           </div>
 
           {/* Card Summary Footer */}
-          <div className="p-4 sm:p-5 bg-zinc-50/70 border-t border-zinc-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="p-4 sm:p-5 bg-[#F8F8FA] border-t border-[#E9E9EF] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <div className="text-xs font-semibold text-zinc-900">{activeStage.title}</div>
-              <div className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">{activeStage.description}</div>
+              <div className="text-xs font-medium text-[#191923]">{activeStage.title}</div>
+              <div className="text-[11px] text-[#777783] mt-0.5 leading-relaxed">{activeStage.description}</div>
             </div>
             <Link
               href={activeStage.linkHref}
-              className="button-primary text-xs px-4 py-2 shrink-0 self-start sm:self-auto"
+              className="button-primary text-xs px-4 py-2 shrink-0 self-start sm:self-auto bg-[#1B1466] hover:bg-[#140F4D] text-white rounded-full font-medium"
             >
               <span>{activeStage.linkText}</span>
               <ArrowRight className="w-3 h-3" />

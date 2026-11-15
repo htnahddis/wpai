@@ -11,71 +11,101 @@ const config: Config = {
       colors: {
         background: "#FFFFFF",
         surface: {
-          DEFAULT: "#FBFBFC",
-          subtle: "#F5F5F7",
-          muted: "#EFEFEF",
+          DEFAULT: "#F8F8FA", // Secondary background per design.md
+          subtle: "#F8F8FA",
+          muted: "#E9E9EF",
         },
         primary: {
-          DEFAULT: "#171717",
-          dark: "#000000",
+          DEFAULT: "#1B1466", // Percipere Indigo
+          hover: "#140F4D",
+          light: "#F0EFFF",
         },
-        secondary: "#666666",
-        muted: "#8E8E93",
+        secondary: "#777783", // Supporting Grey
+        muted: "#777783",
         border: {
-          DEFAULT: "#E5E5E5",
-          subtle: "#EEEEEE",
-          strong: "#D4D4D4",
+          DEFAULT: "#E9E9EF", // Light Grey borders
+          subtle: "#F0F0F5",
+          strong: "#D6D6DE",
         },
-        auctor: {
-          orange: "#FF4400", // The signature Auctor orange rule accent
-          orangeLight: "#FFF5F0",
-          dark: "#171717",
-          gray: "#737373",
-          light: "#FBFBFC",
-          border: "#E5E5E5",
-        },
+        // Official Percipere.ai Design System Palette (docs/design.md)
         percipere: {
-          blue: "#0D5CE5",
-          navy: "#0A2540",
-          orange: "#FF4400",
+          indigo: "#1B1466", // Primary brand colour
+          magenta: "#FF00B7", // Emphasis / signals
+          cyan: "#00B7FF", // Connections / information
+          white: "#FFFFFF", // Primary surface
+          black: "#000000", // Brand neutral
+          softWhite: "#F8F8FA", // Secondary background
+          lightGrey: "#E9E9EF", // Borders and dividers
+          darkText: "#191923", // Headings and body text
+          supportingGrey: "#777783", // Secondary text
+        },
+        // Supporting semantic accents
+        accent: {
+          DEFAULT: "#FF00B7", // Magenta emphasis
+          light: "#FFF0F9",
+          dark: "#D60099",
+        },
+        cyan: {
+          DEFAULT: "#00B7FF", // Cyan connectivity
+          light: "#E6F8FF",
+          dark: "#0095D1",
         },
       },
       fontFamily: {
+        // Primary typeface: Helvetica Neue (docs/design.md)
         sans: [
-          'var(--font-geist-sans)',
+          '"Helvetica Neue"',
+          'Helvetica',
+          'Arial',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
-          'Inter',
           'Roboto',
           'sans-serif',
         ],
+        // Mapped to Helvetica Neue so all headings and body render consistently
         serif: [
-          'Newsreader',
-          'Georgia',
-          'Cambria',
-          '"Times New Roman"',
-          'serif',
+          '"Helvetica Neue"',
+          'Helvetica',
+          'Arial',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'sans-serif',
         ],
-        mono: ['var(--font-geist-mono)', 'monospace'],
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'Monaco',
+          'Consolas',
+          'monospace',
+        ],
+      },
+      fontWeight: {
+        light: "300",
+        normal: "400", // 55 Roman
+        medium: "500", // 65 Medium
+        semibold: "600",
+        bold: "700",
       },
       letterSpacing: {
         tightest: "-0.04em",
         tighter: "-0.03em",
         tight: "-0.015em",
+        normal: "0em",
         wide: "0.04em",
         widest: "0.08em",
       },
       maxWidth: {
-        container: "1280px",
-        auctor: "1200px",
+        container: "1240px",
         editorial: "680px",
         hero: "980px",
       },
       boxShadow: {
-        subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
-        card: "0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02)",
-        preview: "0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04)",
+        subtle: "0 1px 2px 0 rgba(27, 20, 102, 0.03)",
+        card: "0 1px 3px 0 rgba(27, 20, 102, 0.04), 0 1px 2px -1px rgba(27, 20, 102, 0.02)",
+        preview: "0 20px 40px -15px rgba(27, 20, 102, 0.06), 0 0 0 1px #E9E9EF",
       },
       animation: {
         "rule-expand": "ruleExpand 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",

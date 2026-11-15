@@ -31,14 +31,14 @@ export default function ConsultationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#101214]/40 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#000000]/40 backdrop-blur-sm animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-lg bg-white rounded-2xl shadow-elevated border border-[#E8E8E8] p-7 md:p-8 overflow-hidden"
+        className="relative w-full max-w-lg bg-white rounded-2xl shadow-preview border border-[#E9E9EF] p-7 md:p-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 text-secondary hover:text-primary rounded-lg hover:bg-surface transition-colors"
+          className="absolute top-5 right-5 p-2 text-[#777783] hover:text-[#191923] rounded-lg hover:bg-[#F8F8FA] transition-colors"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -46,21 +46,21 @@ export default function ConsultationModal({
 
         {submitted ? (
           <div className="text-center py-8">
-            <div className="w-12 h-12 bg-blue-50 text-percipere-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-[#E6F8FF] text-[#00B7FF] rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-2xl text-primary font-medium mb-2">
+            <h3 className="font-sans text-2xl text-[#191923] font-medium mb-2">
               Consultation Requested
             </h3>
-            <p className="text-sm text-secondary max-w-sm mx-auto mb-6">
-              Thank you for reaching out. One of our enterprise SAP & AI directors will contact you within one business day with customized insights.
+            <p className="text-sm text-[#777783] max-w-sm mx-auto mb-6">
+              Thank you for reaching out. One of our enterprise SAP &amp; AI directors will contact you within one business day with customized insights.
             </p>
             <button
               onClick={() => {
                 setSubmitted(false);
                 onClose();
               }}
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-dark transition-colors"
+              className="inline-flex items-center justify-center px-6 py-2.5 bg-[#1B1466] hover:bg-[#140F4D] text-white text-sm font-medium rounded-full transition-colors"
             >
               Close Window
             </button>
@@ -68,13 +68,13 @@ export default function ConsultationModal({
         ) : (
           <div>
             <div className="mb-6">
-              <span className="inline-block px-2.5 py-1 text-xs font-medium text-percipere-blue bg-blue-50 rounded-full mb-2">
+              <span className="inline-block px-2.5 py-1 text-xs font-medium text-[#1B1466] bg-[#F0EFFF] border border-[#1B1466]/20 rounded-full mb-2">
                 Executive Advisory
               </span>
-              <h2 className="font-serif text-2xl md:text-3xl font-medium text-primary tracking-tight">
+              <h2 className="font-sans text-2xl md:text-3xl font-normal text-[#191923] tracking-tight">
                 Book a Consultation
               </h2>
-              <p className="text-sm text-secondary mt-1">
+              <p className="text-sm text-[#777783] mt-1">
                 Speak directly with an enterprise SAP architect and solution lead.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function ConsultationModal({
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-medium text-[#191923] mb-1.5">
                     Your Name
                   </label>
                   <input
@@ -91,11 +91,11 @@ export default function ConsultationModal({
                     placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3.5 py-2.5 text-sm bg-surface border border-[#E8E8E8] rounded-lg focus:outline-none focus:border-percipere-blue focus:bg-white transition-all text-primary"
+                    className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-medium text-[#191923] mb-1.5">
                     Work Email
                   </label>
                   <input
@@ -104,14 +104,14 @@ export default function ConsultationModal({
                     placeholder="jane@enterprise.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-2.5 text-sm bg-surface border border-[#E8E8E8] rounded-lg focus:outline-none focus:border-percipere-blue focus:bg-white transition-all text-primary"
+                    className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-medium text-[#191923] mb-1.5">
                     Company
                   </label>
                   <input
@@ -120,30 +120,30 @@ export default function ConsultationModal({
                     placeholder="Acme Corp"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-3.5 py-2.5 text-sm bg-surface border border-[#E8E8E8] rounded-lg focus:outline-none focus:border-percipere-blue focus:bg-white transition-all text-primary"
+                    className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-medium text-[#191923] mb-1.5">
                     Primary Interest
                   </label>
                   <select
                     value={formData.topic}
                     onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                    className="w-full px-3.5 py-2.5 text-sm bg-surface border border-[#E8E8E8] rounded-lg focus:outline-none focus:border-percipere-blue focus:bg-white transition-all text-primary"
+                    className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923]"
                   >
                     <option value="PerciXpert SAP Delivery">PerciXpert — SAP Implementation</option>
-                    <option value="PerciServe Support Suite">PerciServe — Support & AMS</option>
+                    <option value="PerciServe Support Suite">PerciServe — Support &amp; AMS</option>
                     <option value="PerciHub AI Agents">PerciHub — Business AI Agents</option>
-                    <option value="xP&A & EPM">xP&A & EPM Planning</option>
-                    <option value="SAP Business AI & Joule">SAP Business AI & Joule</option>
-                    <option value="Enterprise AI Acceleration">AI Acceleration & PerciSuite</option>
+                    <option value="xP&amp;A &amp; EPM">xP&amp;A &amp; EPM Planning</option>
+                    <option value="SAP Business AI &amp; Joule">SAP Business AI &amp; Joule</option>
+                    <option value="Enterprise AI Acceleration">AI Acceleration &amp; PerciSuite</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-primary uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-medium text-[#191923] mb-1.5">
                   Project Notes / Context
                 </label>
                 <textarea
@@ -151,20 +151,20 @@ export default function ConsultationModal({
                   placeholder="Tell us about your current SAP landscape or timeline..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-sm bg-surface border border-[#E8E8E8] rounded-lg focus:outline-none focus:border-percipere-blue focus:bg-white transition-all text-primary resize-none"
+                  className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923] resize-none"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#0D5CE5] text-white font-medium text-sm rounded-lg hover:bg-[#0B4FBA] transition-colors shadow-subtle"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#1B1466] text-white font-medium text-sm rounded-full hover:bg-[#140F4D] transition-colors shadow-subtle"
                 >
                   Confirm Consultation Request
                   <ArrowRight className="w-4 h-4" />
                 </button>
-                <p className="text-xs text-center text-muted mt-2.5">
-                  Confidential advisory • ISO 27000:2022 security governance guaranteed.
+                <p className="text-xs text-center text-[#777783] mt-2.5">
+                  Confidential advisory • ISO 27001:2022 security governance guaranteed.
                 </p>
               </div>
             </form>

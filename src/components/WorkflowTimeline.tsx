@@ -21,26 +21,20 @@ interface WorkflowTimelineProps {
 
 export default function WorkflowTimeline({
   stages,
-  eyebrow,
   title,
   description,
 }: WorkflowTimelineProps) {
   return (
     <div className="w-full">
-      {(title || eyebrow) && (
+      {(title || description) && (
         <div className="text-center max-w-3xl mx-auto mb-12">
-          {eyebrow && (
-            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#0D5CE5] bg-blue-50 rounded-full mb-3 border border-blue-100/50">
-              {eyebrow}
-            </span>
-          )}
           {title && (
-            <h3 className="font-serif text-3xl sm:text-4xl text-[#292A2E] font-normal tracking-tight">
+            <h3 className="font-sans text-3xl sm:text-4xl text-[#191923] font-normal tracking-tight">
               {title}
             </h3>
           )}
           {description && (
-            <p className="text-base text-[#64676D] mt-3">{description}</p>
+            <p className="text-base text-[#777783] mt-3">{description}</p>
           )}
         </div>
       )}
@@ -58,7 +52,7 @@ export default function WorkflowTimeline({
                   {stage.step}
                 </span>
                 {stage.phase && (
-                  <span className="text-[11px] font-medium uppercase tracking-wider text-[#8A8D93]">
+                  <span className="text-xs font-mono font-medium text-[#777783]">
                     {stage.phase}
                   </span>
                 )}

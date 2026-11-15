@@ -15,12 +15,12 @@ export default function MondayWhyChooseGrid() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 sm:py-24 border-b border-[#EBEBED]">
+    <section className="w-full bg-white py-16 sm:py-24 border-b border-[#E9E9EF]">
       <div className="max-w-[1180px] mx-auto px-6">
-        {/* Section Header */}
+        {/* Section Header: No eyebrows, Magenta keyword */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <h2 className="font-serif text-3xl sm:text-5xl lg:text-[46px] font-normal text-zinc-900 tracking-tight leading-[1.12]">
-            Why enterprise leaders choose<br className="hidden sm:inline" /> Percipere for SAP Business AI
+          <h2 className="font-sans text-3xl sm:text-5xl lg:text-[46px] font-normal text-[#191923] tracking-tight leading-[1.12]">
+            Why enterprise leaders choose<br className="hidden sm:inline" /> <span className="text-[#FF00B7]">Percipere</span> for SAP Business AI
           </h2>
         </div>
 
@@ -31,7 +31,7 @@ export default function MondayWhyChooseGrid() {
               ========================================================================= */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
             {/* Card 1: Interactive Agent Automation Scene (7 Cols) */}
-            <div className="lg:col-span-7 bg-[#E8E8EC] rounded-[28px] relative overflow-hidden min-h-[300px] sm:min-h-[340px] flex items-center p-6 sm:p-10 group">
+            <div className="lg:col-span-7 bg-[#F8F8FA] border border-[#E9E9EF] rounded-[28px] relative overflow-hidden min-h-[300px] sm:min-h-[340px] flex items-center p-6 sm:p-10 group shadow-card">
               {/* Leader Photo with transparent crop */}
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
@@ -42,27 +42,27 @@ export default function MondayWhyChooseGrid() {
               {/* Floating UI Simulation Widget */}
               <div className="relative z-10 space-y-3 max-w-[260px] sm:max-w-[280px]">
                 {/* Status Reporter Pill */}
-                <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-white/80 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-inner">
-                    <Sparkles className="w-4 h-4" />
+                <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-[#E9E9EF] flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#1B1466] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-inner">
+                    <Sparkles className="w-4 h-4 text-[#FF00B7]" />
                   </div>
                   <div>
-                    <div className="text-[12px] font-semibold text-zinc-900">Joule S/4HANA Copilot</div>
-                    <div className="text-[11px] text-zinc-500">Auto-cleared 14 overdue tasks</div>
+                    <div className="text-[12px] font-medium text-[#191923]">Joule S/4HANA Copilot</div>
+                    <div className="text-[11px] text-[#777783]">Auto-cleared 14 overdue tasks</div>
                   </div>
                 </div>
 
                 {/* Floating "Done" Action Button with Cursor */}
                 <div className="inline-flex items-center gap-2 pl-3">
-                  <div className="bg-[#00C875] text-white font-bold text-xs px-4 py-2 rounded-lg shadow-md flex items-center gap-1.5 -rotate-3 hover:rotate-0 transition-transform cursor-pointer">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  <div className="bg-[#1B1466] text-white font-medium text-xs px-4 py-2 rounded-lg shadow-md flex items-center gap-1.5 -rotate-3 hover:rotate-0 transition-transform cursor-pointer">
+                    <Check className="w-3.5 h-3.5 text-[#00B7FF] stroke-[3]" />
                     <span>Done</span>
                   </div>
 
-                  {/* SVG Cursor Pointer */}
+                  {/* SVG Cursor Pointer with Percipere Magenta */}
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-5 h-5 text-purple-600 drop-shadow-sm animate-bounce"
+                    className="w-5 h-5 text-[#FF00B7] drop-shadow-sm animate-bounce"
                     fill="currentColor"
                   >
                     <path d="M4 2l16 8-8 3-3 8-5-19z" />
@@ -72,18 +72,18 @@ export default function MondayWhyChooseGrid() {
             </div>
 
             {/* Card 2: Easy to start, fast to show value (5 Cols) */}
-            <div className="lg:col-span-5 bg-[#F4F4F6] hover:bg-[#EFEFEA] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer">
+            <div className="lg:col-span-5 bg-[#F8F8FA] hover:bg-[#F0EFFF] border border-[#E9E9EF] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer shadow-card">
               <div>
-                <h3 className="text-2xl sm:text-[26px] font-semibold text-zinc-900 tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-[26px] font-medium text-[#191923] tracking-tight leading-snug">
                   Easy to start, fast to show value
                 </h3>
-                <p className="text-sm sm:text-base text-zinc-600 mt-3 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#777783] mt-3 leading-relaxed">
                   Get your SAP AI accelerators and Joule extensions up and running in days, not months.
                 </p>
               </div>
 
               <div className="flex justify-end pt-4">
-                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-zinc-400 group-hover:text-zinc-900 shadow-2xs group-hover:scale-110 transition-all">
+                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#777783] group-hover:text-[#1B1466] shadow-2xs group-hover:scale-110 transition-all border border-[#E9E9EF]">
                   <Plus className="w-5 h-5" />
                 </span>
               </div>
@@ -91,21 +91,21 @@ export default function MondayWhyChooseGrid() {
           </div>
 
           {/* =========================================================================
-              ROW 2: Card 3 (Adoption & Avatars) + Card 4 (Signature Purple Quote)
+              ROW 2: Card 3 (Adoption & Avatars) + Card 4 (Percipere Indigo Signature Quote)
               ========================================================================= */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
             {/* Card 3: An AI platform teams actually adopt (5 Cols) */}
-            <div className="lg:col-span-5 bg-[#F4F4F6] hover:bg-[#EFEFEA] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer">
+            <div className="lg:col-span-5 bg-[#F8F8FA] hover:bg-[#F0EFFF] border border-[#E9E9EF] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer shadow-card">
               <div>
-                <h3 className="text-2xl sm:text-[26px] font-semibold text-zinc-900 tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-[26px] font-medium text-[#191923] tracking-tight leading-snug">
                   An AI system teams actually adopt
                 </h3>
-                <p className="text-sm sm:text-base text-zinc-600 mt-3 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#777783] mt-3 leading-relaxed">
                   Embedded directly into daily SAP Fiori, Microsoft Teams, and Excel workflows so data is always accurate.
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-6 border-t border-zinc-200/60 mt-4">
+              <div className="flex items-center justify-between pt-6 border-t border-[#E9E9EF] mt-4">
                 {/* Overlapping User Avatars */}
                 <div className="flex items-center -space-x-2">
                   {teamAvatars.map((u, i) => (
@@ -119,20 +119,20 @@ export default function MondayWhyChooseGrid() {
                   ))}
                 </div>
 
-                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-zinc-400 group-hover:text-zinc-900 shadow-2xs group-hover:scale-110 transition-all">
+                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#777783] group-hover:text-[#1B1466] shadow-2xs group-hover:scale-110 transition-all border border-[#E9E9EF]">
                   <Plus className="w-5 h-5" />
                 </span>
               </div>
             </div>
 
-            {/* Card 4: Signature Monday.com Purple Testimonial Card (7 Cols) */}
-            <div className="lg:col-span-7 bg-[#6161FF] rounded-[28px] p-8 sm:p-12 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] text-white shadow-sm relative overflow-hidden group">
+            {/* Card 4: Signature Percipere Indigo Quote Card (7 Cols) */}
+            <div className="lg:col-span-7 bg-[#1B1466] rounded-[28px] p-8 sm:p-12 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] text-white shadow-card relative overflow-hidden group">
               <div>
                 {/* Large Subtle Quote Mark */}
-                <div className="text-white/35 font-serif text-6xl leading-none select-none mb-3">
+                <div className="text-[#00B7FF]/40 font-serif text-6xl leading-none select-none mb-3">
                   &ldquo;
                 </div>
-                <blockquote className="text-2xl sm:text-3xl font-medium tracking-tight leading-snug text-white">
+                <blockquote className="text-2xl sm:text-3xl font-normal tracking-tight leading-snug text-white">
                   It&rsquo;s the first time we&rsquo;ve seen a real AI solution that is actually useful.
                 </blockquote>
               </div>
@@ -140,12 +140,12 @@ export default function MondayWhyChooseGrid() {
               {/* Author & Client Monogram */}
               <div className="flex items-end justify-between pt-6 border-t border-white/20 mt-6">
                 <div>
-                  <div className="text-sm sm:text-base font-semibold text-white">Alex Boulder</div>
+                  <div className="text-sm sm:text-base font-medium text-white">Alex Boulder</div>
                   <div className="text-xs text-white/80 mt-0.5">Director of Operations &bull; Global Enterprise</div>
                 </div>
 
                 {/* Arcaise-style enterprise brandmark */}
-                <div className="font-serif text-lg tracking-wider font-bold text-white/90">
+                <div className="font-sans text-lg tracking-wider font-bold text-white/90">
                   Arca&iuml;se
                 </div>
               </div>
@@ -171,18 +171,18 @@ export default function MondayWhyChooseGrid() {
             </div>
 
             {/* Card 6: Built for the whole business, not just projects (7 Cols) */}
-            <div className="lg:col-span-7 bg-[#F4F4F6] hover:bg-[#EFEFEA] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer">
+            <div className="lg:col-span-7 bg-[#F8F8FA] hover:bg-[#F0EFFF] border border-[#E9E9EF] transition-colors rounded-[28px] p-8 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[300px] group cursor-pointer shadow-card">
               <div>
-                <h3 className="text-2xl sm:text-[26px] font-semibold text-zinc-900 tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-[26px] font-medium text-[#191923] tracking-tight leading-snug">
                   Built for the whole business, not just projects
                 </h3>
-                <p className="text-sm sm:text-base text-zinc-600 mt-3 leading-relaxed max-w-xl">
+                <p className="text-sm sm:text-base text-[#777783] mt-3 leading-relaxed max-w-xl">
                   Finance, HR, &amp; marketing on the same platform, so projects connect to the entire business.
                 </p>
               </div>
 
               <div className="flex justify-end pt-4">
-                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-zinc-400 group-hover:text-zinc-900 shadow-2xs group-hover:scale-110 transition-all">
+                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#777783] group-hover:text-[#1B1466] shadow-2xs group-hover:scale-110 transition-all border border-[#E9E9EF]">
                   <Plus className="w-5 h-5" />
                 </span>
               </div>

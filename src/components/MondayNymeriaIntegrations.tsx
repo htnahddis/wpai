@@ -3,9 +3,9 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-export default function MondayNymeriaIntegrations({ onOpenModal }: { onOpenModal: () => void }) {
-  // Exactly 13 items + 1 span-3 item = 16 total grid slots across 4 rows (4 x 4 = 16)
-  // Perfectly flush grid with ZERO holes, gaps, or broken borders!
+export default function MondayNymeriaIntegrations({ onOpenModal }: { onOpenModal?: () => void }) {
+  // Exactly 13 items + 1 span-3 cell = 16 total grid slots across 4 rows (4 x 4 = 16)
+  // Perfectly flush grid with ZERO holes, gaps, or broken borders, and no truncated labels!
   const integrations = [
     // Row 1 (4 items)
     {
@@ -139,39 +139,40 @@ export default function MondayNymeriaIntegrations({ onOpenModal }: { onOpenModal
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFC] py-16 sm:py-24 border-y border-[#EBEBED]">
+    <section className="w-full bg-[#FAFAFC] py-16 sm:py-24 border-y border-[#E9E9EF]">
       <div className="max-w-[1240px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Monday.com Headline & Narrative */}
+          {/* Left Column: Narrative with Percipere Styling */}
           <div className="lg:col-span-5 space-y-4 sm:space-y-5">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#737373] font-medium block">
-              Connected SAP Ecosystem
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] leading-[1.12] tracking-tight text-[#171717]">
-              Right at home with the tools your team already uses
+            <h2 className="font-sans text-3xl sm:text-4xl lg:text-[42px] leading-[1.12] tracking-tight text-[#191923] font-normal">
+              Right at home with the tools your team <span className="text-[#FF00B7]">already uses</span>
             </h2>
-            <p className="text-base text-[#676879] leading-relaxed">
+            <p className="text-base text-[#777783] leading-relaxed">
               Percipere connects directly to your existing SAP landscape and enterprise stack so conversations, decisions, scopes, and deliverables stay continuously in sync.
             </p>
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={onOpenModal}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#171717] hover:bg-black text-white text-sm font-medium rounded-full transition-colors shadow-sm"
-              >
-                <span>Explore Enterprise Integrations</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
+            {onOpenModal && (
+              <div className="pt-2">
+                <button
+                  type="button"
+                  onClick={onOpenModal}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B1466] hover:bg-[#140F4D] text-white text-sm font-medium rounded-full transition-colors shadow-sm group"
+                >
+                  <span>Explore Enterprise Integrations</span>
+                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Monday.com Exact Nymeria Integrations Grid */}
           <div className="lg:col-span-7">
-            <div className="nymeria-integrations-grid shadow-sm border border-[#E5E5E8]">
+            <div className="nymeria-integrations-grid shadow-card border border-[#E9E9EF]">
               {integrations.map((tool, idx) => (
                 <div key={idx} className="int-cell bg-[#F6F6F3] hover:bg-white transition-colors cursor-default">
                   {tool.icon}
-                  <span className="truncate">{tool.name}</span>
+                  <span className="whitespace-nowrap font-medium text-xs sm:text-[13px] text-[#191923]">
+                    {tool.name}
+                  </span>
                 </div>
               ))}
               {/* Monday.com Span-3 Highlight Cell — Perfectly completes Row 4 */}

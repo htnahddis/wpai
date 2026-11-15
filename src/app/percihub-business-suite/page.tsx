@@ -1,73 +1,59 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Bot, Database, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import EcosystemStrip from "@/components/EcosystemStrip";
 import ConsultationModal from "@/components/ConsultationModal";
+
+import {
+  PERCIHUB_AGENTS,
+  PERCIHUB_LAYERS,
+  PERCIHUB_INDUSTRIES,
+} from "@/data/percihub.data";
 
 export default function PerciHubPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const availableAgents = [
-    {
-      name: "PR to PO Agent",
-      department: "Procurement",
-      desc: "Validates supplier contracts and auto-generates SAP Purchase Orders.",
-      output: "Zero manual PO data entry",
-    },
-    {
-      name: "Quality Inspection Agent",
-      department: "Manufacturing",
-      desc: "Compares lab measurements against specifications to post accept or reject decisions.",
-      output: "Instant batch clearance",
-    },
-    {
-      name: "Bank Reconciliation Agent",
-      department: "Finance",
-      desc: "Matches daily bank statements against invoices and posts variances automatically.",
-      output: "95%+ touchless clearing",
-    },
-  ];
-
   return (
-    <div className="bg-white text-[#191923]">
-      {/* HERO — Notion Homepage Hero Style */}
-      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#EAEAEA]">
+    <div className="bg-white text-[#191923] selection:bg-[#F0EFFF] selection:text-[#1B1466]">
+      {/* HERO — No Eyebrows, Magenta keyword */}
+      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="max-w-3xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D] block mb-3">
-              PerciHub • Business Suite
-            </span>
-            <h1 className="font-serif text-4xl sm:text-6xl font-normal leading-[1.08] tracking-tight text-[#191923]">
-              AI agents that execute SAP tasks for you.
+            <h1 className="font-sans text-4xl sm:text-6xl font-normal leading-[1.08] tracking-tight text-[#191923]">
+              AI agents that <span className="text-[#FF00B7]">execute</span> SAP tasks for you.
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-[#64676D] font-normal leading-relaxed max-w-xl">
+            <p className="mt-4 text-lg sm:text-xl text-[#777783] font-normal leading-relaxed max-w-xl">
               Automate procurement, quality inspections, and bank reconciliations with built-in business rules.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button
+                type="button"
                 onClick={() => setModalOpen(true)}
-                className="px-6 py-3 bg-[#191923] text-white text-sm font-medium rounded-full hover:bg-black transition-all shadow-sm"
+                className="px-8 py-3.5 bg-[#1B1466] hover:bg-[#140F4D] text-white text-sm font-medium rounded-full transition-all shadow-sm inline-flex items-center gap-2"
               >
-                Book a Consultation
+                <span>Book a Consultation</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           {/* Clean Agent Activity Board */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {availableAgents.map((agent) => (
-              <div key={agent.name} className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#EAEAEA] flex flex-col justify-between">
+            {PERCIHUB_AGENTS.map((agent) => (
+              <div key={agent.name} className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#E9E9EF] flex flex-col justify-between shadow-card hover:border-[#1B1466] transition-colors">
                 <div>
                   <div className="flex items-center justify-between text-xs mb-3 font-mono">
-                    <span className="text-[#0D5CE5] font-semibold">{agent.department}</span>
-                    <span className="text-[#10B981]">Ready to Deploy</span>
+                    <span className="text-[#1B1466] font-semibold">{agent.department}</span>
+                    <span className="text-[#0088CC] font-medium bg-[#E6F8FF] px-2.5 py-0.5 rounded border border-[#00B7FF]/30">
+                      Ready to Deploy
+                    </span>
                   </div>
-                  <h3 className="font-serif text-2xl font-normal text-[#191923] mb-2">{agent.name}</h3>
-                  <p className="text-xs text-[#64676D] leading-relaxed mb-6">{agent.desc}</p>
+                  <h3 className="font-sans text-2xl font-medium text-[#191923] mb-2">{agent.name}</h3>
+                  <p className="text-xs text-[#777783] leading-relaxed mb-6">{agent.desc}</p>
                 </div>
-                <div className="pt-4 border-t border-[#EAEAEA] text-xs font-mono text-[#191923] font-medium flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
+                <div className="pt-4 border-t border-[#E9E9EF] text-xs font-mono text-[#191923] font-medium flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00B7FF]" />
                   <span>{agent.output}</span>
                 </div>
               </div>
@@ -76,79 +62,45 @@ export default function PerciHubPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS — 3-Component Architecture */}
-      <section className="py-20 bg-[#F8F8FA] border-b border-[#EAEAEA]">
+      {/* HOW IT WORKS — 3-Component Architecture (No Eyebrows) */}
+      <section className="py-20 bg-[#F8F8FA] border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="max-w-2xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D]">
-              Architecture
-            </span>
-            <h2 className="font-serif text-3xl font-normal text-[#191923] mt-2">
-              How PerciHub agents execute securely inside SAP.
+            <h2 className="font-sans text-3xl font-normal text-[#191923]">
+              How PerciHub agents execute securely inside <span className="text-[#FF00B7]">SAP</span>.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#8A8D93]">LAYER 01</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">Live SAP Data</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Connects directly to your enterprise system, respecting existing user roles, authorizations, and validation rules.
-              </p>
-            </div>
-
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#0D5CE5]">LAYER 02</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">Execution Agents</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Task-specific agents follow strict criteria to evaluate documents, match records, and post transactions.
-              </p>
-            </div>
-
-            <div className="p-7 bg-white rounded-2xl border border-[#EAEAEA] shadow-subtle">
-              <span className="text-xs font-mono text-[#10B981]">LAYER 03</span>
-              <h3 className="font-serif text-xl font-normal mt-2 mb-2">Business Rules</h3>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Enriched with your company&apos;s governance policies so every automated action strictly adheres to compliance.
-              </p>
-            </div>
+            {PERCIHUB_LAYERS.map((layer) => (
+              <div key={layer.code} className="p-7 bg-white rounded-2xl border border-[#E9E9EF] shadow-card">
+                <span className="text-xs font-mono font-medium" style={{ color: layer.color }}>{layer.code}</span>
+                <h3 className="font-sans text-xl font-medium mt-2 mb-2 text-[#191923]">{layer.title}</h3>
+                <p className="text-xs text-[#777783] leading-relaxed">
+                  {layer.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* THREE INDUSTRY EXAMPLES */}
-      <section className="py-24 bg-white border-b border-[#EAEAEA]">
+      {/* THREE INDUSTRY EXAMPLES (No Eyebrows) */}
+      <section className="py-24 bg-white border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="max-w-2xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#64676D]">
-              Industry Use Cases
-            </span>
-            <h2 className="font-serif text-3xl font-normal text-[#191923] mt-2">
-              Automations tailored to your industry.
+            <h2 className="font-sans text-3xl font-normal text-[#191923]">
+              Automations tailored to your <span className="text-[#FF00B7]">industry</span>.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#EAEAEA]">
-              <h4 className="text-base font-bold text-[#191923] mb-1">Manufacturing</h4>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Batch traceability, lab measurement checks, and automated quality clearance in SAP.
-              </p>
-            </div>
-
-            <div className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#EAEAEA]">
-              <h4 className="text-base font-bold text-[#191923] mb-1">Engineering & EPC</h4>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Subcontractor duplicate invoice detection and milestone cash-flow forecasting.
-              </p>
-            </div>
-
-            <div className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#EAEAEA]">
-              <h4 className="text-base font-bold text-[#191923] mb-1">Supply Chain</h4>
-              <p className="text-xs text-[#64676D] leading-relaxed">
-                Demand forecasting, shelf-life monitoring for perishable goods, and order grouping.
-              </p>
-            </div>
+            {PERCIHUB_INDUSTRIES.map((ind) => (
+              <div key={ind.title} className="p-7 bg-[#F8F8FA] rounded-2xl border border-[#E9E9EF] shadow-card hover:border-[#1B1466] transition-colors">
+                <h4 className="font-sans text-base font-medium text-[#191923] mb-1">{ind.title}</h4>
+                <p className="text-xs text-[#777783] leading-relaxed">{ind.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -156,20 +108,22 @@ export default function PerciHubPage() {
       {/* Ecosystem Strip */}
       <EcosystemStrip current="PerciHub" />
 
-      {/* CLOSING CTA */}
+      {/* CLOSING CTA (No Eyebrows) */}
       <section className="py-24 bg-white text-center">
         <div className="max-w-[600px] mx-auto px-6">
-          <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#191923]">
-            Have a manual task to automate?
+          <h2 className="font-sans text-3xl sm:text-4xl font-normal text-[#191923]">
+            Have a manual task to <span className="text-[#FF00B7]">automate</span>?
           </h2>
-          <p className="text-xs text-[#64676D] mt-2 mb-8">
+          <p className="text-sm text-[#777783] mt-2 mb-8">
             Tell us which workflow costs your team the most time.
           </p>
           <button
+            type="button"
             onClick={() => setModalOpen(true)}
-            className="px-8 py-3.5 bg-[#191923] text-white text-sm font-medium rounded-full hover:bg-black transition-all shadow-sm"
+            className="px-8 py-3.5 bg-[#1B1466] hover:bg-[#140F4D] text-white text-sm font-medium rounded-full transition-all shadow-sm inline-flex items-center gap-2"
           >
-            Request Agent Walkthrough
+            <span>Request Agent Walkthrough</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </section>

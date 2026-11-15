@@ -27,7 +27,7 @@ export default function BentoCard({
       <div>
         <div className="flex items-center justify-between mb-3">
           {category && (
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0D5CE5] bg-blue-50 px-2 py-0.5 rounded border border-blue-100/50">
+            <span className="text-xs font-medium text-[#1B1466] bg-[#F0EFFF] px-2.5 py-0.5 rounded-full border border-[#1B1466]/15 font-mono">
               {category}
             </span>
           )}

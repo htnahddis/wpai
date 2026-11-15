@@ -41,7 +41,7 @@ const DEFAULT_STEPS: StepItem[] = [
             </div>
           </div>
           <div className="p-3 bg-[#10B981]/10 rounded-lg border border-[#10B981]/30 text-[#10B981]">
-            <div className="text-[10px] font-bold tracking-wider mb-0.5">AGENT MATCH:</div>
+            <div className="text-xs font-semibold mb-0.5 font-mono">Agent Match:</div>
             <div>SAP Best Practice Scope Item BME (Cross-Company Stock Transport Order)</div>
           </div>
         </div>
@@ -105,7 +105,7 @@ const DEFAULT_STEPS: StepItem[] = [
             </div>
           </div>
           <div className="p-3 bg-[#FF4400]/10 rounded-lg border border-[#FF4400]/30 text-[#FF4400]">
-            <div className="text-[10px] font-bold tracking-wider mb-0.5">SCOPE GUARD:</div>
+            <div className="text-xs font-semibold mb-0.5 font-mono">Scope Guard:</div>
             <div>Any delta between SOW and Sprint backlog triggers proactive risk notification.</div>
           </div>
         </div>
@@ -145,10 +145,7 @@ export default function ProductHeroSteps({ steps = DEFAULT_STEPS }: ProductHeroS
         {/* Left Column: Heading & Accordion Steps */}
         <div className="lg:col-span-6 text-container-column narrow space-y-8">
           <div className="text-container-title auto-width space-y-3">
-            <div className="technical text-[11px] font-mono uppercase tracking-widest text-[#737373]">
-              What Percipere Does
-            </div>
-            <h2 className="heading-2 font-serif text-3xl sm:text-5xl font-normal tracking-tight text-[#171717] leading-tight">
+            <h2 className="heading-2 font-sans text-3xl sm:text-5xl font-normal tracking-tight text-[#191923] leading-tight">
               A collaborative system for implementation work, built for the full lifecycle.
             </h2>
           </div>

@@ -51,7 +51,7 @@ const PILLARS: ValuePillar[] = [
     id: "automation",
     category: "03 // INSTANT ARTIFACTS",
     title: "Deliverables in Seconds Instead of Weeks",
-    summary: "Eliminates manual documentation. Workshop discussions generate audit-ready Solution Design Documents (SDD), LTMC data templates, and Jira epics in 4.2 seconds.",
+    summary: "Eliminates manual documentation. Workshop discussions generate audit-ready Solution Design Documents (SDD), LTMC data templates, and Jira epics in seconds.",
     points: [
       "Automated conversion of workshop audio into formal specs",
       "LTMC migration mapping validated against target tables",
@@ -66,7 +66,7 @@ const PILLARS: ValuePillar[] = [
     id: "ams",
     category: "04 // OPERATIONAL AMS",
     title: "Diagnostic Managed Services Handover",
-    summary: "Ensures smooth post-go-live operations. PerciServe equips support engineers with complete project history, architecture blueprints, and automated L1 ticket deflection.",
+    summary: "Ensures smooth post-go-live operations. PerciServe equips support engineers with complete project history, architecture blueprints, and automated ticket deflection.",
     points: [
       "PerciDesk instant L1 resolution for routine queries",
       "Root-cause diagnostic engine with error logs attached",
@@ -84,91 +84,99 @@ export default function CleanDeliveryPillars() {
   const active = PILLARS.find((p) => p.id === selectedPillar) || PILLARS[0];
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 border-t border-zinc-200">
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 block mb-2 font-medium">
-            Core Foundations
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif text-zinc-900 tracking-tight leading-tight">
-            The four pillars of predictable SAP delivery
+    <section className="w-full bg-white py-16 sm:py-24 border-t border-[#E9E9EF]">
+      <div className="max-w-[1240px] mx-auto px-6">
+        {/* Section Header: No eyebrows, Magenta keyword */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-5xl font-sans font-normal text-[#191923] tracking-tight leading-tight">
+            The four pillars of <span className="text-[#FF00B7]">predictable</span> SAP delivery
           </h2>
-          <p className="mt-2.5 text-sm sm:text-base text-zinc-600">
+          <p className="mt-3 text-base text-[#777783]">
             Structured governance and intelligence engineered to eliminate rework and preserve Clean Core standards.
           </p>
         </div>
 
-        {/* 2-Column Clean Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left: 4 Selector Items */}
-          <div className="lg:col-span-5 space-y-2.5">
-            {PILLARS.map((p) => {
-              const isCurrent = p.id === selectedPillar;
+        {/* 2-Column Clean Interactive Pillar Explorer */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+          {/* Left Column: 4 Pillar Selectors */}
+          <div className="lg:col-span-5 flex flex-col gap-2.5">
+            {PILLARS.map((pillar) => {
+              const isSelected = pillar.id === selectedPillar;
               return (
-                <div
-                  key={p.id}
-                  onClick={() => setSelectedPillar(p.id)}
-                  className={`p-4 rounded-xl cursor-pointer transition-all border text-left ${
-                    isCurrent
-                      ? "bg-zinc-50 border-zinc-900 shadow-xs ring-1 ring-zinc-900/10"
-                      : "bg-white border-zinc-200 hover:border-zinc-300"
+                <button
+                  key={pillar.id}
+                  type="button"
+                  onClick={() => setSelectedPillar(pillar.id)}
+                  className={`text-left p-4 sm:p-5 rounded-2xl border transition-all ${
+                    isSelected
+                      ? "bg-[#1B1466] text-white border-[#1B1466] shadow-card scale-[1.01]"
+                      : "bg-[#F8F8FA] hover:bg-white text-[#191923] border-[#E9E9EF] hover:border-[#1B1466]/30 shadow-2xs"
                   }`}
                 >
-                  <div className="text-[10px] font-mono text-zinc-400 mb-1">
-                    {p.category}
+                  <div
+                    className={`text-xs font-mono mb-1 ${
+                      isSelected ? "text-[#00B7FF] font-medium" : "text-[#777783]"
+                    }`}
+                  >
+                    {pillar.category}
                   </div>
-                  <div className={`text-xs sm:text-sm font-semibold leading-snug ${isCurrent ? "text-zinc-900" : "text-zinc-600"}`}>
-                    {p.title}
+                  <div
+                    className={`font-sans text-base sm:text-lg font-medium leading-snug ${
+                      isSelected ? "text-white" : "text-[#191923]"
+                    }`}
+                  >
+                    {pillar.title}
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>
 
-          {/* Right: Detailed Stage Card */}
-          <div className="lg:col-span-7 bg-[#FAFBFD] rounded-2xl border border-zinc-200 p-6 sm:p-8 flex flex-col justify-between shadow-xs">
-            <div>
-              <span className="inline-block px-2.5 py-0.5 rounded text-[10px] font-mono font-medium mb-3 bg-white border border-zinc-200 text-zinc-700">
-                {active.category}
-              </span>
+          {/* Right Column: Deep Architectural Focus Card */}
+          <div className="lg:col-span-7 bg-[#F8F8FA] rounded-2xl border border-[#E9E9EF] p-6 sm:p-10 flex flex-col justify-between shadow-card">
+            <div className="space-y-6">
+              <div>
+                <span className="text-xs font-mono font-medium text-[#1B1466] bg-[#F0EFFF] px-2.5 py-1 rounded-full">
+                  {active.category}
+                </span>
+                <h3 className="font-sans text-2xl sm:text-3xl font-medium text-[#191923] mt-3 tracking-tight">
+                  {active.title}
+                </h3>
+                <p className="text-sm sm:text-base text-[#777783] mt-3 leading-relaxed font-normal">
+                  {active.summary}
+                </p>
+              </div>
 
-              <h3 className="text-xl sm:text-2xl font-serif text-zinc-900 font-normal leading-snug mb-3">
-                {active.title}
-              </h3>
-
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-6">
-                {active.summary}
-              </p>
-
-              <div className="space-y-2.5 pt-4 border-t border-zinc-200/80">
+              {/* Verified Proof Points */}
+              <div className="space-y-3 pt-2">
                 {active.points.map((pt, i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <span className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3" />
-                    </span>
-                    <span className="text-xs text-zinc-800 font-medium">{pt}</span>
+                  <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#191923]">
+                    <div className="w-4 h-4 rounded-full bg-[#E6F8FF] flex items-center justify-center text-[#00B7FF] shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 stroke-[3]" />
+                    </div>
+                    <span>{pt}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-zinc-200/80 flex items-center justify-between gap-4">
+            {/* Bottom Metric & Link */}
+            <div className="pt-6 border-t border-[#E9E9EF] mt-8 flex flex-wrap items-center justify-between gap-4">
               <div>
-                <div className="text-2xl sm:text-3xl font-serif text-zinc-900 font-bold">
+                <div className="font-sans text-2xl sm:text-3xl font-normal text-[#1B1466]">
                   {active.metricNumber}
                 </div>
-                <div className="text-[10px] text-zinc-400 font-mono">
+                <div className="text-[11px] font-mono text-[#777783] mt-0.5">
                   {active.metricLabel}
                 </div>
               </div>
 
               <Link
                 href={active.linkHref}
-                className="button-primary text-xs px-4 py-2 inline-flex items-center gap-1.5"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#1B1466] hover:text-[#FF00B7] transition-colors group"
               >
                 <span>{active.linkText}</span>
-                <ArrowRight className="w-3 h-3" />
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>

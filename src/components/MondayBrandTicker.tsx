@@ -24,20 +24,20 @@ export const ENTERPRISE_BRANDS: ClientBrand[] = [
           d="M6 18C6 11.373 11.373 6 18 6C22.6 6 26.5 8.6 28.4 12.4L24.8 14.1C23.5 11.5 20.9 9.8 18 9.8C13.5 9.8 9.8 13.5 9.8 18C9.8 22.5 13.5 26.2 18 26.2C21 26.2 23.7 24.5 25 21.8L28.6 23.4C26.7 27.3 22.7 30 18 30C11.373 30 6 24.627 6 18Z"
           fill="#18181B"
         />
-        <circle cx="18" cy="18" r="3.2" fill="#FF4400" />
+        <circle cx="18" cy="18" r="3.2" fill="#FF00B7" />
         {/* Travelopia Wordmark */}
         <text
           x="36"
           y="24"
-          fill="#18181B"
-          fontFamily="Figtree, system-ui, -apple-system, sans-serif"
+          fill="#191923"
+          fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
           fontSize="18.5"
-          fontWeight="800"
+          fontWeight="700"
           letterSpacing="-0.03em"
         >
           travelopia
         </text>
-        <circle cx="147" cy="13" r="2.8" fill="#FF4400" />
+        <circle cx="147" cy="13" r="2.8" fill="#FF00B7" />
       </svg>
     ),
   },
@@ -344,10 +344,10 @@ export const ENTERPRISE_BRANDS: ClientBrand[] = [
 
 export default function MondayBrandTicker() {
   return (
-    <section className="w-full bg-white py-12 sm:py-16 select-none overflow-hidden border-b border-zinc-100">
+    <section className="w-full bg-white py-12 sm:py-16 select-none overflow-hidden border-b border-[#E9E9EF]">
       <div className="w-full max-w-7xl mx-auto px-6 text-center">
-        {/* Monday.com Clean Eyebrow Headline */}
-        <p className="text-sm sm:text-base font-normal text-[#676879] tracking-tight mb-8 sm:mb-10">
+        {/* Social Proof Headline */}
+        <p className="text-sm sm:text-base font-normal text-[#777783] tracking-tight mb-8 sm:mb-10 font-sans">
           Trusted by fast-growing enterprises and global market leaders
         </p>
 

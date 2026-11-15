@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================================
+   PERCIPERE.AI OFFICIAL DESIGN SYSTEM (docs/design.md)
+   Brand Colour Palette:
+   - Percipere Indigo: #1B1466 (Primary brand colour)
+   - Magenta:          #FF00B7 (Emphasis / signals)
+   - Cyan:             #00B7FF (Connections / information)
+   - White:            #FFFFFF (Primary surface)
+   - Black:            #000000 (Brand neutral)
+   - Soft White:       #F8F8FA (Secondary background)
+   - Light Grey:       #E9E9EF (Borders and dividers)
+   - Dark Text:        #191923 (Headings and body text)
+   - Supporting Grey:  #777783 (Secondary text)
+   Typography:
+   - Primary typeface: Helvetica Neue
+   - 55 Roman (400)    - Headings & body text
+   - 65 Medium (500)   - Emphasis, hierarchy, product names, buttons
+   ========================================================================= */
+
 :root {
   --background: #FFFFFF;
-  --foreground: #171717;
-  --surface: #FBFBFC;
-  --border: #E5E5E5;
-  --auctor-orange: #FF4400;
+  --foreground: #191923;
+  --surface: #F8F8FA;
+  --border: #E9E9EF;
+  --percipere-indigo: #1B1466;
+  --percipere-magenta: #FF00B7;
+  --percipere-cyan: #00B7FF;
+  --percipere-dark: #191923;
+  --percipere-grey: #777783;
+  --percipere-light-grey: #E9E9EF;
 }
 
 /* Strictly enforce light mode for root */
 html {
   color-scheme: light;
   background-color: #FFFFFF;
-  color: #171717;
+  color: #191923;
   scroll-behavior: smooth;
 }
 
 body {
-  color: #171717;
+  color: #191923;
   background-color: #FFFFFF;
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400; /* 55 Roman */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.55;
@@ -29,7 +53,7 @@ body {
 }
 
 /* =========================================================================
-   AUCTOR EXACT DESIGN SYSTEM UTILITIES & CLASSES
+   PERCIPERE ENTERPRISE EDITORIAL UTILITIES & CLASSES
    ========================================================================= */
 
 .max-width {
@@ -80,9 +104,9 @@ body {
 .heading-1 {
   font-size: clamp(2.75rem, 5.75vw, 5.25rem);
   line-height: 1.04;
-  letter-spacing: -0.04em;
-  font-weight: 400;
-  color: #171717;
+  letter-spacing: -0.035em;
+  font-weight: 400; /* 55 Roman */
+  color: #191923;
 }
 
 .heading-1.center {
@@ -92,9 +116,9 @@ body {
 .heading-2 {
   font-size: clamp(2rem, 3.8vw, 3.25rem);
   line-height: 1.1;
-  letter-spacing: -0.035em;
-  font-weight: 400;
-  color: #171717;
+  letter-spacing: -0.03em;
+  font-weight: 400; /* 55 Roman */
+  color: #191923;
 }
 
 .heading-2.center {
@@ -108,23 +132,23 @@ body {
 .heading-3 {
   font-size: clamp(1.5rem, 2.75vw, 2.25rem);
   line-height: 1.25;
-  letter-spacing: -0.025em;
-  font-weight: 400;
-  color: #171717;
+  letter-spacing: -0.02em;
+  font-weight: 400; /* 55 Roman */
+  color: #191923;
 }
 
 .heading-3.quote {
   font-size: clamp(1.35rem, 2.5vw, 2rem);
   line-height: 1.35;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   font-weight: 400;
-  color: #171717;
+  color: #191923;
 }
 
 .paragraph-1 {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #737373;
+  color: #777783; /* Supporting Grey */
   font-weight: 400;
 }
 
@@ -136,71 +160,76 @@ body {
 }
 
 .paragraph-1.center.white {
-  color: #A1A1AA;
+  color: #E9E9EF;
 }
 
 .paragraph-1.card {
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: #737373;
+  color: #777783;
   margin-top: 0.5rem;
 }
 
 .body-text-1 {
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 500; /* 65 Medium */
   line-height: 1.4;
 }
 
 .body-text-1.medium {
   font-size: 1.125rem;
-  font-weight: 500;
-  color: #171717;
+  font-weight: 500; /* 65 Medium */
+  color: #191923;
   line-height: 1.35;
 }
 
 .technical {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.8125rem;
   letter-spacing: 0.04em;
 }
 
 .technical.white-60 {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Auctor Primary Button — Anti-Slop 8-State Interactive System */
+/* =========================================================================
+   PERCIPERE BUTTON SYSTEM — Percipere Indigo & Secondary Styling
+   ========================================================================= */
 .button-primary.w-button,
 .button-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: #171717;
+  background-color: #1B1466; /* Percipere Indigo */
   color: #FFFFFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 500; /* 65 Medium */
   padding: 0.75rem 1.625rem;
   border-radius: 9999px;
   border: 1px solid transparent;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  transition: background-color 140ms ease-out, transform 80ms ease-out, border-color 140ms ease-out;
+  box-shadow: 0 1px 3px 0 rgba(27, 20, 102, 0.12);
+  transition: background-color 140ms ease-out, transform 80ms ease-out, border-color 140ms ease-out, box-shadow 140ms ease-out;
 }
 
 .button-primary:hover {
-  background-color: #262626;
+  background-color: #140F4D;
   color: #FFFFFF;
+  box-shadow: 0 4px 12px 0 rgba(27, 20, 102, 0.2);
 }
 
 .button-primary:focus-visible {
-  outline: 2px solid #FF4400;
+  outline: 2px solid #00B7FF; /* Percipere Cyan */
   outline-offset: 2px;
 }
 
 .button-primary:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .button-primary:disabled {
@@ -209,8 +238,31 @@ body {
   pointer-events: none;
 }
 
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: #191923;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.75rem 1.625rem;
+  border-radius: 9999px;
+  border: 1px solid #E9E9EF;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.button-secondary:hover {
+  background-color: #F8F8FA;
+  border-color: #1B1466;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .button-primary {
+  .button-primary,
+  .button-secondary {
     transition: none;
   }
   .button-primary:active {
@@ -240,9 +292,9 @@ body {
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-  background: #0D0E12;
-  border: 1px solid #E5E5E5;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  background: #0E0F14;
+  border: 1px solid #E9E9EF;
+  box-shadow: 0 25px 50px -12px rgba(27, 20, 102, 0.08);
 }
 
 /* Logo Ticker */
@@ -288,7 +340,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.75;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
@@ -311,7 +363,7 @@ body {
   padding: 120px 24px;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #F0F0F2;
+  border-top: 1px solid #E9E9EF;
 }
 
 .center-text.narrow {
@@ -329,13 +381,13 @@ body {
 .reveal-para {
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.25;
-  font-weight: 400;
+  font-weight: 400; /* 55 Roman */
   letter-spacing: -0.025em;
-  color: #171717;
+  color: #191923;
 }
 
 .reveal-para.reveal-para--static {
-  color: #171717;
+  color: #191923;
 }
 
 .reveal-last {
@@ -344,20 +396,20 @@ body {
   gap: 16px;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.25;
-  font-weight: 400;
+  font-weight: 500; /* 65 Medium */
   letter-spacing: -0.025em;
-  color: #171717;
+  color: #191923;
   margin-top: 8px;
 }
 
-/* Concentric Pulse Mark SVG */
+/* Concentric Pulse Mark SVG with Percipere Signal Accent */
 .pulse-mark {
   width: 28px;
   height: 28px;
   display: inline-block;
   flex-shrink: 0;
   fill: none;
-  stroke: #171717;
+  stroke: #1B1466; /* Percipere Indigo */
   stroke-width: 44;
 }
 
@@ -366,12 +418,14 @@ body {
 }
 .pulse-mark .ring-3 {
   opacity: 0.45;
+  stroke: #00B7FF; /* Percipere Cyan */
 }
 .pulse-mark .ring-2 {
   opacity: 0.75;
+  stroke: #1B1466;
 }
 .pulse-mark .ring-1 {
-  fill: #FF4400;
+  fill: #FF00B7; /* Percipere Magenta Signal */
   stroke: none;
   animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -410,8 +464,8 @@ body {
 
 .card {
   background: #FFFFFF;
-  border: 1px solid #EBEBED;
-  border-radius: 14px;
+  border: 1px solid #E9E9EF; /* Light Grey */
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -420,13 +474,13 @@ body {
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 32px -10px rgba(27, 20, 102, 0.08);
 }
 
 .card .mux-media-slot.square {
   aspect-ratio: 1 / 1;
   width: 100%;
-  background: #F8F8FA;
+  background: #F8F8FA; /* Soft White */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -446,11 +500,11 @@ body {
 
 /* Testimonial Carousel */
 .grey {
-  background-color: #F8F8FA;
+  background-color: #F8F8FA; /* Soft White */
   padding-top: 100px;
   padding-bottom: 100px;
-  border-top: 1px solid #EBEBED;
-  border-bottom: 1px solid #EBEBED;
+  border-top: 1px solid #E9E9EF;
+  border-bottom: 1px solid #E9E9EF;
 }
 
 .testimonial-carousel {
@@ -467,7 +521,7 @@ body {
 
 .t-bar {
   height: 3px;
-  background-color: #E2E2E6;
+  background-color: #E9E9EF;
   border-radius: 9999px;
   flex: 1;
   cursor: pointer;
@@ -477,7 +531,7 @@ body {
 
 .t-bar-fill {
   height: 100%;
-  background-color: #171717;
+  background-color: #1B1466; /* Percipere Indigo */
   border-radius: 9999px;
   width: 0%;
 }
@@ -531,23 +585,23 @@ body {
 
 .deliverable-typewriter__prefix {
   font-size: clamp(1.85rem, 3.6vw, 3.15rem);
-  font-weight: 400;
+  font-weight: 400; /* 55 Roman */
   letter-spacing: -0.03em;
-  color: #737373;
+  color: #777783;
 }
 
 .deliverable-typewriter__dynamic {
   font-size: clamp(1.85rem, 3.6vw, 3.15rem);
-  font-weight: 500;
+  font-weight: 500; /* 65 Medium */
   letter-spacing: -0.03em;
-  color: #171717;
+  color: #191923;
 }
 
 .deliverable-typewriter__caret {
   display: inline-block;
   width: 3px;
   height: 1.15em;
-  background-color: #FF4400;
+  background-color: #FF00B7; /* Percipere Magenta Signal */
   vertical-align: middle;
   margin-left: 6px;
   animation: blink 0.9s step-end infinite;
@@ -562,7 +616,7 @@ body {
   }
 }
 
-/* Pre-Sales / Post-Sales Tabs */
+/* Tabs */
 .tabs-container {
   padding-bottom: 96px;
 }
@@ -579,22 +633,22 @@ body {
   border-radius: 9999px;
   font-size: 0.9375rem;
   font-weight: 500;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #E9E9EF;
   background: #FFFFFF;
-  color: #737373;
+  color: #777783;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tablink:hover {
-  color: #171717;
-  border-color: #D4D4D4;
+  color: #191923;
+  border-color: #1B1466;
 }
 
 .tablink.w--current {
-  background: #171717;
+  background: #1B1466;
   color: #FFFFFF;
-  border-color: #171717;
+  border-color: #1B1466;
 }
 
 ._3-column-cards {
@@ -617,7 +671,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid #EBEBED;
+  border: 1px solid #E9E9EF;
 }
 
 /* Integrations 2-Column Accordion */
@@ -629,7 +683,7 @@ body {
   grid-template-columns: 1.1fr 1fr;
   gap: 56px;
   align-items: center;
-  border: 1px solid #EBEBED;
+  border: 1px solid #E9E9EF;
 }
 
 @media (max-width: 960px) {
@@ -654,19 +708,20 @@ body {
 
 /* Dark Ticker */
 .dark-grey {
-  background-color: #121316;
+  background-color: #0E0F14;
   padding-top: 80px;
   padding-bottom: 80px;
   color: #FFFFFF;
+  border-top: 1px solid #23242B;
 }
 
 .dark-grey .paragraph-1 {
-  color: #9E9EA7;
+  color: #A1A1AA;
 }
 
 /* Bottom Black CTA */
 .black {
-  background-color: #0A0A0C;
+  background-color: #000000; /* Brand Neutral */
   color: #FFFFFF;
   padding-top: 104px;
   padding-bottom: 48px;
@@ -681,7 +736,7 @@ body {
   height: 60px;
 }
 
-/* Auctor Footer */
+/* Footer */
 .footer {
   padding-top: 48px;
   padding-bottom: 32px;
@@ -702,14 +757,14 @@ body {
 }
 
 .text-link.white {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
   transition: color 0.2s ease;
   text-decoration: none;
 }
 
 .text-link.white:hover {
-  color: #FFFFFF;
+  color: #00B7FF; /* Percipere Cyan on hover */
 }
 
 .footer-logo {
@@ -721,8 +776,8 @@ body {
 
 /* Global Selection and Scrollbar */
 ::selection {
-  background-color: #FFF5F0;
-  color: #FF4400;
+  background-color: #F0EFFF;
+  color: #1B1466;
 }
 
 ::-webkit-scrollbar {
@@ -733,11 +788,11 @@ body {
   background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E5E5E5;
+  background: #E9E9EF;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4D4D4;
+  background: #D6D6DE;
 }
 
 @layer utilities {
@@ -747,15 +802,16 @@ body {
 }
 
 /* =========================================================================
-   MONDAY.COM PMO NYMERIA INTEGRATIONS GRID
+   MONDAY.COM PMO NYMERIA INTEGRATIONS GRID — Percipere Light Grey Styling
    ========================================================================= */
 .nymeria-integrations-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  background: #f6f6f3;
+  background: #F8F8FA; /* Soft White */
   border-radius: 16px;
   overflow: hidden;
   width: 100%;
+  border: 1px solid #E9E9EF;
 }
 
 .nymeria-integrations-grid .int-cell {
@@ -763,13 +819,19 @@ body {
   align-items: center;
   gap: 10px;
   padding: 14px 16px;
-  border-right: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-right: 1px solid #E9E9EF;
+  border-bottom: 1px solid #E9E9EF;
   font-size: 13px;
-  font-weight: 500;
-  color: #1f2937;
+  font-weight: 500; /* 65 Medium */
+  color: #191923; /* Dark Text */
   box-sizing: border-box;
   min-width: 0;
+  background: #FFFFFF;
+  transition: background-color 0.15s ease;
+}
+
+.nymeria-integrations-grid .int-cell:hover {
+  background: #F8F8FA;
 }
 
 .nymeria-integrations-grid .int-cell:nth-child(4n) {
@@ -795,12 +857,17 @@ body {
   justify-content: center;
   gap: 2px;
   padding: 14px 20px;
+  background: #F0EFFF; /* Soft Indigo Tint */
+}
+
+.nymeria-integrations-grid .int-cell.span3:hover {
+  background: #EAE8FC;
 }
 
 .nymeria-integrations-grid .int-cell.span3 .more-count {
   font-size: 24px;
   font-weight: 700;
-  color: #171717;
+  color: #1B1466; /* Percipere Indigo */
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -808,7 +875,7 @@ body {
 .nymeria-integrations-grid .int-cell.span3 .more-text {
   font-size: 12px;
   font-weight: 400;
-  color: #676879;
+  color: #777783; /* Supporting Grey */
   line-height: 1.3;
 }
 
@@ -817,8 +884,8 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .nymeria-integrations-grid .int-cell {
-    border-right: 1px solid #ececec;
-    border-bottom: 1px solid #ececec;
+    border-right: 1px solid #E9E9EF;
+    border-bottom: 1px solid #E9E9EF;
   }
   .nymeria-integrations-grid .int-cell:nth-child(2n) {
     border-right: none;
@@ -832,4 +899,3 @@ body {
     border-bottom: none;
   }
 }
-

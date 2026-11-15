@@ -98,10 +98,7 @@ export default function MondayIntegrationsHub() {
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 block mb-2 font-medium">
-            Connected Architecture
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-serif text-zinc-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl font-sans text-[#191923] tracking-tight leading-tight font-normal">
             Integrated with your enterprise tech stack
           </h2>
           <p className="mt-2.5 text-sm sm:text-base text-zinc-600">

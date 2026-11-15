@@ -19,12 +19,12 @@ export default function Footer() {
                   Run every SAP implementation on one platform
                 </h2>
                 <div className="text-button-center">
-                  <div className="paragraph-1 center white">
+                  <div className="paragraph-1 center white text-[#E9E9EF]">
                     Discover how Percipere transforms your SAP S/4HANA migration, planning, and operations into a predictable, automated system of action.
                   </div>
                   <button
                     onClick={() => setModalOpen(true)}
-                    className="button-primary w-button bg-white text-[#171717] hover:bg-[#F2F2F4]"
+                    className="button-primary w-button bg-white text-[#1B1466] hover:bg-[#F8F8FA] font-medium transition-colors"
                   >
                     Book a Consultation
                   </button>
@@ -36,7 +36,7 @@ export default function Footer() {
 
         <div className="divider _60"></div>
 
-        {/* Auctor Signature Technical Footer */}
+        {/* Technical Footer */}
         <div className="max-width _2">
           <section id="footer" className="footer">
             <div className="row-container parent">
@@ -47,22 +47,22 @@ export default function Footer() {
               <div className="row-container flex flex-col md:flex-row items-start md:items-center gap-8">
                 <div className="row-container">
                   <div className="link-list flex flex-wrap gap-4 text-xs font-mono">
-                    <Link className="text-link white" href="/percixpert">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/percixpert">
                       PerciXpert
                     </Link>
-                    <Link className="text-link white" href="/perciserve-support-suite">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/perciserve-support-suite">
                       PerciServe
                     </Link>
-                    <Link className="text-link white" href="/percihub-business-suite">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/percihub-business-suite">
                       PerciHub
                     </Link>
-                    <Link className="text-link white" href="/what-we-do/intelligence-enterprise-offerings/xpa-epm">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/what-we-do/intelligence-enterprise-offerings/xpa-epm">
                       xP&amp;A / EPM
                     </Link>
-                    <Link className="text-link white" href="/sap-business-ai">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/sap-business-ai">
                       SAP Business AI
                     </Link>
-                    <Link className="text-link white" href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration">
+                    <Link className="text-link white hover:text-[#00B7FF]" href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration">
                       AI Acceleration
                     </Link>
                   </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                   <div className="link-list">
                     <button
                       onClick={() => setModalOpen(true)}
-                      className="text-link white bg-transparent border-none p-0 cursor-pointer"
+                      className="text-link white hover:text-[#00B7FF] bg-transparent border-none p-0 cursor-pointer"
                     >
                       Contact
                     </button>
@@ -80,13 +80,13 @@ export default function Footer() {
                       href="https://www.linkedin.com/company/percipere"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-link white"
+                      className="text-link white hover:text-[#00B7FF]"
                     >
                       LinkedIn
                     </a>
                     <button
                       onClick={() => setModalOpen(true)}
-                      className="text-link white bg-transparent border-none p-0 cursor-pointer"
+                      className="text-link white hover:text-[#00B7FF] bg-transparent border-none p-0 cursor-pointer"
                     >
                       Login
                     </button>
@@ -94,7 +94,7 @@ export default function Footer() {
                       href="https://x.com/percipere"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-link white"
+                      className="text-link white hover:text-[#00B7FF]"
                     >
                       X
                     </a>
@@ -103,7 +103,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Giant Monolithic Auctor-Style Brand Wordmark */}
+            {/* Monolithic Brand Wordmark */}
             <div className="w-full mt-12 pt-6 flex justify-center items-center overflow-hidden">
               <svg
                 viewBox="0 0 1400 240"
@@ -116,15 +116,15 @@ export default function Footer() {
                   y="62%"
                   dominantBaseline="middle"
                   textAnchor="middle"
-                  fontFamily="serif"
+                  fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
                   fontWeight="bold"
                   fontSize="220"
-                  letterSpacing="-0.06em"
+                  letterSpacing="-0.04em"
                   className="fill-white"
                 >
                   percipere
                 </text>
-                <circle cx="1275" cy="115" r="14" fill="#FF4400" />
+                <circle cx="1275" cy="115" r="14" fill="#FF00B7" />
               </svg>
             </div>
           </section>
