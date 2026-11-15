@@ -168,15 +168,6 @@ export default function Header() {
             >
               Book a Demo
             </button>
-
-            <button
-              type="button"
-              onClick={() => setModalOpen(true)}
-              className="cn-mobile-demo sm:hidden text-[12px] py-1.5 px-3.5 bg-[#1B1466] text-white rounded-full font-medium transition-colors cursor-pointer"
-            >
-              Demo
-            </button>
-
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
