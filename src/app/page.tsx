@@ -14,7 +14,7 @@ import MondayProductsSuiteSection from "@/components/MondayProductsSuiteSection"
 import MondayWorkOSShowcase from "@/components/MondayWorkOSShowcase";
 import MondayAutomationRecipes from "@/components/MondayAutomationRecipes";
 import MondayEveryStageRunning from "@/components/MondayEveryStageRunning";
-import MondayLeadershipAndTrust from "@/components/MondayLeadershipAndTrust";
+import MondayAccelerateCards from "@/components/MondayAccelerateCards";
 import MondayNymeriaIntegrations from "@/components/MondayNymeriaIntegrations";
 
 export default function HomePage() {
@@ -186,6 +186,147 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* =========================================================================
+          5. THE 6 ENTERPRISE SUITES — Monday.com-Inspired Suite Showcase
+          ========================================================================= */}
+      <MondayProductsSuiteSection />
+
+      {/* =========================================================================
+          6. MONDAY.COM WORK OS BOARD SHOWCASE — Interactive Lifecycle Board
+          ========================================================================= */}
+      <MondayWorkOSShowcase />
+
+      {/* =========================================================================
+          7. THE FOUR FOUNDATIONAL PILLARS — Core Foundations
+          ========================================================================= */}
+      <CleanDeliveryPillars />
+
+      {/* =========================================================================
+          8. VERIFIED ENTERPRISE METRICS — Authentic Percipere Telemetry
+          ========================================================================= */}
+      <section className="max-width py-16 sm:py-20 border-b border-[#EBEBED]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCounter
+            value={100}
+            suffix="+"
+            label="ENTERPRISE CLIENTS"
+            sublabel="Global enterprises trusting Percipere for cloud ERP"
+          />
+          <StatCounter
+            value={50}
+            suffix="+"
+            label="COUNTRIES SERVED"
+            sublabel="Active cross-border transformations worldwide"
+          />
+          <StatCounter
+            value={275}
+            suffix="+"
+            label="CONSULTANTS & ENGINEERS"
+            sublabel="Specialists across UK, UAE, KSA, US, and India"
+          />
+          <StatCounter
+            value={2017}
+            suffix=""
+            label="FOUNDED"
+            sublabel="SAP Gold Partner with continuous innovation delivery"
+          />
+        </div>
+      </section>
+
+      {/* =========================================================================
+          9. TESTIMONIAL CAROUSEL — Authentic Enterprise Client Stories
+          ========================================================================= */}
+      <section className="grey">
+        <div className="max-width">
+          <TestimonialCarousel items={testimonials} />
+        </div>
+      </section>
+
+      {/* =========================================================================
+          10. EVERY STAGE OF PROJECT DELIVERY — Monday.com Interactive Stage Stream
+          ========================================================================= */}
+      <MondayEveryStageRunning onOpenModal={() => setModalOpen(true)} />
+
+      {/* =========================================================================
+          11. AUTOMATE WHAT MATTERS — Monday.com-Style Recipe Automation Builder
+          ========================================================================= */}
+      <MondayAutomationRecipes />
+
+      {/* =========================================================================
+          12. TYPEWRITER SECTION — Purpose-Built Strategic Deliverables
+          ========================================================================= */}
+      <section className="max-wdith_embed type">
+        <Typewriter
+          prefix="Purpose-built for "
+          phrases={typewriterPhrases}
+          dot={
+            <svg className="pulse-mark w-7 h-7" viewBox="0 0 1000 1000" aria-hidden="true">
+              <circle className="ring-4" cx="500" cy="500" r="498"></circle>
+              <circle className="ring-3" cx="500" cy="500" r="334"></circle>
+              <circle className="ring-2" cx="500" cy="500" r="183"></circle>
+              <circle className="ring-1" cx="500" cy="500" r="75"></circle>
+            </svg>
+          }
+        />
+      </section>
+
+      {/* =========================================================================
+          13. MONDAY.COM PMO ACCELERATE CARDS — Purpose-Built AI Agents
+          ========================================================================= */}
+      <MondayAccelerateCards onOpenModal={() => setModalOpen(true)} />
+
+      {/* =========================================================================
+          14. MONDAY.COM PMO NYMERIA INTEGRATIONS GRID — 4-Column Ecosystem Hub
+          ========================================================================= */}
+      <MondayNymeriaIntegrations onOpenModal={() => setModalOpen(true)} />
+
+      {/* =========================================================================
+          15. DARK INVESTOR & PARTNER TICKER — Enterprise Credentials
+          ========================================================================= */}
+      <section className="dark-grey">
+        <div className="max-width">
+          <div className="primary-container even-padding center-vertical dark text-center">
+            <div className="small-paragraph-stretch fixed-padding max-w-2xl mx-auto mb-8">
+              <div className="text-container mobile-narrow">
+                <h3 className="heading-3 white text-2xl sm:text-3xl font-serif text-white mb-2">
+                  Backed by the SAP Partner Network
+                </h3>
+                <div className="paragraph-1 mobile-center text-sm sm:text-base font-normal text-[#A1A1AA]">
+                  Certified by leading global enterprise ecosystems &amp; governance frameworks
+                </div>
+              </div>
+            </div>
+
+            {/* Dark Ticker with White Logos */}
+            <div className="logo-ticker-final">
+              <div className="_wf-logo-ticker">
+                <div className="wf-logo-ticker__track">
+                  {/* Set 1 */}
+                  <div className="_wf-logo-ticker__list">
+                    {investorLogos.map((name, i) => (
+                      <div key={`inv-1-${i}`} className="_wf-logo-ticker__item">
+                        <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white/80 hover:text-white transition-colors select-none">
+                          {name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Set 2 (Clone for seamless loop) */}
+                  <div className="_wf-logo-ticker__list" aria-hidden="true">
+                    {investorLogos.map((name, i) => (
+                      <div key={`inv-2-${i}`} className="_wf-logo-ticker__item">
+                        <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white/80 hover:text-white transition-colors select-none">
+                          {name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Booking Consultation Modal */}
       <ConsultationModal
