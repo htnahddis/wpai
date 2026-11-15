@@ -12,7 +12,7 @@ export default function XpaEpmView() {
 
   return (
     <div className="bg-white text-[#191923] selection:bg-[#F0EFFF] selection:text-[#1B1466]">
-      {/* HERO — No Eyebrows, Magenta keyword */}
+      {/* HERO  No Eyebrows, Magenta keyword */}
       <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="max-w-3xl mb-12">

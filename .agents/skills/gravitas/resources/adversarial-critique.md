@@ -17,7 +17,7 @@ A plan that skips it ships bugs.
 
 For every plan, attack it on these 7 dimensions:
 
-### Vector 1 — Wrong File / Wrong Line
+### Vector 1  Wrong File / Wrong Line
 
 ```
 Attack: "What if the target is not where I think it is?"
@@ -28,7 +28,7 @@ Check:
   - Did git log show the file was recently moved?
 ```
 
-### Vector 2 — Downstream Breakage
+### Vector 2  Downstream Breakage
 
 ```
 Attack: "What else depends on what I'm changing?"
@@ -39,7 +39,7 @@ Check:
   - What API contracts does this expose?
 ```
 
-### Vector 3 — Test Coverage Gaps
+### Vector 3  Test Coverage Gaps
 
 ```
 Attack: "What scenarios do the tests NOT cover?"
@@ -52,7 +52,7 @@ Check:
   - Are there integration tests, or only unit tests?
 ```
 
-### Vector 4 — Config / Environment Mismatch
+### Vector 4  Config / Environment Mismatch
 
 ```
 Attack: "What config assumptions might be wrong?"
@@ -63,7 +63,7 @@ Check:
   - Are there env vars this depends on that might not be set?
 ```
 
-### Vector 5 — Concurrency / Race Conditions
+### Vector 5  Concurrency / Race Conditions
 
 ```
 Attack: "What if two requests hit this simultaneously?"
@@ -74,7 +74,7 @@ Check:
   - Is there a retry that could create duplicates?
 ```
 
-### Vector 6 — Rollback Failure
+### Vector 6  Rollback Failure
 
 ```
 Attack: "What if we need to undo this?"
@@ -85,7 +85,7 @@ Check:
   - If this is a feature flag, can we flip it off?
 ```
 
-### Vector 7 — Security Regression
+### Vector 7  Security Regression
 
 ```
 Attack: "Does this introduce or loosen security controls?"
@@ -102,34 +102,34 @@ Check:
 ## Critique Output Format
 
 ```markdown
-## Adversarial Critique — [plan name]
+## Adversarial Critique  [plan name]
 
 ### Vector 1: Wrong Location
-- Risk: LOW — grepped and confirmed auth.ts at src/auth/session.ts:23
+- Risk: LOW  grepped and confirmed auth.ts at src/auth/session.ts:23
 - Evidence: `grep -rn "SESSION_TIMEOUT" src/` → one result
 
 ### Vector 2: Downstream
-- Risk: MEDIUM — 2 middleware files import from session.ts
-  - src/middleware/auth.ts:7 — calls validateSession()
-  - src/routes/auth.ts:4 — calls createSession()
+- Risk: MEDIUM  2 middleware files import from session.ts
+  - src/middleware/auth.ts:7  calls validateSession()
+  - src/routes/auth.ts:4  calls createSession()
 - Mitigation: run full test suite after, not just session.test.ts
 
 ### Vector 3: Test Coverage
-- Risk: LOW — 23 tests cover normal cases
+- Risk: LOW  23 tests cover normal cases
 - GAP: No test for concurrent session creation
 - Mitigation: add one concurrency test before shipping
 
 ### Vector 4: Config
-- Risk: LOW — TypeScript strict mode on, change is fully typed
+- Risk: LOW  TypeScript strict mode on, change is fully typed
 
 ### Vector 5: Concurrency
-- Risk: LOW — session creation uses DB transaction (line 45)
+- Risk: LOW  session creation uses DB transaction (line 45)
 
 ### Vector 6: Rollback
-- Risk: LOW — timeout change is reversible, no data migration
+- Risk: LOW  timeout change is reversible, no data migration
 
 ### Vector 7: Security
-- Risk: LOW — change only affects timeout value, no auth logic
+- Risk: LOW  change only affects timeout value, no auth logic
 
 ### Overall Risk: MEDIUM (due to Vector 2)
 ### Recommendation: proceed with full test suite run

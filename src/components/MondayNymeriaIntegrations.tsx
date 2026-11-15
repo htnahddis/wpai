@@ -175,7 +175,7 @@ export default function MondayNymeriaIntegrations({ onOpenModal }: { onOpenModal
                   </span>
                 </div>
               ))}
-              {/* Monday.com Span-3 Highlight Cell — Perfectly completes Row 4 */}
+              {/* Monday.com Span-3 Highlight Cell  Perfectly completes Row 4 */}
               <div className="int-cell span3 bg-[#EFEFEA] hover:bg-[#EAEAE5] transition-colors cursor-default">
                 <span className="more-count">200+</span>
                 <span className="more-text">enterprise connectors, native SAP BTP APIs, and workflow hooks</span>

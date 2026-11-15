@@ -7,14 +7,14 @@ what you already learned.
 
 ## Two Memory Layers
 
-### Layer 1 — Session Memory (in-session, ephemeral)
+### Layer 1  Session Memory (in-session, ephemeral)
 
 Created at task start. Lost when session ends.
 
 **File:** `SESSION_FAILURES.md` in the project root or working dir.
 
 ```markdown
-## Session Failures — 2026-09-08
+## Session Failures  2026-09-08
 
 - **auth timeout**: Tried changing SESSION_TIMEOUT in config.ts:15. Wrong file.
   Actual location is src/auth/session.ts:23. Do not retry config.ts.
@@ -36,7 +36,7 @@ Created at task start. Lost when session ends.
 
 ---
 
-### Layer 2 — Project Memory (cross-session, persistent)
+### Layer 2  Project Memory (cross-session, persistent)
 
 Stored in `GRAVITAS_MEMORY.md` at project root, or `.gravitas/memory/` directory.
 
@@ -62,7 +62,7 @@ updated: 2026-09-08
 
 ## Memory Types
 
-### `user` — Who is the user
+### `user`  Who is the user
 
 ```markdown
 ---
@@ -80,7 +80,7 @@ Works in TypeScript with strict mode on.
 **How to apply:** Always show the verify command. Use conventional commits.
 ```
 
-### `feedback` — What the user has corrected
+### `feedback`  What the user has corrected
 
 ```markdown
 ---
@@ -96,13 +96,13 @@ iteration, use `vitest run` directly. Only use `npm test` for CI checks.
 **How to apply:** Any time I'd run tests, use `vitest run` not `npm test`.
 ```
 
-### `project` — Ongoing context not in code
+### `project`  Ongoing context not in code
 
 ```markdown
 ---
 type: project
 name: auth-rewrite-context
-description: Auth module is being rewritten — old and new systems co-exist
+description: Auth module is being rewritten  old and new systems co-exist
 ---
 
 The auth module is mid-migration. `/src/auth/` is the new system.
@@ -110,11 +110,11 @@ The auth module is mid-migration. `/src/auth/` is the new system.
 Do not touch legacy auth unless explicitly asked. Migration completes 2026-10-01.
 
 **Why:** Prevents accidentally breaking legacy auth.
-**How to apply:** Any auth task — check which system is in scope first.
+**How to apply:** Any auth task  check which system is in scope first.
 **Related:** [[migration-timeline]]
 ```
 
-### `reference` — External resources
+### `reference`  External resources
 
 ```markdown
 ---
@@ -132,7 +132,7 @@ Used in src/webhooks/stripe.ts. Check here before any Stripe webhook changes.
 
 ---
 
-## Memory Index — GRAVITAS_MEMORY.md
+## Memory Index  GRAVITAS_MEMORY.md
 
 The index file. One line per memory. Loaded into context each session.
 Never put full memory content here.
@@ -141,18 +141,18 @@ Never put full memory content here.
 # GRAVITAS Memory Index
 
 ## User
-- [user-preferences](memory/user-preferences.md) — dev preferences, commit style, verify commands
+- [user-preferences](memory/user-preferences.md)  dev preferences, commit style, verify commands
 
 ## Feedback
-- [test-runner-preference](memory/test-runner-preference.md) — vitest run, not npm test
-- [import-style](memory/import-style.md) — named exports only, never default
+- [test-runner-preference](memory/test-runner-preference.md)  vitest run, not npm test
+- [import-style](memory/import-style.md)  named exports only, never default
 
 ## Project
-- [auth-rewrite-context](memory/auth-rewrite-context.md) — legacy and new auth co-exist
-- [db-schema](memory/db-schema.md) — schema location and migration approach
+- [auth-rewrite-context](memory/auth-rewrite-context.md)  legacy and new auth co-exist
+- [db-schema](memory/db-schema.md)  schema location and migration approach
 
 ## Reference
-- [stripe-webhook-docs](memory/stripe-webhook-docs.md) — webhook signature verification
+- [stripe-webhook-docs](memory/stripe-webhook-docs.md)  webhook signature verification
 ```
 
 ---
@@ -188,10 +188,10 @@ At session start, if `GRAVITAS_MEMORY.md` exists:
 1. Read the index
 2. Load memories relevant to today's task
 3. Verify any memories that reference files (the file may have moved)
-4. Note memories that seem outdated — flag for update
+4. Note memories that seem outdated  flag for update
 
 **Don't blindly follow stale memories.** If a memory says "function X is at
-line 23" — verify it. Lines change. Verify before recommending.
+line 23"  verify it. Lines change. Verify before recommending.
 
 ---
 
@@ -200,17 +200,17 @@ line 23" — verify it. Lines change. Verify before recommending.
 When continuing a multi-session task:
 
 ```markdown
-## Task Status — [task name]
+## Task Status  [task name]
 
 ### Completed
-- [x] Step 1: Auth recon — findings in memory/auth-rewrite-context.md
-- [x] Step 2: Plan — approved by user 2026-09-07
+- [x] Step 1: Auth recon  findings in memory/auth-rewrite-context.md
+- [x] Step 2: Plan  approved by user 2026-09-07
 
 ### In Progress
-- [ ] Step 3: Implementation — started src/auth/session.ts, not done
+- [ ] Step 3: Implementation  started src/auth/session.ts, not done
 
 ### Blocked
-- Step 4: Verify — can't run tests until step 3 done
+- Step 4: Verify  can't run tests until step 3 done
 
 ### Session Failures (this session)
 - Tried editing config.ts for timeout. Wrong file. Actual: src/auth/session.ts:23

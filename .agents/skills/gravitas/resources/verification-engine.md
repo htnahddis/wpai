@@ -147,8 +147,8 @@ vitest run 2>&1 | tail -5
 ### Regression check
 ```
 Pass count: Y' >= Y?  → ✅ no regression
-Pass count: Y' < Y?   → ❌ REGRESSION — [Y-Y'] tests newly failing
-New warnings: M' > M? → ❌ NEW LINT ISSUES — [list them]
+Pass count: Y' < Y?   → ❌ REGRESSION  [Y-Y'] tests newly failing
+New warnings: M' > M? → ❌ NEW LINT ISSUES  [list them]
 ```
 
 ---
@@ -210,7 +210,7 @@ Requirements (ALL must be met):
 ```
 VERDICT: PASS
 
-Tests:    47/47 (baseline: 47/47 — no regression)
+Tests:    47/47 (baseline: 47/47  no regression)
 Lint:     clean (0 warnings)
 Types:    clean (tsc --noEmit: no output)
 Coverage: 87% on changed files (was 85%)
@@ -235,7 +235,7 @@ Failing tests (2):
 
 Root cause: Test assertion not updated, and middleware import missing.
 Required fix:
-  1. Update src/auth/session.test.ts:47 — change toBe(5000) to toBe(30000)
+  1. Update src/auth/session.test.ts:47  change toBe(5000) to toBe(30000)
   2. Add import { SESSION_TIMEOUT } to src/middleware/auth.ts
 ```
 
@@ -249,12 +249,12 @@ Gate automation on this string: `VERDICT: PASS` or `VERDICT: FAIL`.
 
 When verification fails:
 
-1. **Stop** — don't patch and re-run hoping it'll work
-2. **Read error carefully** — diagnose root cause, not symptom
-3. **Fix root cause** — not the test (unless test is genuinely wrong)
-4. **Re-run full chain** — not just the failing test
+1. **Stop**  don't patch and re-run hoping it'll work
+2. **Read error carefully**  diagnose root cause, not symptom
+3. **Fix root cause**  not the test (unless test is genuinely wrong)
+4. **Re-run full chain**  not just the failing test
 5. **Log to SESSION_FAILURES.md** if the approach itself was wrong
-6. **Report honestly** — VERDICT: FAIL with specific reason
+6. **Report honestly**  VERDICT: FAIL with specific reason
 
 ### Root Cause vs Symptom
 

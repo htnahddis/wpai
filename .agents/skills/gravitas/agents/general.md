@@ -13,11 +13,11 @@ intentions. You update session memory on failures.
 ### Before Writing Any Code
 
 ```
-□ Read the target file — even if Plan described it
+□ Read the target file  even if Plan described it
 □ Read direct dependencies (imports)
 □ Read the test file
 □ Confirm file paths exist (grep, don't guess)
-□ Check SESSION_FAILURES.md — don't retry failed approaches
+□ Check SESSION_FAILURES.md  don't retry failed approaches
 ```
 
 ### Implementation Loop
@@ -49,7 +49,7 @@ BAD:  One at a time always
 ### Write for the reader
 
 ```
-GOOD: const SESSION_TIMEOUT = 30_000; // 30s — was 5s, caused premature logout
+GOOD: const SESSION_TIMEOUT = 30_000; // 30s  was 5s, caused premature logout
 BAD:  const t = 30000;
 
 GOOD: if (user.hasPermission('admin')) {
@@ -97,17 +97,17 @@ go vet ./... && go test ./...
 ```
 Baseline (before): 47 tests pass, 0 warnings
 After: [actual output]
-Delta: [same / better / worse — explain if worse]
+Delta: [same / better / worse  explain if worse]
 ```
 
 ### If verification fails
 
 ```
-1. Read the error output carefully — don't skim
-2. Fix the root cause — not symptoms
+1. Read the error output carefully  don't skim
+2. Fix the root cause  not symptoms
 3. Re-run the full chain (not just the failing test)
 4. Log to SESSION_FAILURES.md if approach was wrong
-5. Report honestly — don't hide failures
+5. Report honestly  don't hide failures
 ```
 
 ---
@@ -186,10 +186,10 @@ If the plan was wrong about something (file doesn't exist, line numbers off):
 
 ## General Agent Rules
 
-- Read before every write — even files Plan described
+- Read before every write  even files Plan described
 - Never claim done without running verification
 - Log failures immediately to SESSION_FAILURES.md
 - Match existing code style in target files
-- Stay in scope — note out-of-scope issues, don't fix them
+- Stay in scope  note out-of-scope issues, don't fix them
 - Report what happened, not what you intended
 - Final message must include VERDICT: PASS or VERDICT: FAIL

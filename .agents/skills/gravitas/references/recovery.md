@@ -78,7 +78,7 @@ Evidence ledgers written before user-local anchoring fail verification with
 gravitas verify --backfill-anchors --session-dir .gravitas/sessions/<task-id>
 ```
 
-Only backfill ledgers you trust — anchoring legitimizes whatever the head
+Only backfill ledgers you trust  anchoring legitimizes whatever the head
 commits to. Legacy `resolved:true` failure markers without `resolution_id`
 stay unresolved by design; re-resolve them with
 `gravitas resolve-failure --session-dir … --fingerprint … --reason … --file … [--criterion-id …]`.

@@ -116,10 +116,6 @@ export default function HomePage() {
 
       {/* 16. NYMERIA INTEGRATIONS GRID */}
       <MondayNymeriaIntegrations onOpenModal={() => setModalOpen(true)} />
-
-      {/* 17. DARK INVESTOR & PARTNER NETWORK TICKER */}
-      <HomepageDarkTickerSection />
-
       {/* Consultation Modal */}
       <ConsultationModal
         isOpen={modalOpen}

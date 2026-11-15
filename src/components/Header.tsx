@@ -59,7 +59,7 @@ export default function Header() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF00B7]"></span>
             </Link>
 
-            {/* Desktop Navigation Links — Strictly the 6 Percipere Pages */}
+            {/* Desktop Navigation Links  Strictly the 6 Percipere Pages */}
             <div className="cn-links hidden xl:flex items-center gap-6">
               {navPages.map((page) => {
                 const isActive =
@@ -71,11 +71,10 @@ export default function Header() {
                   <Link
                     key={page.name}
                     href={page.href}
-                    className={`cn-link text-[13px] font-medium tracking-tight transition-colors py-1.5 whitespace-nowrap ${
-                      isActive
+                    className={`cn-link text-[13px] font-medium tracking-tight transition-colors py-1.5 whitespace-nowrap ${isActive
                         ? "text-[#1B1466] font-medium border-b-2 border-[#FF00B7]"
                         : "text-[#777783] hover:text-[#191923]"
-                    }`}
+                      }`}
                   >
                     {page.name}
                   </Link>

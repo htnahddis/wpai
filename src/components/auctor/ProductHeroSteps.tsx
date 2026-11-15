@@ -37,7 +37,7 @@ const DEFAULT_STEPS: StepItem[] = [
           <div className="p-3 bg-[#161722] rounded-lg border border-[#2B2C3B]">
             <div className="text-[#FF4400] text-[11px] mb-1">Speaker 1 (VP Supply Chain):</div>
             <div className="text-white text-[13px] font-sans">
-              "We need automated cross-company stock transport orders with EDI 856 ASN triggers for European DCs."
+              &ldquo;We need automated cross-company stock transport orders with EDI 856 ASN triggers for European DCs.&rdquo;
             </div>
           </div>
           <div className="p-3 bg-[#10B981]/10 rounded-lg border border-[#10B981]/30 text-[#10B981]">
@@ -101,7 +101,7 @@ const DEFAULT_STEPS: StepItem[] = [
           <div className="p-3 bg-[#161722] rounded-lg border border-[#2B2C3B]">
             <div className="text-[#8E8E93] text-[11px] mb-1">Scope Item: #48 (S/4HANA Finance)</div>
             <div className="text-white font-sans text-[13px]">
-              "Originating SOW Agreement &rarr; Architecture Blueprint &rarr; Sprint 03 Task #104"
+              &ldquo;Originating SOW Agreement &rarr; Architecture Blueprint &rarr; Sprint 03 Task #104&rdquo;
             </div>
           </div>
           <div className="p-3 bg-[#FF4400]/10 rounded-lg border border-[#FF4400]/30 text-[#FF4400]">

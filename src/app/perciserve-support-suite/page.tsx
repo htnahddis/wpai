@@ -11,7 +11,7 @@ export default function PerciServePage() {
 
   return (
     <div className="bg-white text-[#191923] selection:bg-[#F0EFFF] selection:text-[#1B1466]">
-      {/* HERO — No Eyebrows, Magenta keyword */}
+      {/* HERO  No Eyebrows, Magenta keyword */}
       <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -138,11 +138,10 @@ export default function PerciServePage() {
             {LEARNING_LOOP_STEPS.map((step, idx) => (
               <div
                 key={idx}
-                className={`p-4 rounded-xl border ${
-                  idx === 3
+                className={`p-4 rounded-xl border ${idx === 3
                     ? "bg-[#1B1466] text-white border-[#1B1466] shadow-card"
                     : "bg-[#F8F8FA] border-[#E9E9EF]"
-                }`}
+                  }`}
               >
                 <span
                   className="text-[10px] font-mono font-medium"

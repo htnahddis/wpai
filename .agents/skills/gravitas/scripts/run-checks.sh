@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# run-checks.sh — Quick verification script for GRAVITAS
+# run-checks.sh  Quick verification script for GRAVITAS
 # Run this as your "evidence" step after implementing changes.
 #
 # Usage: ./scripts/run-checks.sh [project-root]
@@ -176,6 +176,6 @@ echo ""
 if [ $FAILED -eq 0 ]; then
     echo "=== All checks passed ==="
 else
-    echo "=== Some checks failed — see above ==="
+    echo "=== Some checks failed  see above ==="
     exit 1
 fi

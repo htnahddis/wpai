@@ -365,7 +365,7 @@ export default function MondayBrandTicker() {
                 <div
                   key={`brand-1-${i}`}
                   className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity cursor-default"
-                  title={`${brand.name} — ${brand.category}`}
+                  title={`${brand.name}  ${brand.category}`}
                 >
                   {brand.svg}
                 </div>
@@ -378,7 +378,7 @@ export default function MondayBrandTicker() {
                 <div
                   key={`brand-2-${i}`}
                   className="flex items-center justify-center shrink-0 opacity-80 hover:opacity-100 transition-opacity cursor-default"
-                  title={`${brand.name} — ${brand.category}`}
+                  title={`${brand.name}  ${brand.category}`}
                 >
                   {brand.svg}
                 </div>

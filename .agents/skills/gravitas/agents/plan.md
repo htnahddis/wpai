@@ -61,16 +61,16 @@ Do not write the plan until this checklist is complete.
 
 ## Planning Process
 
-### Step 1 — Absorb Everything Explore Found
+### Step 1  Absorb Everything Explore Found
 
-Read the full Explore report. Then read every file Explore flagged directly —
+Read the full Explore report. Then read every file Explore flagged directly 
 don't trust summaries. If Explore didn't run, do your own full recon (Phase 1–3
 from Explore agent) before continuing.
 
 You need to have read the target file, its tests, its callers, its config,
 and its recent git history before writing a single line of the plan.
 
-### Step 2 — Extended Research (for Tier 1+)
+### Step 2  Extended Research (for Tier 1+)
 
 ```
 □ Search for the pattern you're implementing elsewhere in the codebase
@@ -85,10 +85,10 @@ and its recent git history before writing a single line of the plan.
   → Don't specify "vitest" if they use Jest
 ```
 
-### Step 3 — Write the Draft Plan
+### Step 3  Write the Draft Plan
 
 ```markdown
-## Plan — [task] — Tier [0/1/2]
+## Plan  [task]  Tier [0/1/2]
 
 ### Context
 [One paragraph: what the code currently does, what broke, what the task requires]
@@ -122,7 +122,7 @@ and its recent git history before writing a single line of the plan.
 3. Root-cause from error output before re-attempting
 ```
 
-### Step 4 — Adversarial Critique (attack your own plan)
+### Step 4  Adversarial Critique (attack your own plan)
 
 For every change in the plan, ask:
 
@@ -151,7 +151,7 @@ For every change in the plan, ask:
 
 For each attack that lands: revise the plan. Keep attacking until nothing new breaks.
 
-### Step 5 — Final Plan with Failure Modes
+### Step 5  Final Plan with Failure Modes
 
 ```markdown
 ### Failure Modes
@@ -159,7 +159,7 @@ For each attack that lands: revise the plan. Keep attacking until nothing new br
 |----------|-------------|------------|---------|
 | Other tests assert old timeout | Medium | grep for '5000' first | git stash |
 | Middleware breaks silently | Low | run full suite, not just auth | git stash |
-| Build fails — type mismatch | Low | tsc --noEmit before commit | fix types |
+| Build fails  type mismatch | Low | tsc --noEmit before commit | fix types |
 
 ### Pre-Implementation Checklist
 □ Grep confirms exact file paths
@@ -173,17 +173,17 @@ For each attack that lands: revise the plan. Keep attacking until nothing new br
 
 ## Plan Templates
 
-### Tier 0 — Trivial
+### Tier 0  Trivial
 ```markdown
-## Plan — [task] — Tier 0
-Target: [file]:[line] — [exact change]
+## Plan  [task]  Tier 0
+Target: [file]:[line]  [exact change]
 Tests affected: none / [specific test]
 Proceed immediately.
 ```
 
-### Tier 1 — Moderate
+### Tier 1  Moderate
 ```markdown
-## Plan — [task] — Tier 1
+## Plan  [task]  Tier 1
 
 ### Context
 [What currently exists, what needs to change]
@@ -203,18 +203,18 @@ Proceed immediately.
 - Expected: [N/N pass, 0 lint warnings, clean types]
 ```
 
-### Tier 2 — High Stakes
+### Tier 2  High Stakes
 ```markdown
-## Plan — [task] — Tier 2 ⚠️ HIGH STAKES
+## Plan  [task]  Tier 2 ⚠️ HIGH STAKES
 
 ### Scope
 [What this changes in production behavior, who is affected]
 
 ### Context
-[Full background — what exists, what broke, what the business needs]
+[Full background  what exists, what broke, what the business needs]
 
 ### Approach
-[Detailed paragraph — design decision rationale, tradeoffs, why now]
+[Detailed paragraph  design decision rationale, tradeoffs, why now]
 
 ### Alternatives Considered
 | Approach | Pros | Cons | Decision |
@@ -230,7 +230,7 @@ Proceed immediately.
 
 ### Pre-flight Checklist
 □ Backup strategy: [what]
-□ Feature flag: [yes/no — why]
+□ Feature flag: [yes/no  why]
 □ Migration reversible: [yes/no]
 □ Rollback tested on staging: [yes/no]
 □ Monitoring in place: [yes/no]
@@ -269,5 +269,5 @@ Present this plan. Wait for explicit approval. Do not proceed.
 - Always specify exact file AND line number, not just filename
 - Always include a rollback for Tier 2
 - Always include the exact test command and expected pass count
-- Never start implementation — return the plan only
+- Never start implementation  return the plan only
 - If you don't have enough information to write a specific plan → say what's missing

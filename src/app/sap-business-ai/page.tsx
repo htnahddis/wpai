@@ -29,7 +29,7 @@ export default function SapBusinessAiPage() {
   return (
     <div className="bg-white text-[#191923] selection:bg-[#F0EFFF] selection:text-[#1B1466]">
       {/* =========================================================================
-          1. HERO — Display Proportions + Modern Clean Feel (No Eyebrows)
+          1. HERO  Display Proportions + Modern Clean Feel (No Eyebrows)
           ========================================================================= */}
       <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 border-b border-[#E9E9EF]">
         <div className="max-w-[1240px] mx-auto px-6">
@@ -97,11 +97,10 @@ export default function SapBusinessAiPage() {
                     key={scenario.id}
                     type="button"
                     onClick={() => setActiveScenarioId(scenario.id)}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                      isActive
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${isActive
                         ? "bg-white text-[#1B1466] shadow-xs border border-[#1B1466]/30 font-medium ring-1 ring-[#1B1466]/10"
                         : "text-[#777783] hover:text-[#191923] hover:bg-white/60"
-                    }`}
+                      }`}
                   >
                     {scenario.name}
                   </button>
@@ -177,7 +176,7 @@ export default function SapBusinessAiPage() {
       </section>
 
       {/* =========================================================================
-          3. BENTO GRID — Why Enterprise Leaders Choose Percipere
+          3. BENTO GRID  Why Enterprise Leaders Choose Percipere
           ========================================================================= */}
       <MondayWhyChooseGrid />
 
@@ -319,7 +318,7 @@ export default function SapBusinessAiPage() {
       <EcosystemStrip current="SAP Business AI" />
 
       {/* =========================================================================
-          Connected SAP Ecosystem — Nymeria Grid (200+ Enterprise Connectors)
+          Connected SAP Ecosystem  Nymeria Grid (200+ Enterprise Connectors)
           ========================================================================= */}
       <MondayNymeriaIntegrations onOpenModal={() => setModalOpen(true)} />
 

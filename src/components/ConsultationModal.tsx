@@ -32,7 +32,7 @@ export default function ConsultationModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#000000]/40 backdrop-blur-sm animate-in fade-in duration-200">
-      <div 
+      <div
         className="relative w-full max-w-lg bg-white rounded-2xl shadow-preview border border-[#E9E9EF] p-7 md:p-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -132,9 +132,9 @@ export default function ConsultationModal({
                     onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                     className="w-full px-3.5 py-2.5 text-sm bg-[#F8F8FA] border border-[#E9E9EF] rounded-xl focus:outline-none focus:border-[#00B7FF] focus:bg-white transition-all text-[#191923]"
                   >
-                    <option value="PerciXpert SAP Delivery">PerciXpert — SAP Implementation</option>
-                    <option value="PerciServe Support Suite">PerciServe — Support &amp; AMS</option>
-                    <option value="PerciHub AI Agents">PerciHub — Business AI Agents</option>
+                    <option value="PerciXpert SAP Delivery">PerciXpert  SAP Implementation</option>
+                    <option value="PerciServe Support Suite">PerciServe  Support &amp; AMS</option>
+                    <option value="PerciHub AI Agents">PerciHub  Business AI Agents</option>
                     <option value="xP&amp;A &amp; EPM">xP&amp;A &amp; EPM Planning</option>
                     <option value="SAP Business AI &amp; Joule">SAP Business AI &amp; Joule</option>
                     <option value="Enterprise AI Acceleration">AI Acceleration &amp; PerciSuite</option>

@@ -104,7 +104,7 @@ verify_typescript() {
       echo "$output" | head -20
     fi
   else
-    log_warn "No ESLint config found — skipping lint"
+    log_warn "No ESLint config found  skipping lint"
   fi
 
   # Tests
@@ -127,7 +127,7 @@ verify_typescript() {
       echo "$output" | tail -30
     fi
   else
-    log_warn "No test runner found — skipping tests"
+    log_warn "No test runner found  skipping tests"
   fi
 }
 
@@ -149,7 +149,7 @@ verify_python() {
       echo "$output" | head -20
     fi
   else
-    log_warn "mypy not found — skipping type check"
+    log_warn "mypy not found  skipping type check"
   fi
 
   # Lint
@@ -169,7 +169,7 @@ verify_python() {
       echo "$output" | head -20
     fi
   else
-    log_warn "No linter found — skipping lint"
+    log_warn "No linter found  skipping lint"
   fi
 
   # Tests
@@ -183,7 +183,7 @@ verify_python() {
       echo "$output" | tail -30
     fi
   else
-    log_warn "pytest not found — skipping tests"
+    log_warn "pytest not found  skipping tests"
   fi
 }
 
@@ -246,7 +246,7 @@ verify_go() {
       echo "$output" | head -20
     fi
   else
-    log_warn "staticcheck not found — skipping (install: go install honnef.co/go/tools/cmd/staticcheck@latest)"
+    log_warn "staticcheck not found  skipping (install: go install honnef.co/go/tools/cmd/staticcheck@latest)"
   fi
 
   log_info "Step 3/3: Tests (go test)"
@@ -279,7 +279,7 @@ case "$LANG" in
     log_info "Supported: typescript, python, rust, go"
     log_info "Usage: bash verify.sh typescript"
     echo ""
-    echo "VERDICT: UNKNOWN — language not identified"
+    echo "VERDICT: UNKNOWN  language not identified"
     exit 1
     ;;
 esac

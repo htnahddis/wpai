@@ -60,7 +60,7 @@ Constructed fresh for each task. Maximum specificity.
 - Tests: [test file path]
 
 ## Constraints
-- [what NOT to do — specific]
+- [what NOT to do  specific]
 - [what to keep unchanged]
 - [scope limit: "only touch files in src/auth/"]
 
@@ -70,10 +70,10 @@ Constructed fresh for each task. Maximum specificity.
 - [recent git changes if relevant]
 
 ## Output Format
-[exact format — with an example when non-obvious]
+[exact format  with an example when non-obvious]
 
 ## Tier
-[0 / 1 / 2] — [brief justification]
+[0 / 1 / 2]  [brief justification]
 ```
 
 ### Example: Bug Fix Task
@@ -86,18 +86,18 @@ Users are being logged out after 5 seconds.
 ## Files
 - Target: src/auth/session.ts (timeout constant is at line 23)
 - Test: src/auth/session.test.ts (assertion at line 47 needs update)
-- Config: tsconfig.json (strict mode — types must be correct)
+- Config: tsconfig.json (strict mode  types must be correct)
 
 ## Constraints
 - Only touch these 2 files
 - Don't refactor session module (out of scope)
-- Don't change other timeout values (there are 3 others — leave them)
+- Don't change other timeout values (there are 3 others  leave them)
 - Conventional commit format: "fix: increase session timeout to 30s"
 
 ## Context
 - Recon found: SESSION_TIMEOUT = 5_000 at session.ts:23
-- Test at session.test.ts:47 asserts toBe(5000) — must update
-- 2 middleware files import session.ts — they'll need full suite run
+- Test at session.test.ts:47 asserts toBe(5000)  must update
+- 2 middleware files import session.ts  they'll need full suite run
 - Last change to auth.ts: 6 weeks ago (unrelated)
 
 ## Output Format
@@ -110,7 +110,7 @@ Users are being logged out after 5 seconds.
 VERDICT: PASS
 
 ## Tier
-1 — moderate, 2 files, clear scope, low risk
+1  moderate, 2 files, clear scope, low risk
 ```
 
 ---
@@ -122,14 +122,14 @@ Minimal context injected at spawn time or after context compression.
 ### For a conditional subagent
 
 ```markdown
-## Session Context — [agent name]
+## Session Context  [agent name]
 
 ### Memory
 - SESSION_TIMEOUT at src/auth/session.ts:23 (confirmed via grep)
-- Test at session.test.ts:47 (asserts old value — needs update)
+- Test at session.test.ts:47 (asserts old value  needs update)
 
 ### Session Failures
-- Tried editing config.ts — wrong file, SESSION_TIMEOUT not there
+- Tried editing config.ts  wrong file, SESSION_TIMEOUT not there
   → Do NOT touch config.ts
 
 ### Current Task State
@@ -145,7 +145,7 @@ Minimal context injected at spawn time or after context compression.
 ### For Long Sessions (after context compression)
 
 ```markdown
-## Session Summary — [timestamp]
+## Session Summary  [timestamp]
 
 ### What we've established
 - Bug: SESSION_TIMEOUT is 5_000 but should be 30_000
@@ -154,7 +154,7 @@ Minimal context injected at spawn time or after context compression.
 - Scope confirmed: only 2 files need changing
 
 ### Session failures
-- config.ts was a dead end — do not retry
+- config.ts was a dead end  do not retry
 
 ### Status
 General agent implementing now. Verify pending.
@@ -166,8 +166,8 @@ General agent implementing now. Verify pending.
 
 ### Tier 0 (trivial) → `direct`
 ```
-[Layer 1: SKILL.md — already loaded]
-[Layer 2: task only — 3-5 lines]
+[Layer 1: SKILL.md  already loaded]
+[Layer 2: task only  3-5 lines]
 ```
 No subagents. No multi-step plan. Tool calls ≤5. Full suite never required.
 
@@ -229,7 +229,7 @@ Do NOT edit anything.
 
 ### Bug Fix
 ```
-Goal: Fix [symptom] — [suspected cause]
+Goal: Fix [symptom]  [suspected cause]
 Files: [target] + [test]
 Constraint: Stay in these files
 Output: What Changed + Evidence + VERDICT
@@ -248,7 +248,7 @@ Tier: 1 or 2 depending on auth/security involvement
 ### Refactor
 ```
 Goal: Refactor [what] to [why]
-Files: [all affected files — be exhaustive]
+Files: [all affected files  be exhaustive]
 Constraint: No behavior changes, tests must pass unchanged
 Output: What Changed + Evidence (before/after pass counts) + VERDICT
 Tier: 2 if production module, 1 otherwise

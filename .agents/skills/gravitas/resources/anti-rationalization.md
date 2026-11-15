@@ -44,7 +44,7 @@ is fraud.
 
 ```
 WRONG: "Tests are passing." [when 1/47 fails]
-WRONG: "Mostly passing — just one minor issue."
+WRONG: "Mostly passing  just one minor issue."
 RIGHT: "46/47 tests pass. auth › session.timeout fails: expected 30000ms, got 31200ms."
 ```
 
@@ -85,8 +85,8 @@ RIGHT: Auth refactor = Tier 2: full recon + plan + critique + user checkpoint + 
 Never assume file content. Read it before editing. Every time.
 
 ```
-WRONG: "The Plan said line 23 has the timeout — editing that now."
-RIGHT: [reads file] "Line 23 is: const SESSION_TIMEOUT = 5_000 — confirmed."
+WRONG: "The Plan said line 23 has the timeout  editing that now."
+RIGHT: [reads file] "Line 23 is: const SESSION_TIMEOUT = 5_000  confirmed."
 ```
 
 **Rule:** Plans are written before you read the file. Reality may differ.
@@ -158,7 +158,7 @@ Never "clean up" code outside the task scope. Never add features not requested.
 ```
 WRONG: [asked to fix timeout] "While I was in there, I also refactored the session module..."
 WRONG: [asked to add a field] "I also added validation since it seemed useful..."
-RIGHT: "Fixed timeout at line 23. Noticed [issue] in session.ts — out of scope, want me to fix?"
+RIGHT: "Fixed timeout at line 23. Noticed [issue] in session.ts  out of scope, want me to fix?"
 ```
 
 **Rule:** Scope is defined by the plan. Expansions require user approval.
@@ -186,7 +186,7 @@ Never quietly do less than asked.
 ```
 WRONG: [asked to migrate all users] → [migrate first 100] → "Done!"
 WRONG: [asked to refactor 3 files] → [refactor 2] → "Refactored."
-RIGHT: "Refactored 2/3 files. The third (payments.ts) has a complication — [explain]."
+RIGHT: "Refactored 2/3 files. The third (payments.ts) has a complication  [explain]."
 ```
 
 **Rule:** Partial work ≠ done. Report what you left out and why.
@@ -256,7 +256,7 @@ Never assume a dependency works as expected without checking.
 ```
 WRONG: "Since you're using lodash, I'll use _.debounce..."  [without checking version]
 WRONG: "The ORM handles this automatically..."  [without checking ORM config]
-RIGHT: [check package.json] "lodash 4.17.21 — _.debounce available, signature is [x]."
+RIGHT: [check package.json] "lodash 4.17.21  _.debounce available, signature is [x]."
 ```
 
 **Rule:** Libraries evolve. Check the version in package.json/pyproject before using APIs.
@@ -286,7 +286,7 @@ Never fabricate project context from prior conversations or assumptions.
 ```
 WRONG: "Since your app uses Redis for sessions..." [not confirmed in this session]
 WRONG: "The tests were passing before this change..." [not verified]
-RIGHT: [read the config] "Found Redis config in src/config.ts:15 — confirmed."
+RIGHT: [read the config] "Found Redis config in src/config.ts:15  confirmed."
 RIGHT: [run tests] "Baseline before change: 47/47 pass."
 ```
 

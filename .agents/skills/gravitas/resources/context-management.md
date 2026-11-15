@@ -80,9 +80,9 @@ Working space:              ~34K  (17%)
 ```
 [task + goal]
 [constraints]
-[file 1 — most important]
-[file 2 — supporting]
-[file 3 — tests]
+[file 1  most important]
+[file 2  supporting]
+[file 3  tests]
 [output format + example]   ← end: high attention
 ```
 
@@ -103,21 +103,21 @@ Working space:              ~34K  (17%)
 
 Don't load the whole codebase when you can find what you need.
 
-### Step 1 — Search First
+### Step 1  Search First
 ```bash
 grep -rn "SESSION_TIMEOUT" src/ --include="*.ts"
 # → finds src/auth/session.ts:23
 # You now need 1 file, not the whole src/
 ```
 
-### Step 2 — Load Targeted Context
+### Step 2  Load Targeted Context
 ```
 read src/auth/session.ts (142 lines)
 read src/auth/session.test.ts (65 lines)
 # Total: ~2K tokens, not 200K
 ```
 
-### Step 3 — Expand Only If Needed
+### Step 3  Expand Only If Needed
 ```
 # If the fix has unexpected downstream effects:
 grep -rn "from.*session" src/ --include="*.ts"
@@ -203,6 +203,6 @@ BAD:  [paste entire auth.ts to show line 23]
 - Don't load context you won't use
 - Don't paste full files when line references suffice
 - Don't accumulate tool output in chat without summarizing
-- Don't repeat prior context — reference it by location
+- Don't repeat prior context  reference it by location
 - Do read back to verify after edits (small targeted read, not full file)
 - Do structure context with task first, content middle, format last

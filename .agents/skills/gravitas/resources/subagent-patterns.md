@@ -31,7 +31,7 @@ Would the results dump fill my context window unnecessarily?
 |----------|--------|
 | Single file lookup | Act directly |
 | Find a symbol in known file | Act directly (grep) |
-| Unknown codebase — need to map | Spawn Explore |
+| Unknown codebase  need to map | Spawn Explore |
 | Multi-file refactor | Spawn Plan → General → Verify |
 | Independent feature areas | Spawn parallel General agents |
 | Complex architecture decision | Spawn Plan with adversarial mode |
@@ -78,13 +78,13 @@ Explore  →│                                  → Synthesize
 # Step 1
 explore_result = spawn(Explore, task="Map full codebase")
 
-# Step 2 (parallel — A and B are independent)
+# Step 2 (parallel  A and B are independent)
 [plan_A, plan_B] = spawn_parallel([
   Plan(task="Plan feature A"),
   Plan(task="Plan feature B"),
 ])
 
-# Step 3 (parallel — A and B are independent)
+# Step 3 (parallel  A and B are independent)
 [impl_A, impl_B] = spawn_parallel([
   General(task="Implement A", plan=plan_A),
   General(task="Implement B", plan=plan_B),
@@ -102,7 +102,7 @@ explore_result = spawn(Explore, task="Map full codebase")
 Use when you want to keep a subtask's file dumps out of your context.
 
 ```
-# Your context stays clean — fork handles the dump
+# Your context stays clean  fork handles the dump
 fork_result = spawn(fork, task="Find all usages of deprecated API")
 # fork returns: summary of findings, not raw file content
 ```
@@ -143,8 +143,8 @@ Every dispatch message must include:
 **Task:** Update SESSION_TIMEOUT from 5_000 to 30_000ms.
 **Scope:** src/auth/session.ts and src/auth/session.test.ts
 **Plan:**
-  1. src/auth/session.ts:23 — change constant value
-  2. src/auth/session.test.ts:47 — update assertion to toBe(30_000)
+  1. src/auth/session.ts:23  change constant value
+  2. src/auth/session.test.ts:47  update assertion to toBe(30_000)
 **Constraints:**
   - Stay in these two files only
   - Do not refactor unrelated code
@@ -172,10 +172,10 @@ Every dispatch message must include:
 
 When an agent reports back:
 
-1. **Read the VERDICT first** — is it PASS or FAIL?
+1. **Read the VERDICT first**  is it PASS or FAIL?
 2. **If FAIL** → diagnose from the output, dispatch General for fix
-3. **Don't relay raw file dumps** — synthesize findings
-4. **Resolve conflicts** — if two agents disagree, reason through it explicitly
+3. **Don't relay raw file dumps**  synthesize findings
+4. **Resolve conflicts**  if two agents disagree, reason through it explicitly
 
 ### Synthesis Pattern
 
@@ -194,9 +194,9 @@ Verify confirms: VERDICT: PASS, 47/47 tests, lint clean
 
 ## Agent Communication Rules
 
-- Never fabricate an agent's results — wait for actual output
+- Never fabricate an agent's results  wait for actual output
 - Never mark task complete before Verify issues VERDICT: PASS
-- If a spawned agent is stuck, don't re-ask the same question — adjust
+- If a spawned agent is stuck, don't re-ask the same question  adjust
 - Relay conclusions, not file dumps, to the user
 - Maximum fix cycles: 3. After 3 FAIL verdicts, escalate to user
 

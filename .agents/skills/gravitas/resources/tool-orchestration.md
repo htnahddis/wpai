@@ -13,12 +13,12 @@ Independent tool calls run in one batch. Sequential is the wrong default.
 ```
 Task: "Fix auth bug"
 
-WRONG (sequential — 3 round-trips):
+WRONG (sequential  3 round-trips):
   turn 1: read src/auth.ts
   turn 2: read src/auth.test.ts
   turn 3: grep SESSION_TIMEOUT src/
 
-RIGHT (parallel — 1 round-trip):
+RIGHT (parallel  1 round-trip):
   turn 1: [read src/auth.ts] + [read src/auth.test.ts] + [grep SESSION_TIMEOUT src/]
 ```
 
@@ -106,7 +106,7 @@ Read lines 100–120 (related section)
 ### Exact symbol search
 ```bash
 grep -rn "functionName\b" src/ --include="*.ts"
-# \b = word boundary — avoids matching functionNameExtra
+# \b = word boundary  avoids matching functionNameExtra
 ```
 
 ### File pattern search
@@ -118,7 +118,7 @@ find src/ -name "auth*" -type f
 ### Content + context
 ```bash
 grep -rn "SESSION_TIMEOUT" src/ -A 3 -B 3
-# -A 3: 3 lines after, -B 3: 3 lines before — see context
+# -A 3: 3 lines after, -B 3: 3 lines before  see context
 ```
 
 ### Multi-pattern
@@ -166,7 +166,7 @@ Never write to a file you haven't read in this session
 
 ### Edit precision
 ```
-Target exact lines/content — not approximate
+Target exact lines/content  not approximate
 If the edit tool takes a search-replace:
   Search: exact string including whitespace
   Replace: exact new string
@@ -227,7 +227,7 @@ vitest run          → check output → record counts
 
 ### Phase: Report
 ```
-No tool calls needed — synthesize from collected outputs
+No tool calls needed  synthesize from collected outputs
 Lead with verdict, evidence second, details third
 ```
 

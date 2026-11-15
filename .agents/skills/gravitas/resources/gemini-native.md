@@ -39,7 +39,7 @@ GOOD: "Review this TypeScript file for bugs and security issues.
 
 ---
 
-## 3. Few-Shot Examples — Gemini's Strongest Lever
+## 3. Few-Shot Examples  Gemini's Strongest Lever
 
 When defining output format, show one concrete example. Gemini calibrates to
 examples far more reliably than abstract descriptions.
@@ -85,7 +85,7 @@ are less effective on Gemini than markdown headings.
 
 ---
 
-## 5. Context Window — Large, But Use Wisely
+## 5. Context Window  Large, But Use Wisely
 
 Current Pro-class models offer very large context windows (order of 1M
 tokens; verify the exact limit for the model revision you run). Key
@@ -135,10 +135,10 @@ Gemini can execute independent tool calls in parallel in one response.
 This is the single biggest performance multiplier in GRAVITAS.
 
 ```python
-# GOOD — parallel, one response
+# GOOD  parallel, one response
 [read auth.ts] + [read auth.test.ts] + [grep SESSION_TIMEOUT src/]
 
-# BAD — sequential, three round-trips
+# BAD  sequential, three round-trips
 [read auth.ts]
 → wait →
 [read auth.test.ts]  
@@ -247,7 +247,7 @@ prompt structure and output-length constraints first; they vary the most.
 
 **Don't:**
 - Use XML tags as primary structure (works but suboptimal)
-- Ask for "step-by-step" reasoning (it reasons internally — just give space)
+- Ask for "step-by-step" reasoning (it reasons internally  just give space)
 - Dump the whole codebase then ask a simple question (mid-context degradation)
 - Use very high temperature for code (hallucination risk)
 - Pad prompts with persona setup ("You are an expert...")
