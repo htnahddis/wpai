@@ -22,7 +22,7 @@ export const AI_ENGAGEMENT_MODELS = [
   },
   {
     code: "MODEL 02",
-    title: "Pre-Built PerciSuite Tools",
+    title: "Pre-Built PerciServe Tools",
     color: "#00B7FF",
     desc: "Ready-to-deploy applications that plug directly into SAP to solve common operational bottlenecks in weeks.",
     benefit: "Rapid ROI in under 90 days",

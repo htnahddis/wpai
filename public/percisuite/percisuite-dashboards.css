@@ -1,0 +1,646 @@
+/* Percipere PerciSuite Dashboards Cloned Styles */
+
+.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}
+
+
+  /* Mobile Header CSS DO NOT REMOVE! [Start] */
+  .nav_menu-mobile {
+    overflow-x: hidden !important; 
+  }
+
+  .mobile_menu-page,
+  .mobile_menu-back-wrapper,
+  .mobile_menu-heading {
+    display: none !important; 
+    opacity: 0; 
+  }
+
+  @keyframes subtleSlideFade {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes subtleFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .mobile_menu-page.is-open {
+    display: block !important; 
+    animation: subtleSlideFade 0.2s ease-out forwards;
+  }
+
+  .mobile_menu-back-wrapper.is-open {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    animation: subtleFade 0.2s ease-out forwards;
+  }
+
+  .mobile_menu-heading.is-active {
+    display: block !important;
+    animation: subtleFade 0.2s ease-out forwards;
+  }
+
+  .mobile_menu-page.is-open .mobile_menu-heading-wrap,
+  .mobile_menu-page.is-open .mobile-menu_links-wrapper {
+    opacity: 0; 
+    animation: subtleSlideFade 0.3s ease-out forwards;
+  }
+
+  .mobile_menu-page.is-open > div:nth-child(1), .mobile_menu-page.is-open > div > div:nth-child(1) { animation-delay: 0.04s; }
+  .mobile_menu-page.is-open > div:nth-child(2), .mobile_menu-page.is-open > div > div:nth-child(2) { animation-delay: 0.08s; }
+  .mobile_menu-page.is-open > div:nth-child(3), .mobile_menu-page.is-open > div > div:nth-child(3) { animation-delay: 0.12s; }
+  .mobile_menu-page.is-open > div:nth-child(4), .mobile_menu-page.is-open > div > div:nth-child(4) { animation-delay: 0.16s; }
+  .mobile_menu-page.is-open > div:nth-child(5), .mobile_menu-page.is-open > div > div:nth-child(5) { animation-delay: 0.20s; }
+  .mobile_menu-page.is-open > div:nth-child(6), .mobile_menu-page.is-open > div > div:nth-child(6) { animation-delay: 0.24s; }
+  .mobile_menu-page.is-open > div:nth-child(n+7), .mobile_menu-page.is-open > div > div:nth-child(n+7) { animation-delay: 0.28s; }
+
+  .full_mobile-menu-trigger.menu-active {
+    position: relative !important;
+    z-index: 50 !important;
+  }
+/* Mobile Header CSS DO NOT REMOVE! [END] */
+
+
+
+/* START make sure all links are colored and underlined */  
+  :is(.w-richtext a, p a, .text-style-link):not(.section-footer *, .section---mobile-footer *) {
+  color: #6161ff;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+:is(.w-richtext a, p a, .text-style-link):not(.section-footer *, .section---mobile-footer *):is(:hover, :focus-visible) {
+  text-decoration-thickness: 2px;
+}
+/* END make sure all links are colored and underlined */  
+
+
+
+
+#primary_slider .splide__track {
+ overflow: hidden;
+}
+/* Overide default styles so all slides are visible */
+.splide__track {
+ overflow: visible;
+ touch-action: pan-y; /* Prevents scrolling conflicts */
+}
+/* Change button style when disabled */
+.splide button:disabled {
+ opacity: .3;
+ cursor: none;
+}
+
+#thumbnail_slider .splide__arrows {
+	display: none;
+}
+
+
+
+    [fs-marquee-instance],[fs-cnumbercount-instance]{ opacity: 0; }
+    [fs-consent-element="internal-component"],[fs-consent-element="banner"],[fs-consent-element="fixed-preferences"],[fs-consent-element="preferences"],[fs-consent-element="interaction"]{display:none}
+  
+
+/* Tag color styling using CSS variable */
+[data-hp-tag].is-color-active {
+    border-color: var(--tag-color) !important;
+}
+
+[data-hp-tag].is-color-active svg {
+    color: var(--tag-color) !important;
+}
+
+[data-hp-tag].is-color-active-with-checkbox [checkbox] {
+    border-color: var(--tag-color) !important;
+}
+
+[data-hp-tag].is-color-active-with-checkbox [checkbox] > div {
+    border-color: var(--tag-color) !important;
+}
+
+/* Button gradient background */
+[data-button-type="signup"].has-gradient-background {
+    background: var(--button-gradient);
+}
+
+[data-selectable-tags-grid] [data-button-type="signup"] {
+    position: relative;
+}
+
+[data-selectable-tags-grid] [data-button-type="signup"]::before {
+    content: "";
+    position: absolute;
+    background-color: var(--square-color);
+    border-radius: 2px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+[data-selectable-tag-wrapper][updated-expirence].is-active {
+    border-color: hsla(240, 100.00%, 69.02%, 1.00);
+    background-color: hsla(240, 100.00%, 93.00%, 1.00);
+    color: hsla(240, 100.00%, 69.02%, 1.00);
+}
+
+[data-selectable-tag-wrapper][updated-expirence] [checkbox].is-checked {
+    border-color: hsla(240, 100.00%, 69.02%, 1.00);
+    background-color: hsla(240, 100.00%, 69.02%, 1.00);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+[data-product-id="crm"] [data-selectable-tag-wrapper][updated-expirence].is-active {
+    border-color: #00D2D2;
+    background-color: #E1EFF2;
+    color: #007F9B;
+}
+
+[data-product-id="crm"] [data-selectable-tag-wrapper][updated-expirence] [checkbox].is-checked {
+    border-color: #00D2D2;
+    background-color: #00D2D2;
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.tag-animation::before {
+    z-index: -1;
+    width: 20px;
+    height: 20px;
+    animation: tagAnimation 0.5s 1;
+    animation-fill-mode: both;
+}
+
+@keyframes tagAnimation {
+    0% {
+        transform: translate(-50%, 0) rotate(24deg) scale(0.2);
+        animation-timing-function: linear;
+    }
+
+    25% {
+        transform: translate(-50%, -18px) rotate(24deg) scale(1);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: translate(-50%, -36px) rotate(24deg) scale(1);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translate(-50%, 0) rotate(0) scale(1);
+        animation-timing-function: linear;
+    }
+}
+
+/* Breathe animation for grid */
+[data-hp-tags-grid].breathe {
+    animation: breathe 0.3s linear;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+.shake-button {
+    animation: shakeAnimation 0.5s 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shakeAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.05);
+    }
+
+    35% {
+        transform: scale(0.989);
+    }
+
+    67.5% {
+        transform: scale(1.005);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.loading-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  z-index: 9999;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.loading-screen-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.loading-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.loading-screen-image {
+  max-width: 348px;
+  max-height: 240px;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+.loading-screen-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: #333333;
+  line-height: 1.3;
+}
+
+.loading-screen-text:first-of-type {
+  margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .loading-screen-image {
+    max-width: 250px;
+    max-height: 180px;
+    margin-bottom: 24px;
+  }
+
+  .loading-screen-text {
+    font-size: 1.25rem;
+  }
+}
+
+
+.accordion-item-crm.is-open .accordion-body{
+    height: auto;
+}
+
+.accordion-item-crm.is-open .title-after{
+    display: flex;
+}
+.accordion-item-crm.is-open .title-before{
+    display: none;
+}
+
+.accordion-item-crm.is-open .accordion-item-content{
+    opacity: 1;
+    top: 0;
+}
+
+.accordion-body p{
+    color: inherit;
+}
+
+
+.magic-bounce {
+	animation: magic-bounce-scale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[class*="Magic_w-variant-"].cta-fade {
+	opacity: 0.4;
+}
+
+@keyframes magic-bounce-scale {
+	0% {
+		transform: scale(1);
+	}
+	40% {
+		transform: scale(1.01);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+/* Port of the Generator's amanda-meeting-wizard emotion styles — values kept 1:1.
+   Classes are amw- prefixed so Webflow site classes can't collide with them. */
+
+.amw-wizard {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  font-family: "Poppins", "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+/* Mirrors the Generator's global `*` rule. It also reaches the <elevenlabs-convai> host,
+   where page styles beat the widget's own :host font, so the chat inherits Poppins too. */
+.amw-wizard * {
+  font-family: "Poppins", "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+}
+
+.amw-wizard *,
+.amw-wizard *::before,
+.amw-wizard *::after {
+  box-sizing: border-box;
+}
+
+@keyframes amw-wizard-header-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.amw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 45px 24px 69px;
+}
+
+.amw-wizard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.amw-wizard-eyebrow {
+  margin: 0;
+  font-size: 18px;
+  line-height: 20.7px;
+  color: #333333;
+  text-align: center;
+  animation: amw-wizard-header-fade-in 300ms ease-out;
+}
+
+.amw-wizard-eyebrow:empty::before {
+  content: "\00a0";
+}
+
+.amw-wizard-title {
+  margin: 0;
+  font-size: 38px;
+  line-height: 38px;
+  font-weight: 500;
+  color: #323338;
+  text-align: center;
+  animation: amw-wizard-header-fade-in 300ms ease-out;
+}
+
+/* Stepper */
+
+.amw-stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.amw-step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  user-select: none;
+}
+
+.amw-step-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.amw-step-label {
+  margin-top: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.amw-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6161ff;
+}
+
+.amw-step-check {
+  width: 11px;
+  height: auto;
+  display: block;
+}
+
+.amw-step-check path {
+  fill: currentColor;
+}
+
+.amw-step-indicator--pending .amw-step-circle {
+  background: #e6e7ea;
+  color: #ffffff;
+}
+
+.amw-step-indicator--pending .amw-step-label {
+  color: #cacbcd;
+}
+
+.amw-step-indicator--active .amw-step-circle {
+  background: #ffffff;
+  border: 2px solid #6161ff;
+}
+
+.amw-step-indicator--active .amw-step-label {
+  color: #6161ff;
+}
+
+.amw-step-indicator--completed .amw-step-circle {
+  background: #6161ff;
+  color: #ffffff;
+}
+
+.amw-step-indicator--completed .amw-step-label {
+  color: #6161ff;
+}
+
+/* Muted variant — a previous step is locked (e.g. AE URL granted): checkmark stays but color desaturates */
+.amw-step-indicator--muted.amw-step-indicator--completed .amw-step-circle {
+  background: #cacbcd;
+}
+
+.amw-step-indicator--muted .amw-step-label {
+  color: #cacbcd;
+}
+
+.amw-step-connector {
+  width: 120px;
+  height: 1px;
+  margin-top: 9.5px;
+  background: #e6e7ea;
+  flex-shrink: 0;
+}
+
+.amw-step-connector--completed {
+  background: #6161ff;
+}
+
+/* Agent chat step */
+
+.amw-chat-container {
+  width: 100%;
+  max-width: 747px;
+  min-height: 546px;
+  background: #f8f9fa;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translate(0);
+}
+
+.amw-chat-container elevenlabs-convai {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: var(--convai-widget-height, 100%);
+}
+
+/* Meet with us step */
+
+.amw-chilipiper-container {
+  width: 100%;
+  max-width: 747px;
+  height: 546px;
+  background: #f8f9fa;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.amw-chilipiper-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ChiliPiper has a 92px header buffer on the booking screen — crop it out */
+.amw-chilipiper-iframe--hide-header {
+  position: absolute;
+  top: -92px;
+  height: calc(100% + 92px);
+}
+
+/* Thank you step */
+
+.amw-thank-you-container {
+  width: 100%;
+  max-width: 747px;
+  min-height: 546px;
+  background: #f8f9fa;
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  align-items: stretch;
+}
+
+.amw-thank-you-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  gap: 8px;
+}
+
+.amw-thank-you-badge-image {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.amw-thank-you-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #323338;
+  text-align: center;
+  max-width: 480px;
+}
+
+.amw-thank-you-subtitle {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+}
+
+.amw-thank-you-help-center,
+.amw-thank-you-disclaimer {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7c7b7b;
+  text-align: center;
+  max-width: 520px;
+}
+
+.amw-thank-you-help-center {
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.amw-thank-you-help-center-link {
+  color: #6161ff;
+  text-decoration: underline;
+}
+
+.amw-thank-you-disclaimer {
+  margin-top: 8px;
+  padding-bottom: 8px;
+}
+
+

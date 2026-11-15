@@ -8,27 +8,27 @@ interface MondayEnterpriseTrustSectionProps {
 }
 
 export default function MondayEnterpriseTrustSection({ onOpenModal }: MondayEnterpriseTrustSectionProps) {
-  const baseAssetPath = "/The%20AI%20Workspace%20for%20People%20%26%20Agents%20_%20monday.com_files/";
+  const baseAssetPath = "/trust/";
 
   const trustBadges = [
     {
       name: "GDPR",
-      src: `${baseAssetPath}6909c812b47e2c6520f86855_gdpr-logo.png`,
+      src: `${baseAssetPath}gdpr-logo.png`,
       alt: "GDPR Compliant",
     },
     {
       name: "AICPA SOC 2",
-      src: `${baseAssetPath}6909c8121da431cca6be60fb_aicpa-soc2-logo.png`,
+      src: `${baseAssetPath}aicpa-soc2-logo.png`,
       alt: "AICPA SOC 2 Type II Certified",
     },
     {
       name: "ISO 27001",
-      src: `${baseAssetPath}68f62a0bd0c61c457518cca2_iso.png`,
+      src: `${baseAssetPath}iso-logo.png`,
       alt: "ISO 27001 Information Security",
     },
     {
       name: "HIPAA",
-      src: `${baseAssetPath}6909c78c0f507978af960894_hipa-logo.png`,
+      src: `${baseAssetPath}hipaa-logo.png`,
       alt: "HIPAA Compliant",
     },
   ];
@@ -109,7 +109,7 @@ export default function MondayEnterpriseTrustSection({ onOpenModal }: MondayEnte
             {/* Bottom Gartner Logo */}
             <div className="mt-8 pt-6 w-full flex items-center justify-center border-t border-transparent">
               <img
-                src={`${baseAssetPath}6909c6b92cbac229556cbcd3_gartner-logo-black.svg`}
+                src={`${baseAssetPath}gartner-logo-black.svg`}
                 alt="Gartner Logo"
                 loading="lazy"
                 className="h-7 w-auto object-contain"
@@ -142,7 +142,7 @@ export default function MondayEnterpriseTrustSection({ onOpenModal }: MondayEnte
             {/* Bottom Forrester Logo */}
             <div className="mt-8 pt-6 w-full flex items-center justify-center border-t border-transparent">
               <img
-                src={`${baseAssetPath}6909c71959bd3f91bc37f3f6_forrester-logo.svg`}
+                src={`${baseAssetPath}forrester-logo.svg`}
                 alt="Forrester Logo"
                 loading="lazy"
                 className="h-7 w-auto object-contain"

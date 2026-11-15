@@ -124,24 +124,6 @@ export default function InsightsThoughtLeadershipSection({
             </div>
           ))}
         </div>
-
-        {/* Minimalist Bottom Callout */}
-        {bannerText && (
-          <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-[#F8F8FA] border border-[#E9E9EF] text-center sm:text-left shadow-xs">
-            <p className="font-sans text-sm sm:text-base font-normal text-[#191923]">
-              {bannerText}
-            </p>
-
-            <button
-              type="button"
-              onClick={onBannerButtonClick}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#191923] hover:bg-black text-white text-xs sm:text-sm font-medium rounded-full transition-all cursor-pointer shadow-xs active:scale-95 shrink-0"
-            >
-              <span>{bannerButtonText}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

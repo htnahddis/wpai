@@ -16,6 +16,10 @@ const MondayWorkInContextSection = dynamic(
   () => import("@/components/sections/MondayWorkInContextSection"),
   { ssr: false }
 );
+const PerciVerseProductsScrollSection = dynamic(
+  () => import("@/components/sections/PerciVerseProductsScrollSection"),
+  { ssr: false }
+);
 import PerciXpertStagesSection from "@/components/sections/PerciXpertStagesSection";
 import AuctorVisualGallerySection from "@/components/sections/AuctorVisualGallerySection";
 import VerifiedTelemetrySection from "@/components/sections/VerifiedTelemetrySection";
@@ -52,6 +56,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 5. PERCIVERSE PRODUCTS SOLAR SYSTEM SCROLL SECTION */}
+      <PerciVerseProductsScrollSection onOpenModal={() => setModalOpen(true)} />
+
       {/* 5. NYMERIA INTEGRATIONS GRID */}
       <MondayNymeriaIntegrations onOpenModal={() => setModalOpen(true)} />
 
@@ -68,10 +75,6 @@ export default function HomePage() {
 
       {/* 8. SOCIAL PROOF LOGO BAR */}
       <MondayBrandTicker />
-
-      {/* 9. AUCTOR-STYLE 4-COLUMN VISUAL FEATURE GALLERY */}
-      <AuctorVisualGallerySection onOpenModal={() => setModalOpen(true)} />
-
       {/* 11. TESTIMONIAL CAROUSEL */}
       <section className="grey">
         <div className="max-width">

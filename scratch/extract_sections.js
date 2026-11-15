@@ -1,20 +1,41 @@
 const fs = require('fs');
-const html = fs.readFileSync('c:/Users/Aditya/Desktop/Code/CLIENT/percipere/wpai/public/Free AI Agent Builder _ Build your Agents with AI _ monday.com.html', 'utf8');
 
-// Let's find all major headings and their immediate text and parent classes
-const sections = [];
-const hReg = /<(h[1-3])[^>]*class=["']([^"']*)["'][^>]*>([\s\S]*?)<\/\1>/gi;
-let match;
-while ((match = hReg.exec(html)) !== null) {
-  const tag = match[1];
-  const className = match[2];
-  const text = match[3].replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
-  const index = match.index;
-  // Get snippet around this heading (200 chars before, 800 chars after)
-  const snippet = html.slice(Math.max(0, index - 100), Math.min(html.length, index + 800))
-    .replace(/<svg[\s\S]*?<\/svg>/gi, '[SVG]')
-    .replace(/\s+/g, ' ');
-  sections.push({ tag, className, text, index, snippet: snippet.slice(0, 300) });
+const html = fs.readFileSync('public/monday.com _ Dashboards & Reporting.html', 'utf-8');
+
+const startTag = '<section class="m_main-wrapper">';
+const startIdx = html.indexOf(startTag);
+
+// Let's find where m_main-wrapper ends
+// It ends right before the footer or near the end of body
+let endIdx = html.indexOf('<footer', startIdx);
+if (endIdx === -1) {
+  endIdx = html.indexOf('<div class="footer', startIdx);
+}
+if (endIdx === -1) {
+  endIdx = html.indexOf('<!-- START OF FOOTER', startIdx);
+}
+console.log('startIdx:', startIdx, 'endIdx:', endIdx);
+
+let mainContent = '';
+if (endIdx !== -1) {
+  mainContent = html.substring(startIdx + startTag.length, endIdx);
+} else {
+  // Let's search for the closing section of m_main-wrapper
+  const lastSection = html.lastIndexOf('</section>');
+  mainContent = html.substring(startIdx + startTag.length, lastSection);
 }
 
-console.log(JSON.stringify(sections, null, 2));
+console.log('mainContent length:', mainContent.length);
+
+// Count sections
+const sectionMatches = mainContent.match(/<section[\s\S]*?<\/section>/gi) || [];
+console.log('Top-level sections inside wrapper:', sectionMatches.length);
+
+// Let's write out a summary of each section
+sectionMatches.forEach((s, idx) => {
+  const h1 = s.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  const h2 = s.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
+  const h3 = s.match(/<h3[^>]*>([\s\S]*?)<\/h3>/i);
+  const heading = (h1 && h1[1]) || (h2 && h2[1]) || (h3 && h3[1]) || 'No heading';
+  console.log(`[Section ${idx + 1}] Length: ${s.length} | Heading: ${heading.replace(/<[^>]+>/g, '').trim()}`);
+});

@@ -164,35 +164,6 @@ export default function PerciXpertPartnerAdvantageSection({
             </div>
           ))}
         </div>
-
-        {/* Compact Bottom Bar */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-white border border-[#E9E9EF] shadow-xs text-center sm:text-left">
-          <div className="flex items-center gap-6 text-xs sm:text-sm">
-            <div>
-              <span className="font-semibold text-[#191923]">3–5 Wks</span>
-              <span className="text-[#777783] ml-1.5">Scoping</span>
-            </div>
-            <div className="w-px h-4 bg-[#E9E9EF]" />
-            <div>
-              <span className="font-semibold text-[#191923]">Zero</span>
-              <span className="text-[#777783] ml-1.5">Rework Leakage</span>
-            </div>
-            <div className="w-px h-4 bg-[#E9E9EF]" />
-            <div>
-              <span className="font-semibold text-[#191923]">100%</span>
-              <span className="text-[#777783] ml-1.5">Traceability</span>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={onOpenModal}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#191923] hover:bg-black text-white text-xs font-medium rounded-full transition-all cursor-pointer active:scale-95 shrink-0"
-          >
-            <span>Request Walkthrough</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
       </div>
     </section>
   );

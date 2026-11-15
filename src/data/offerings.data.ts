@@ -224,7 +224,7 @@ export const ENTERPRISE_SUITES: ProductSuiteItem[] = [
     highlights: [
       "30-Day Value Blueprint with prioritized use cases",
       "Enterprise data readiness and governance audit",
-      "Pre-built PerciSuite warehouse and estimation tools",
+      "Pre-built PerciServe warehouse and estimation tools",
     ],
     mockBoard: {
       title: "AI Acceleration Roadmap",

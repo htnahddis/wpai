@@ -137,7 +137,7 @@ export default function ConsultationModal({
                     <option value="PerciHub AI Agents">PerciHub  Business AI Agents</option>
                     <option value="xP&amp;A &amp; EPM">xP&amp;A &amp; EPM Planning</option>
                     <option value="SAP Business AI &amp; Joule">SAP Business AI &amp; Joule</option>
-                    <option value="Enterprise AI Acceleration">AI Acceleration &amp; PerciSuite</option>
+                    <option value="Enterprise AI Acceleration">AI Acceleration &amp; PerciServe</option>
                   </select>
                 </div>
               </div>

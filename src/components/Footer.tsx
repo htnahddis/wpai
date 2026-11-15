@@ -33,39 +33,45 @@ export default function Footer() {
 
         {/* Footer Navigation and Links */}
         <div className="max-w-[1240px] mx-auto px-6 border-t border-[#ECEAF8] pt-10 pb-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-0">
             {/* Copyright */}
-            <div className="text-xs text-[#7B789C] font-mono">
+            <div className="text-xs text-[#7B789C] font-mono order-1 lg:order-1">
               &copy; {new Date().getFullYear()} Percipere AI. All rights reserved.
             </div>
 
-            {/* Core Product Links */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm font-medium">
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/agent-studio">
-                Agent Studio
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percixpert">
-                PerciXpert
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/perciserve-support-suite">
-                PerciServe
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percihub-business-suite">
-                PerciHub
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/what-we-do/intelligence-enterprise-offerings/xpa-epm">
-                xP&amp;A / EPM
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/sap-business-ai">
-                SAP Business AI
-              </Link>
-              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration">
-                AI Acceleration
-              </Link>
+            {/* Core Product Links - Two Rows */}
+            <div className="flex flex-col items-center gap-2 text-xs sm:text-sm font-medium order-2 lg:order-2">
+              {/* First Row - 4 Links */}
+              <div className="flex items-center gap-x-6">
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/agent-studio">
+                  Agent Studio
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percixpert">
+                  PerciXpert
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/perciserve-support-suite">
+                  PerciServe
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percihub-business-suite">
+                  PerciHub
+                </Link>
+              </div>
+              {/* Second Row - 3 Links */}
+              <div className="flex items-center gap-x-6">
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/what-we-do/intelligence-enterprise-offerings/xpa-epm">
+                  xP&amp;A / EPM
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/sap-business-ai">
+                  SAP Business AI
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/what-we-do/intelligence-enterprise-offerings/ai-acceleration">
+                  AI Acceleration
+                </Link>
+              </div>
             </div>
 
             {/* Utility / Social Links */}
-            <div className="flex items-center gap-5 text-xs sm:text-sm">
+            <div className="flex items-center gap-5 text-xs sm:text-sm order-3 lg:order-3">
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}

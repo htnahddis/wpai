@@ -10,7 +10,7 @@ interface MondayWorkInContextSectionProps {
 export default function MondayWorkInContextSection({ onOpenModal }: MondayWorkInContextSectionProps) {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
-  const baseAssetPath = "/The%20AI%20Workspace%20for%20People%20%26%20Agents%20_%20monday.com_files/";
+  const baseAssetPath = "/work-in-context/";
 
   const cards = [
     {

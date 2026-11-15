@@ -28,7 +28,7 @@ const IMPACT_CARDS: ImpactCard[] = [
   {
     id: "impact-1",
     type: "quote",
-    theme: "dark",
+    theme: "lavender",
     quote: "We replaced 8 weeks of manual workshop churn with PerciXpert, delivering verified blueprints",
     highlightedText: "in 18 days with zero rework.",
     author: "Marcus Vance",
@@ -69,7 +69,7 @@ const IMPACT_CARDS: ImpactCard[] = [
   {
     id: "impact-4",
     type: "quote",
-    theme: "dark",
+    theme: "mint",
     quote: "During our AMS takeover, PerciXpert's System Audit module surfaced 230+ undocumented Z-table macros",
     highlightedText: "before our contract even began.",
     author: "Elena Rostova",
@@ -217,12 +217,12 @@ export default function PerciXpertImpactSection({
                   key={`${card.id}-${index}`}
                   className={`w-full lg:w-[calc(50%-14px)] flex-shrink-0 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[410px] relative transition-shadow duration-300 shadow-xs hover:shadow-md ${
                     isDark
-                      ? "bg-[#0A0B0E] text-white"
+                      ? "bg-[#191923] text-white"
                       : isLavender
-                      ? "bg-[#F3E3FD] text-[#191923]"
+                      ? "bg-[#F5F5F5] text-[#191923]"
                       : isMint
-                      ? "bg-[#E6F7F0] text-[#191923]"
-                      : "bg-[#EBF3FF] text-[#191923]"
+                      ? "bg-[#F5F5F5] text-[#191923]"
+                      : "bg-[#F5F5F5] text-[#191923]"
                   }`}
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-stretch h-full">
@@ -236,7 +236,7 @@ export default function PerciXpertImpactSection({
                               “
                             </span>
 
-                            <p className="text-base sm:text-[17px] font-normal leading-relaxed text-white/95 mb-6">
+                            <p className="text-base sm:text-[17px] font-normal leading-relaxed text-[#191923] mb-6">
                               {card.quote}{" "}
                               <span className="text-[#FF1F8E] font-medium">
                                 {card.highlightedText}
@@ -244,11 +244,11 @@ export default function PerciXpertImpactSection({
                             </p>
                           </div>
 
-                          <div className="text-xs sm:text-[13px] text-white/70 pt-2">
-                            <span className="text-white font-normal block">
+                          <div className="text-xs sm:text-[13px] text-[#676879] pt-2">
+                            <span className="text-[#191923] font-normal block">
                               - {card.author}
                             </span>
-                            <span className="text-white/60 text-xs">
+                            <span className="text-[#9999A5] text-xs">
                               {card.role}
                             </span>
                           </div>

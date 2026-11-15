@@ -33,15 +33,7 @@ const suites: SuiteData[] = [
     name: 'PerciServe',
     color: '#9475D8',
     category: 'SUPPORT SUITE',
-    description: 'AMS Journey Enhancement | Deflect L1 Tickets | Accelerate L2 and L3 Resolution.',
-    logo: null
-  },
-  {
-    id: 'percisuite',
-    name: 'PerciSuite',
-    color: '#00B7FF',
-    category: 'PRODUCT SUITE',
-    description: 'Industry-specific products | Portfolio: PerciDesk, PerciPlan, PerciBOT, PerciServe, PerciEstimate.',
+    description: 'AMS Journey Enhancement | Deep Telemetry | Live Dashboards & Automated Deflection.',
     logo: '/percibot.png'
   }
 ];
