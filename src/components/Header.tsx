@@ -17,11 +17,6 @@ export default function Header() {
   // Products
   const products = [
     {
-      name: "Agent Studio",
-      href: "/agent-studio",
-      tagline: "No-code autonomous AI agent builder",
-    },
-    {
       name: "PerciXpert",
       href: "/percixpert",
       tagline: "AI implementation engine for SAP S/4HANA",
@@ -32,9 +27,19 @@ export default function Header() {
       tagline: "Enterprise support suite & root-cause analysis",
     },
     {
-      name: "PerciHub",
-      href: "/percihub-business-suite",
-      tagline: "Autonomous business agents for SAP processes",
+      name: "Agentic Studio",
+      href: "/agent-studio",
+      tagline: "No-code autonomous AI agent builder",
+    },
+    {
+      name: "Futuroot",
+      href: "/futuroot",
+      tagline: "Enterprise process mining & adoption telemetry",
+    },
+    {
+      name: "Percibot",
+      href: "/percibot",
+      tagline: "Live dashboards, telemetry & automated reporting",
     },
   ];
 

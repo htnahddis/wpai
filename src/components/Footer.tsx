@@ -41,19 +41,22 @@ export default function Footer() {
 
             {/* Core Product Links - Two Rows */}
             <div className="flex flex-col items-center gap-2 text-xs sm:text-sm font-medium order-2 lg:order-2">
-              {/* First Row - 4 Links */}
-              <div className="flex items-center gap-x-6">
-                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/agent-studio">
-                  Agent Studio
-                </Link>
+              {/* First Row - Core Products */}
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
                 <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percixpert">
                   PerciXpert
                 </Link>
                 <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/perciserve-support-suite">
                   PerciServe
                 </Link>
-                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percihub-business-suite">
-                  PerciHub
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/agent-studio">
+                  Agentic Studio
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/futuroot">
+                  Futuroot
+                </Link>
+                <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percibot">
+                  Percibot
                 </Link>
               </div>
               {/* Second Row - 3 Links */}

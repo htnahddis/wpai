@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Turn SAP work data into real-time clarity. Continuous telemetry, automated ticket deflection, and intelligent root-cause resolution for enterprise SAP landscapes.",
 };
 
-const PerciServeClonedView = dynamic(
+const PercibotClonedView = dynamic(
   () => import("@/components/views/PerciSuiteClonedView"),
   {
     ssr: false,
@@ -26,7 +26,7 @@ export default function PerciSuitePage() {
       className="bg-white text-[#191923] selection:bg-[#F0EFFF] selection:text-[#1B1466]"
       suppressHydrationWarning
     >
-      <PerciServeClonedView />
+      <PercibotClonedView />
     </div>
   );
 }
