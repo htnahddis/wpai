@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light font-sans">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-[#191923] flex flex-col min-h-screen selection:bg-[#F0EFFF] selection:text-[#1B1466]`}>
         <Header />
         <main className="flex-grow">{children}</main>

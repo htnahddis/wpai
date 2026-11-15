@@ -15,6 +15,11 @@ export default function Header() {
   // The 6 verified Percipere pages
   const navPages = [
     {
+      name: "Agent Studio",
+      href: "/agent-studio",
+      tagline: "No-code autonomous AI agent builder",
+    },
+    {
       name: "PerciXpert",
       href: "/percixpert",
       tagline: "AI implementation engine for SAP S/4HANA",

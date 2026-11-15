@@ -1,0 +1,249 @@
+/* monday.com Agent Studio Page Specific Styles */
+.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}
+
+/* Avatar Interaction Styles */
+.agents_avatars-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+@media screen and (max-width: 991px) {
+  .agents_avatars-wrapper {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .agents_avatars-wrapper {
+    display: none !important;
+  }
+  .splide__track {
+    overflow: visible;
+  }
+}
+
+.agen-avatar {
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.08));
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+.agen-avatar:nth-child(7) { 
+  z-index: 100 !important; 
+  position: relative; 
+  transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+.agen-avatar:nth-child(1), .agen-avatar:nth-child(13) { z-index: 10; }
+.agen-avatar:nth-child(2), .agen-avatar:nth-child(12) { z-index: 20; }
+.agen-avatar:nth-child(3), .agen-avatar:nth-child(11) { z-index: 30; }
+.agen-avatar:nth-child(4), .agen-avatar:nth-child(10) { z-index: 40; }
+.agen-avatar:nth-child(5), .agen-avatar:nth-child(9) { z-index: 50; }
+.agen-avatar:nth-child(6), .agen-avatar:nth-child(8) { z-index: 60; }
+
+/* Swiper Coverflow Carousel Styles - Webflow Native 3D */
+.swiper-agents-comp {
+  position: relative;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.agents-carousel {
+  overflow: visible !important;
+  padding: 20px 0 50px 0 !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.agents-carousel:not(.swiper-initialized) {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 520px;
+  overflow: hidden;
+}
+
+.agents-carousel.swiper-initialized {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease;
+}
+
+.agents-carousel .swiper-wrapper.for-agents {
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+}
+
+.agents-carousel .swiper-slide.for-agents {
+  width: 340px !important;
+  height: 500px !important;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .agents-carousel .swiper-slide.for-agents {
+    width: 280px !important;
+    height: 440px !important;
+  }
+}
+
+/* 3D Slide Shadows & Video styling */
+.swiper-slide .ai-agent-26-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  display: block;
+}
+
+/* Hide default SVG if any in swiper navigation */
+[class*="swiper-button"] svg {
+  display: none !important;
+}
+
+/* Navigation button styling & positioning */
+.carousel-button-style-v1 {
+  background-color: #181b34 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 30 !important;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-button-style-v1:hover {
+  opacity: 1 !important;
+  transform: scale(1.08) !important;
+  background-color: #000000 !important;
+}
+
+.carousel-button-style-v1.abs-left {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  left: 1.5rem !important;
+}
+
+.carousel-button-style-v1.abs-right {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  right: 1.5rem !important;
+  left: auto !important;
+}
+
+@media screen and (min-width: 1280px) {
+  .carousel-button-style-v1.abs-left {
+    left: -2.5rem !important;
+  }
+  .carousel-button-style-v1.abs-right {
+    right: -2.5rem !important;
+  }
+}
+
+/* Tabs Display */
+.w-tab-pane {
+  display: none;
+}
+.w-tab-pane.w--tab-active {
+  display: block !important;
+}
+
+/* FAQ Details/Summary Styling */
+.agents-faq_item summary::-webkit-details-marker {
+  display: none;
+}
+.agents-faq_item summary {
+  list-style: none;
+  cursor: pointer;
+}
+.agents-faq_item[open] .agents-faq_chevron {
+  transform: rotate(180deg);
+}
+.agents-faq_chevron {
+  transition: transform 0.25s ease;
+}
+
+/* =========================================================
+   Enterprise Agents - Interactive Sticky Scroll Stack
+   ========================================================= */
+.percipere-enterprise-stack-section {
+  position: relative;
+  z-index: 5;
+}
+
+.percipere-scroll-stack {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3.5rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.percipere-scroll-stack .agents_readymade-card {
+  position: sticky !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.3) !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2rem !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+@media screen and (max-width: 991px) {
+  .percipere-scroll-stack .agents_readymade-card {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+.percipere-scroll-stack .stack-card-1 {
+  top: 90px !important;
+  z-index: 10 !important;
+}
+
+.percipere-scroll-stack .stack-card-2 {
+  top: 115px !important;
+  z-index: 20 !important;
+}
+
+.percipere-scroll-stack .stack-card-3 {
+  top: 140px !important;
+  z-index: 30 !important;
+}
+
+.percipere-scroll-stack .stack-card-4 {
+  top: 165px !important;
+  z-index: 40 !important;
+}
+
+.percipere-scroll-stack .agents_readymade-grid-image-wrapper {
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 1.5rem !important;
+}
+
+.percipere-scroll-stack .agents_readymade-grid-image {
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  max-height: 380px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}

@@ -12,8 +12,8 @@ export default function Footer() {
     <>
       <footer className="w-full bg-white text-[#1B1466] pt-14 sm:pt-20 pb-10 border-t border-[#ECEAF8] overflow-hidden">
         {/* Top CTA Banner in Soft Purple Tinted Card */}
-        <div className="max-w-[1240px] mx-auto px-6 mb-14 sm:mb-18">
-          <div className="rounded-[28px] sm:rounded-[36px] p-8 sm:p-14 bg-gradient-to-b from-[#FAF9FE] to-[#F3F0FC] border border-[#E6E1F7] text-center shadow-xs">
+        <div className="max-w-[1240px] mx-auto px-4 mb-14 sm:mb-18">
+          <div className="rounded-[28px] sm:rounded-[36px] p-8 sm:p-14 text-center shadow-xs">
             <h2 className="font-sans text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#1B1466] tracking-tight leading-tight mb-4">
               Run every ERP implementation on one platform
             </h2>
@@ -41,6 +41,9 @@ export default function Footer() {
 
             {/* Core Product Links */}
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm font-medium">
+              <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/agent-studio">
+                Agent Studio
+              </Link>
               <Link className="text-[#55527D] hover:text-[#1B1466] transition-colors" href="/percixpert">
                 PerciXpert
               </Link>
