@@ -139,7 +139,7 @@ export default function MondayNymeriaIntegrations({ onOpenModal }: { onOpenModal
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFC] py-16 sm:py-24 border-y border-[#E9E9EF]">
+    <section className="w-full bg-white py-16 sm:py-24">
       <div className="max-w-[1240px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Narrative with Percipere Styling */}

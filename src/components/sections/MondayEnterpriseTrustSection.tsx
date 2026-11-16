@@ -34,7 +34,7 @@ export default function MondayEnterpriseTrustSection({ onOpenModal }: MondayEnte
   ];
 
   return (
-    <section className="w-full bg-white text-[#191923] py-20 sm:py-28 border-b border-[#F1F5F9]">
+    <section className="w-full bg-white text-[#191923] py-20 sm:py-28 ">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         {/* Section Heading matching Monday design */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">

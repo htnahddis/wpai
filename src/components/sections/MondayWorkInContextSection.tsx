@@ -81,24 +81,26 @@ export default function MondayWorkInContextSection({ onOpenModal }: MondayWorkIn
   const coreCenter = { x: 600, y: 350 };
 
   return (
-    <section className="relative w-full overflow-hidden text-[#191923] pt-16 sm:pt-24 pb-16 sm:pb-24 border-b border-[#F1F5F9]">
+    <section className="relative w-full overflow-hidden text-[#191923] pt-16 sm:pt-24 pb-16 sm:pb-24 ">
       {/* 1. Header: Centered Layout (As Requested) */}
       <div className="max-w-4xl mx-auto px-6 text-center mb-8 sm:mb-12">
-        <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-medium tracking-tight text-[#191923] leading-[1.08] mb-4">
-          Work in context
-        </h2>
-        <p className="text-base sm:text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-6">
-          <strong className="text-[#191923] font-semibold">AI agents are only as good as their context.</strong> Agents have the context they need before they act — ensuring enterprise workflows are carried out confidently and accurately.
-        </p>
+       
+<h2 className="text-4xl sm:text-5xl lg:text-[64px] font-medium tracking-tight text-[#191923] leading-[1.08] mb-4">
+ <p className= "text-[#FF00B7]"> Intelligence</p> that works across your enterprise
+</h2>
 
-        <button
-          type="button"
-          onClick={onOpenModal}
-          className="inline-flex items-center gap-2.5 text-sm sm:text-base px-8 py-3.5 bg-[#191923] hover:bg-[#140F4D] text-white rounded-full font-medium transition-all shadow-sm hover:scale-[1.02] cursor-pointer"
-        >
-          <span>Get Started</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+<p className="text-base sm:text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-6">
+ 
+    One Connected system to understand your ERP Journey
+ 
+  We connect enterprise systems, understand business processes, and
+  deploy AI-powered solutions that transform complex ERP operations
+  into actionable insights, intelligent support, and confident
+  business decisions.
+</p>
+
+
+        
       </div>
 
       {/* 2. Scattered & Connected Constellation Stage */}

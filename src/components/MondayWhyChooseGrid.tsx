@@ -15,7 +15,7 @@ export default function MondayWhyChooseGrid() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 sm:py-24 border-b border-[#E9E9EF]">
+    <section className="w-full bg-white py-16 sm:py-24 ">
       <div className="max-w-[1180px] mx-auto px-6">
         {/* Section Header: No eyebrows, Magenta keyword */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">

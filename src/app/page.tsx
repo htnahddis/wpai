@@ -46,11 +46,11 @@ export default function HomePage() {
       <PerciXpertStagesSection onOpenModal={() => setModalOpen(true)} />
 
       {/* 4. MANIFESTO QUOTE */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E9E9EF]">
+      <section className="py-16 sm:py-24 bg-white ">
         <div className="max-w-[1240px] mx-auto px-6">
           <blockquote className="max-w-3xl mx-auto text-center">
             <p className="font-sans text-2xl sm:text-3xl lg:text-[40px] font-normal text-[#191923] leading-relaxed">
-              &ldquo;We have structured our entire methodology around AI — whether we talk about implementation, support, or the products we build. Not AI as a talking point. AI used wisely, because that is what actually delivers results.&rdquo;
+              &ldquo;We have structured our entire methodology around AI whether we talk about implementation, support, or the products we build. Not AI as a talking point. AI used wisely, because that is what actually delivers results.&rdquo;
             </p>
           </blockquote>
         </div>

@@ -64,7 +64,7 @@ export default function PerciXpertStagesSection({
   }, []);
 
   return (
-    <section id="stages" className="py-16 sm:py-20 bg-white border-b border-[#E9E9EF]">
+    <section id="stages" className="py-16 sm:py-20 bg-white ">
       <div className="max-w-[1240px] mx-auto px-6">
         {/* Section Heading (Clean, concise) */}
         <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-14">

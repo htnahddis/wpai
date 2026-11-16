@@ -90,7 +90,7 @@ const coreCapabilitiesHtml = `
           <!-- Visual Panel 1: Knowledge -->
           <div data-panel-id="knowledge" class="percipere-cap-panel flex flex-col h-full justify-between">
             <div>
-              <div class="flex items-center justify-between pb-5 border-b border-[#F1F5F9] mb-6">
+              <div class="flex items-center justify-between pb-5  mb-6">
                 <div>
                   <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#FF00B7] bg-[#FFF0FA] px-3 py-1 rounded-full border border-[#FF00B7]/20">Percipere Clean Core Matrix</span>
                   <h3 class="text-xl font-bold text-[#191923] mt-2">Enterprise Grounding Engine</h3>
@@ -144,7 +144,7 @@ const coreCapabilitiesHtml = `
           <!-- Visual Panel 2: Actions -->
           <div data-panel-id="actions" class="percipere-cap-panel hidden flex-col h-full justify-between">
             <div>
-              <div class="flex items-center justify-between pb-5 border-b border-[#F1F5F9] mb-6">
+              <div class="flex items-center justify-between pb-5  mb-6">
                 <div>
                   <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#008744] bg-[#EBFBF3] px-3 py-1 rounded-full border border-[#00C875]/20">Autonomous Execution Engine</span>
                   <h3 class="text-xl font-bold text-[#191923] mt-2">End-to-End Enterprise Action Pipeline</h3>
@@ -211,7 +211,7 @@ const coreCapabilitiesHtml = `
           <!-- Visual Panel 3: Integrations -->
           <div data-panel-id="integrations" class="percipere-cap-panel hidden flex-col h-full justify-between">
             <div>
-              <div class="flex items-center justify-between pb-5 border-b border-[#F1F5F9] mb-6">
+              <div class="flex items-center justify-between pb-5  mb-6">
                 <div>
                   <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#0086C0] bg-[#EBF5FF] px-3 py-1 rounded-full border border-[#0086C0]/20">Enterprise Integration Fabric</span>
                   <h3 class="text-xl font-bold text-[#191923] mt-2">Bi-Directional Enterprise Ecosystem</h3>
@@ -277,7 +277,7 @@ const coreCapabilitiesHtml = `
           <!-- Visual Panel 4: Autonomy -->
           <div data-panel-id="autonomy" class="percipere-cap-panel hidden flex-col h-full justify-between">
             <div>
-              <div class="flex items-center justify-between pb-5 border-b border-[#F1F5F9] mb-6">
+              <div class="flex items-center justify-between pb-5  mb-6">
                 <div>
                   <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#D97706] bg-[#FFFBEB] px-3 py-1 rounded-full border border-[#F59E0B]/20">Continuous Operations Engine</span>
                   <h3 class="text-xl font-bold text-[#191923] mt-2">24/7 Autonomous Governance & Triage</h3>
@@ -337,7 +337,7 @@ const coreCapabilitiesHtml = `
           <!-- Visual Panel 5: Guardrails -->
           <div data-panel-id="guardrails" class="percipere-cap-panel hidden flex-col h-full justify-between">
             <div>
-              <div class="flex items-center justify-between pb-5 border-b border-[#F1F5F9] mb-6">
+              <div class="flex items-center justify-between pb-5  mb-6">
                 <div>
                   <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#7C3AED] bg-[#F5F3FF] px-3 py-1 rounded-full border border-[#8B5CF6]/20">Enterprise Guardrails Cockpit</span>
                   <h3 class="text-xl font-bold text-[#191923] mt-2">Zero-Trust Governance & Compliance</h3>
