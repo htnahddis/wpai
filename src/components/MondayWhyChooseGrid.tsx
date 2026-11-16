@@ -20,7 +20,7 @@ export default function MondayWhyChooseGrid() {
         {/* Section Header: No eyebrows, Magenta keyword */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 className="font-sans text-3xl sm:text-5xl lg:text-[46px] font-normal text-[#191923] tracking-tight leading-[1.12]">
-            The impact of <span className="text-[#FF00B7]">Percipere</span> on SAP Business AI
+            The impact of our<span className="text-[#FF00B7]"> Ecosystem</span> 
           </h2>
         </div>
 

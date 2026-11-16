@@ -34,13 +34,13 @@ const products: ProductItem[] = [
     logo: "/perciXpert.png",
   },
   {
-    id: "percihub",
-    name: "PerciHub",
+    id: "percibot",
+    name: "PerciBot",
     category: "BUSINESS SUITE",
     headline: "Autonomous business process agents built on Joule Studio",
     description:
       "Sector-tailored autonomous agents that execute multi-system transactions, resolve vendor discrepancies, and automate financial reconciliations across SAP modules.",
-    href: "/percihub-business-suite",
+    href: "/percibot-business-suite",
     color: "#D946A0",
     accentColor: "#9475D8",
   },
@@ -54,7 +54,20 @@ const products: ProductItem[] = [
     href: "/perciserve-support-suite",
     color: "#9475D8",
     accentColor: "#6161FF",
-    logo: "/percibot.png",
+   
+  },
+
+  {
+    id: "agentic-studio",
+    name: "Agentic Studio",
+    category: "AGENTIC SUITE",
+    headline: "Build and deploy autonomous agents across your enterprise",
+    description:
+      "Create intelligent, self-operating agents that can navigate complex business processes, interact with multiple systems, and make decisions in real-time.",
+    href: "/agentic-studio",
+    color: "#9475D8",
+    accentColor: "#6161FF",
+    
   },
 ];
 
@@ -273,12 +286,12 @@ export default function PerciVerseProductsScrollSection({
           >
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-[#191923] leading-[1.18] mb-3 text-balance">
               <span className="font-semibold text-[#191923]">{activeProduct.name}</span>
-              <span className="text-[#94A3B8] font-light mx-2.5">:</span>
-              <span>{activeProduct.headline}</span>
+            
+              
             </h2>
 
             <p className="text-sm sm:text-base text-[#64748B] leading-relaxed max-w-2xl sm:max-w-3xl mx-auto mb-5 text-balance">
-              {activeProduct.description}
+              {activeProduct.headline}
             </p>
           </div>
 
